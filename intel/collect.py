@@ -123,6 +123,10 @@ def ytdlp_collect(t, platform, handle, n):
     url = {'tiktok': f'https://www.tiktok.com/@{handle}', 'youtube': f'https://www.youtube.com/@{handle}/videos',
            'facebook': f'https://www.facebook.com/{handle}/videos'}[platform]
     opts = {'quiet': True, 'skip_download': True, 'playlistend': n, 'ignoreerrors': True, 'sleep_interval_requests': 1}
+    if platform == 'youtube':
+        # Per-video pages hit YouTube's bot check from datacenter IPs; the channel listing still
+        # returns id, title, views and duration. Full detail + heatmaps need Apify or cookies.
+        opts['extract_flat'] = 'in_playlist'
     with YoutubeDL(opts) as y:
         info = y.extract_info(url, download=False)
     entries = [e for e in (info or {}).get('entries') or [] if e]
@@ -139,7 +143,7 @@ def ytdlp_collect(t, platform, handle, n):
                          format='short' if (e.get('duration') or 0) <= 70 else 'video', duration_s=e.get('duration'),
                          views=e.get('view_count'), likes=e.get('like_count'), comments=e.get('comment_count'),
                          shares=e.get('repost_count'), caption=(e.get('title') or '') + ' ' + (e.get('description') or ''), source='yt-dlp'))
-        if platform == 'youtube' and e.get('heatmap'):
+        if platform == 'youtube' and e.get('heatmap'):  # only present on full (non-flat) extraction
             heatmaps[e['id']] = {'title': e.get('title'), 'duration': e.get('duration'), 'heatmap': e['heatmap']}
 
 
