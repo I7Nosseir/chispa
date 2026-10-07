@@ -17,22 +17,22 @@
   "name": "EconplusDal",
   "platform": "youtube",
   "source": "open-source",
-  "status": "fail",
-  "detail": "RuntimeError: no entries returned"
+  "status": "ok",
+  "detail": ""
  },
  {
   "name": "Economics Explained",
   "platform": "youtube",
   "source": "open-source",
-  "status": "fail",
-  "detail": "RuntimeError: no entries returned"
+  "status": "ok",
+  "detail": ""
  },
  {
   "name": "El Da7ee7",
   "platform": "youtube",
   "source": "open-source",
-  "status": "fail",
-  "detail": "RuntimeError: no entries returned"
+  "status": "ok",
+  "detail": ""
  },
  {
   "name": "tutor2u",

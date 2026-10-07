@@ -1,1 +1,29 @@
-[]
+[
+ {
+  "name": "EconplusDal",
+  "platform": "youtube",
+  "handle": "EconplusDal",
+  "followers": 403000,
+  "posts": null,
+  "bio": "When I was studying Economics at A Level and at University, I often wondered why, given the current state of technology and communication, there were never any recordings of class or lecture content. Revision was difficult, grasping key concepts was at times difficult - it was hard to stay ahead of ",
+  "source": "yt-dlp"
+ },
+ {
+  "name": "Economics Explained",
+  "platform": "youtube",
+  "handle": "EconomicsExplained",
+  "followers": 2890000,
+  "posts": null,
+  "bio": "\n",
+  "source": "yt-dlp"
+ },
+ {
+  "name": "El Da7ee7",
+  "platform": "youtube",
+  "handle": "Da7ee7",
+  "followers": 2520000,
+  "posts": null,
+  "bio": "\n",
+  "source": "yt-dlp"
+ }
+]
