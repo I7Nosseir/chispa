@@ -1,0 +1,37 @@
+name: intel-collect
+# Collects public social data for intel/targets.yml and commits it to intel/data/.
+on:
+  push:
+    branches: [claude/elegant-brown-yt0vko]
+    paths: [intel/targets.yml, intel/collect.py, .github/workflows/intel-collect.yml]
+  workflow_dispatch:
+    inputs:
+      source_mode: {description: 'auto | apify | open', default: auto}
+      posts_per_account: {description: 'posts per account', default: '30'}
+  schedule:
+    - cron: '17 4 * * 1'   # Mondays 06:17 Cairo — only fires from the default branch
+permissions:
+  contents: write
+concurrency: {group: intel-collect, cancel-in-progress: false}
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -r intel/requirements.txt
+      - name: Collect
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          SOURCE_MODE: ${{ inputs.source_mode }}
+          POSTS_PER_ACCOUNT: ${{ inputs.posts_per_account }}
+        run: python intel/collect.py
+      - name: Commit data
+        run: |
+          git config user.name "commando-intel-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add intel/data
+          git diff --cached --quiet || git commit -m "intel: data $(date -u +%F)"
+          git pull --rebase origin ${GITHUB_REF_NAME} && git push origin HEAD:${GITHUB_REF_NAME}

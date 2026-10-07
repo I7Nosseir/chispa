@@ -1,0 +1,31 @@
+# Accounts the collector pulls. role: competitor | benchmark | client
+# Edit this file and push to run a new collection.
+posts_per_account: 30
+source_mode: auto        # auto = Apify if APIFY_TOKEN secret exists, else open-source
+targets:
+  - name: Assem El Nady
+    client: rakha
+    role: competitor
+    accounts:
+      instagram: igbusinessassemelnady
+      tiktok: igcsebusinessassemelnady
+  - name: EconplusDal
+    client: rakha
+    role: benchmark          # UK A-level economics teacher, ~397K YouTube subs
+    accounts:
+      youtube: EconplusDal
+  - name: Economics Explained
+    client: rakha
+    role: benchmark          # polished economics explainers
+    accounts:
+      youtube: EconomicsExplained
+  - name: El Da7ee7
+    client: rakha
+    role: benchmark          # Egypt's best-known edutainment explainer (Arabic)
+    accounts:
+      youtube: Da7ee7
+  - name: tutor2u
+    client: rakha
+    role: benchmark          # UK business/economics revision brand
+    accounts:
+      instagram: tutor2u
