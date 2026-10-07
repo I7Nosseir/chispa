@@ -28,6 +28,8 @@ jobs:
           SOURCE_MODE: ${{ inputs.source_mode }}
           POSTS_PER_ACCOUNT: ${{ inputs.posts_per_account }}
         run: python intel/collect.py
+      - name: Audit
+        run: python intel/analyze.py "intel/data/$(date -u +%F)"
       - name: Commit data
         run: |
           git config user.name "commando-intel-bot"

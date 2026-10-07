@@ -1,0 +1,368 @@
+{
+ "run": "intel/data/2026-10-07",
+ "accounts": [
+  {
+   "n_posts": 30,
+   "format_mix": {
+    "video": 30
+   },
+   "median_views": 14000,
+   "mean_views": 18313,
+   "median_views_per_follower": 0.03,
+   "outliers": [
+    {
+     "x_median": 3.64,
+     "url": "https://www.youtube.com/watch?v=LuVmxYVN-p8",
+     "date": "",
+     "format": "video",
+     "views": "51000",
+     "likes": "",
+     "comments": "",
+     "caption": "5 BEAUTIFUL Micro Diagrams to STUN Paper 1 Examiners!!! \ud83d\udd25 "
+    },
+    {
+     "x_median": 3.29,
+     "url": "https://www.youtube.com/watch?v=-0VhWVj-1mk",
+     "date": "",
+     "format": "video",
+     "views": "46000",
+     "likes": "",
+     "comments": "",
+     "caption": "UK Economy Stats 2026 - A* Gold for Macro Exams! "
+    },
+    {
+     "x_median": 2.71,
+     "url": "https://www.youtube.com/watch?v=ogLWduNVhOg",
+     "date": "",
+     "format": "video",
+     "views": "38000",
+     "likes": "",
+     "comments": "",
+     "caption": "5 POWER Macro Diagrams For Paper 2!!! \ud83d\udcaa\ud83d\udd25 "
+    },
+    {
+     "x_median": 2.5,
+     "url": "https://www.youtube.com/watch?v=cnBu3Zigwxo",
+     "date": "",
+     "format": "video",
+     "views": "35000",
+     "likes": "",
+     "comments": "",
+     "caption": "Y2 32) Deregulation "
+    },
+    {
+     "x_median": 2.43,
+     "url": "https://www.youtube.com/watch?v=Vfr3ztbMjcw",
+     "date": "",
+     "format": "video",
+     "views": "34000",
+     "likes": "",
+     "comments": "",
+     "caption": "6 Paper 1 Mistakes That Will Cost You an A* \ud83d\ude31 "
+    },
+    {
+     "x_median": 2.21,
+     "url": "https://www.youtube.com/watch?v=yvG5WA_ZPNU",
+     "date": "",
+     "format": "video",
+     "views": "31000",
+     "likes": "",
+     "comments": "",
+     "caption": "9 Unbelievable Ways to Show Off in Paper 2! Incredible Paper 2 Revision \ud83d\ude0e "
+    },
+    {
+     "x_median": 2.0,
+     "url": "https://www.youtube.com/watch?v=f-REL1SWzf0",
+     "date": "",
+     "format": "video",
+     "views": "28000",
+     "likes": "",
+     "comments": "",
+     "caption": "Write Paper 1 Essays Like Dal \ud83d\udcaa A* Example Essay Plans "
+    }
+   ],
+   "flops": [
+    {
+     "x_median": 0.23,
+     "url": "https://www.youtube.com/watch?v=S-kGdfeGCD0",
+     "caption": "Credit Creation and the Money Multiplier - How do Commercial Banks Make Money? "
+    },
+    {
+     "x_median": 0.16,
+     "url": "https://www.youtube.com/watch?v=5fgdTbWZOMU",
+     "caption": "OCR Paper 3 Revision Advice and Walkthrough! "
+    },
+    {
+     "x_median": 0.16,
+     "url": "https://www.youtube.com/watch?v=LvqfRqYqA5Q",
+     "caption": "OCR Paper 1 & 2 - Paper Walkthrough & Advice! "
+    }
+   ],
+   "median_by_weekday_utc": {},
+   "median_by_hour_utc": {},
+   "caption_short_vs_long_median": [
+    14000,
+    22000
+   ],
+   "top_hashtags": [],
+   "name": "EconplusDal",
+   "platform": "youtube",
+   "role": "benchmark",
+   "handle": "EconplusDal",
+   "followers": 403000,
+   "total_posts": null
+  },
+  {
+   "n_posts": 30,
+   "format_mix": {
+    "video": 30
+   },
+   "median_views": 513500,
+   "mean_views": 595866,
+   "median_views_per_follower": 0.18,
+   "outliers": [
+    {
+     "x_median": 2.53,
+     "url": "https://www.youtube.com/watch?v=QtZfbWOkoIY",
+     "date": "",
+     "format": "video",
+     "views": "1300000",
+     "likes": "",
+     "comments": "",
+     "caption": "Australia May Have Just Solved The Housing Crisis "
+    },
+    {
+     "x_median": 2.53,
+     "url": "https://www.youtube.com/watch?v=jknb1YE6zdY",
+     "date": "",
+     "format": "video",
+     "views": "1300000",
+     "likes": "",
+     "comments": "",
+     "caption": "Finally a Country Is Taxing Its Billionaires "
+    },
+    {
+     "x_median": 2.34,
+     "url": "https://www.youtube.com/watch?v=TsfsoaNFyTQ",
+     "date": "",
+     "format": "video",
+     "views": "1200000",
+     "likes": "",
+     "comments": "",
+     "caption": "Economics Is A Junk Science "
+    },
+    {
+     "x_median": 2.14,
+     "url": "https://www.youtube.com/watch?v=J9PzjUlyzAY",
+     "date": "",
+     "format": "video",
+     "views": "1100000",
+     "likes": "",
+     "comments": "",
+     "caption": "The Economy Gave Up On Young People ... It's Starting To Show "
+    }
+   ],
+   "flops": [
+    {
+     "x_median": 0.43,
+     "url": "https://www.youtube.com/watch?v=Gi1zk8rLqNI",
+     "caption": "Has the World Become Uninsurable? "
+    },
+    {
+     "x_median": 0.4,
+     "url": "https://www.youtube.com/watch?v=01f3r_DnOPc",
+     "caption": "How to Rebuild an Economy "
+    },
+    {
+     "x_median": 0.29,
+     "url": "https://www.youtube.com/watch?v=JwklXWLy2UA",
+     "caption": "Get Rich Or Die Tryin' ... Literally "
+    }
+   ],
+   "median_by_weekday_utc": {},
+   "median_by_hour_utc": {},
+   "caption_short_vs_long_median": [
+    513500,
+    null
+   ],
+   "top_hashtags": [],
+   "name": "Economics Explained",
+   "platform": "youtube",
+   "role": "benchmark",
+   "handle": "EconomicsExplained",
+   "followers": 2890000,
+   "total_posts": null
+  },
+  {
+   "n_posts": 30,
+   "format_mix": {
+    "short": 10,
+    "video": 20
+   },
+   "median_views": 600500,
+   "mean_views": 949900,
+   "median_views_per_follower": 0.24,
+   "outliers": [
+    {
+     "x_median": 5.0,
+     "url": "https://www.youtube.com/watch?v=93KmHm4ggPo",
+     "date": "",
+     "format": "video",
+     "views": "3000000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u0643\u0648\u0631\u0629 \u0645\u0639 \u0627\u0644\u0633\u0644\u0627\u0645\u0629 | \u0627\u0644\u062d\u0644\u0642\u0629 \u0627\u0644\u0623\u0648\u0644\u0649 - \u0627\u0644\u0628\u0631\u0627\u0632\u064a\u0644 \ud83c\udde7\ud83c\uddf7 "
+    },
+    {
+     "x_median": 4.66,
+     "url": "https://www.youtube.com/watch?v=3Db6t_bySco",
+     "date": "",
+     "format": "video",
+     "views": "2800000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u062f\u062d\u064a\u062d  | \u0641\u0648\u0627\u0626\u062f \u0627\u0644\u062a\u062f\u062e\u064a\u0646- Benefits of Smoking "
+    },
+    {
+     "x_median": 4.0,
+     "url": "https://www.youtube.com/watch?v=MR_SrWGQj3E",
+     "date": "",
+     "format": "video",
+     "views": "2400000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u0643\u0648\u0631\u0629 \u0645\u0639 \u0627\u0644\u0633\u0644\u0627\u0645\u0629 | \u0627\u0644\u062d\u0644\u0642\u0629 \u0627\u0644\u0631\u0627\u0628\u0639\u0647 - \u0643\u0648\u0631\u064a\u0627 \u0627\u0644\u0634\u0645\u0627\u0644\u064a\u0629 \ud83c\uddf0\ud83c\uddf5 "
+    },
+    {
+     "x_median": 3.83,
+     "url": "https://www.youtube.com/watch?v=qnBpnEmUNfQ",
+     "date": "",
+     "format": "video",
+     "views": "2300000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u0643\u0648\u0631\u0629 \u0645\u0639 \u0627\u0644\u0633\u0644\u0627\u0645\u0629 | \u0627\u0644\u062d\u0644\u0642\u0629 \u0627\u0644\u062b\u0627\u0646\u064a\u0629 - \u0643\u0648\u0644\u0648\u0645\u0628\u064a\u0627 \ud83c\udde8\ud83c\uddf4 "
+    },
+    {
+     "x_median": 3.83,
+     "url": "https://www.youtube.com/watch?v=jXi-ODqD4eQ",
+     "date": "",
+     "format": "video",
+     "views": "2300000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u062f\u062d\u064a\u062d | \u0642\u0635\u0629 \u0627\u0642\u062a\u0635\u0627\u062f \u0639\u0645\u062a\u0643 "
+    },
+    {
+     "x_median": 3.66,
+     "url": "https://www.youtube.com/watch?v=z9VlaSRmcWE",
+     "date": "",
+     "format": "video",
+     "views": "2200000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u062f\u062d\u064a\u062d | \u0644\u064a\u0647 \u0645\u0627 \u0628\u0646\u062a\u0643\u0644\u0645\u0634 \u0632\u064a \u0627\u0644\u0627\u062c\u0627\u0646\u0628\u061f (Speech Perception) "
+    },
+    {
+     "x_median": 2.66,
+     "url": "https://www.youtube.com/watch?v=F47qG4S89qg",
+     "date": "",
+     "format": "video",
+     "views": "1600000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u0643\u0648\u0631\u0629 \u0645\u0639 \u0627\u0644\u0633\u0644\u0627\u0645\u0629 | \u0627\u0644\u062d\u0644\u0642\u0629 \u0627\u0644\u062b\u0627\u0644\u062b\u0647 - \u0643\u0648\u062a \u062f\u064a\u0641\u0648\u0627\u0631 "
+    },
+    {
+     "x_median": 2.66,
+     "url": "https://www.youtube.com/watch?v=dfQxpz8af9I",
+     "date": "",
+     "format": "video",
+     "views": "1600000",
+     "likes": "",
+     "comments": "",
+     "caption": "\u0627\u0644\u062f\u062d\u064a\u062d | \u0627\u0644\u0633\u0628\u0628\u061f (Correlation-Causation Fallacy) "
+    }
+   ],
+   "flops": [
+    {
+     "x_median": 0.08,
+     "url": "https://www.youtube.com/watch?v=Mp356Ql1chk",
+     "caption": "\u062d\u0627\u0633\u064a\u0646 \u0628\u0627\u0644\u0630\u0646\u0628 #shorts "
+    },
+    {
+     "x_median": 0.07,
+     "url": "https://www.youtube.com/watch?v=i5jVLcLsUL8",
+     "caption": "\u0647\u0627\u0646\u064a\u0628\u0627\u0644 \u0639\u0644\u0649 \u0627\u0644\u0623\u0628\u0648\u0627\u0628 #shorts "
+    },
+    {
+     "x_median": 0.06,
+     "url": "https://www.youtube.com/watch?v=86k5OCT4YVA",
+     "caption": "\u0633\u0644\u0637\u0646\u0629 \u0639\u062f\u0648\u064a\u0629 #shorts "
+    }
+   ],
+   "median_by_weekday_utc": {},
+   "median_by_hour_utc": {},
+   "caption_short_vs_long_median": [
+    600500,
+    null
+   ],
+   "top_hashtags": [
+    [
+     "#shorts",
+     6
+    ]
+   ],
+   "name": "El Da7ee7",
+   "platform": "youtube",
+   "role": "benchmark",
+   "handle": "Da7ee7",
+   "followers": 2520000,
+   "total_posts": null
+  }
+ ],
+ "log": [
+  {
+   "name": "Assem El Nady",
+   "platform": "instagram",
+   "source": "open-source",
+   "status": "fail",
+   "detail": "ConnectionException: JSON Query to api/v1/users/web_profile_info/: 429 Too Many Requests when accessing https://www.instagram.com/api/v1/users/web_profile_info/?username=igbusinessassemelnady"
+  },
+  {
+   "name": "Assem El Nady",
+   "platform": "tiktok",
+   "source": "open-source",
+   "status": "fail",
+   "detail": "RuntimeError: no entries returned"
+  },
+  {
+   "name": "EconplusDal",
+   "platform": "youtube",
+   "source": "open-source",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "name": "Economics Explained",
+   "platform": "youtube",
+   "source": "open-source",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "name": "El Da7ee7",
+   "platform": "youtube",
+   "source": "open-source",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "name": "tutor2u",
+   "platform": "instagram",
+   "source": "open-source",
+   "status": "fail",
+   "detail": "ConnectionException: JSON Query to api/v1/users/web_profile_info/: 429 Too Many Requests when accessing https://www.instagram.com/api/v1/users/web_profile_info/?username=tutor2u"
+  }
+ ]
+}
