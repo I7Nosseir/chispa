@@ -1,0 +1,44 @@
+[
+ {
+  "name": "Assem El Nady",
+  "platform": "instagram",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "ConnectionException: JSON Query to api/v1/users/web_profile_info/: 429 Too Many Requests when accessing https://www.instagram.com/api/v1/users/web_profile_info/?username=igbusinessassemelnady"
+ },
+ {
+  "name": "Assem El Nady",
+  "platform": "tiktok",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "RuntimeError: no entries returned"
+ },
+ {
+  "name": "EconplusDal",
+  "platform": "youtube",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "RuntimeError: no entries returned"
+ },
+ {
+  "name": "Economics Explained",
+  "platform": "youtube",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "RuntimeError: no entries returned"
+ },
+ {
+  "name": "El Da7ee7",
+  "platform": "youtube",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "RuntimeError: no entries returned"
+ },
+ {
+  "name": "tutor2u",
+  "platform": "instagram",
+  "source": "open-source",
+  "status": "fail",
+  "detail": "ConnectionException: JSON Query to api/v1/users/web_profile_info/: 429 Too Many Requests when accessing https://www.instagram.com/api/v1/users/web_profile_info/?username=tutor2u"
+ }
+]
