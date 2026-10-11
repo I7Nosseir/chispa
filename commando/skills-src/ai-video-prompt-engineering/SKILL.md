@@ -14,7 +14,7 @@ A living methodology for writing AI generation prompts that actually produce wha
 ## 0. The Workflow (every job)
 
 1. **Brief:** brand, real product photos (2–4 angles, required for product work), audience (Egypt / Gulf), platform + aspect ratio, format (still, product set, UGC, concept film), the ONE idea (twist-lab / idea-elevator for concept films), credits budget.
-2. **Realism card:** fill it before writing a prompt (see `references/realism-playbook.md` §2 for device presets):
+2. **Pick the style mode first (§16):** **A, Real life** (documentary/UGC; `realism-playbook.md`) or **B, Commercial hero** (bright, staged, scroll-stopping ad; `commercial-recipes.md`). For product ads and outreach samples, the default is **B**. Then fill the realism card (see `references/realism-playbook.md` §2 for device presets):
    ```
    Capture device · Light (source, direction, time) · Exact local place · Cast (different from the last 3 pieces)
    3+ imperfections · What must stay exact (product/label/colour) · Sound (room tone + foley, or silent)
@@ -164,6 +164,16 @@ Detail on the 12 AI tells and their fixes, device presets, UGC and product-categ
 - **Spec work:** label "spec concept — not commissioned" anywhere it's shown (§10).
 - **Range:** don't reuse the same face in more than 2 portfolio pieces.
 - Any on-screen text or VO goes through cringe-filter; Egyptian Arabic through egyptian-voice (with transliteration, per lessons-learned).
+
+---
+
+## 16. Style Modes: Real-Life vs Commercial Hero
+
+"Photoreal" has two very different meanings, and mixing them gives a dark, moody, film-still look that impresses nobody:
+- **Mode A, Real life:** looks like a phone or documentary photo of the real world. Lived-in clutter, imperfections, available light. For UGC, BTS and trust content. (`references/realism-playbook.md`)
+- **Mode B, Commercial hero:** photoreal *materials* in a staged, big-budget studio shoot. The product fills 35–60% of the frame, exposure is bright, studio light is named, there's one strong visual idea (splash, levitation, ingredient world, nature podium, colour block), props come from the product's story, and the background is clean. For ads, grids, e-commerce and outreach samples. (`references/commercial-recipes.md`)
+
+Never put Mode A imperfections (receipts, fingerprints, clutter, "late afternoon shop light") into a Mode B prompt, and don't run `realism_finish.py` on Mode B beyond `--strength 0.3`.
 
 ---
 

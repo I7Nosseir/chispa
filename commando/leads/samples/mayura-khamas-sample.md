@@ -49,6 +49,40 @@ NEGATIVE PROMPT: bottle, cap and label must exactly match @product throughout, e
 
 All three prompts passed `prompt_lint.py` with 0 errors and 0 warnings.
 
+## V2: Commercial hero prompts (use these; 11 Oct feedback)
+The first output looked real but read as a dark film still. Outreach samples need **Mode B: commercial hero**: bright, the product large in frame, one strong idea, props from the brand story. "Mayura" means peacock, so the props are peacock feathers in teal, emerald and gold. All four prompts passed `prompt_lint.py` with 0 errors and 0 warnings.
+
+**Attach their real bottle photo as `@product` first.** The V1 label ("MAYURA KHAMAS" on a peacock cap) was invented by the model. Unless that's their actual bottle, don't send it: product truth.
+
+### B1: Peacock pedestal (send this one)
+```
+High-end commercial product photography, Phase One camera, 100mm macro, f/11, crisp focus edge to edge. The exact Mayura Khamas perfume bottle from @product stands at the center of a bright, airy scene, filling about half the frame — already there, same bottle shape, cap, label and amber liquid as the reference. It sits on a smooth cream sandstone pedestal surrounded by exactly 5 real peacock feathers fanned out behind it like a crown, their blue-green eyes sharp and iridescent. Soft warm-white background with a gentle gradient to pale gold. Lighting: large softbox from the upper left for clean highlights on the glass, a thin rim light from behind that makes the amber liquid glow, a soft fill from the right. Exactly 3 small amber droplets resting on the pedestal. Bright, luxurious, clean, rich colour, glossy magazine advertising look.
+NEGATIVE: label and bottle must exactly match @product, no invented text or logo, no extra bottles, no dark or moody lighting, no smoke, no ring or halo object, no plastic CGI look, no watermark or reference-image border bleed.
+```
+### B2: Amber splash
+```
+High-end commercial product photography, Sony A1, 90mm macro, f/8, high-speed flash freezing motion. The exact Mayura Khamas perfume bottle from @product floats in mid-air at a slight angle, filling about half the frame — already there, same shape, cap, label and amber liquid as the reference. Around it, a frozen splash of golden amber liquid curls in one clean ribbon from the lower left to the upper right, with exactly 7 crisp droplets suspended in the air. Background: smooth deep-teal to emerald gradient inspired by peacock colours. Lighting: strong key light from the right, white rim light outlining the glass, bright highlights in the droplets. Crisp, saturated, premium perfume-ad look.
+NEGATIVE: label and bottle must exactly match @product, no invented text, exactly 7 droplets, no extra bottles, no muddy or dark exposure, no smoke, no glow halo, no plastic CGI look.
+```
+### B3: Dubai dune at golden hour
+```
+High-end commercial product photography, 85mm, f/5.6, golden hour. The exact Mayura Khamas perfume bottle from @product stands on the crest of a smooth sand dune in the Dubai desert, filling about a third of the frame — already there, same shape, cap, label and amber liquid as the reference. The sun sits low behind it on the left, shining through the amber liquid so the bottle glows warmly, with a long soft shadow across the sand. Clean wind ripples in the sand, a clear pale-blue sky fading to warm gold at the horizon, exactly 1 peacock feather lying in the sand beside the bottle. Bright, warm, airy, luxurious Gulf perfume campaign.
+NEGATIVE: label and bottle must exactly match @product, no invented text, no extra bottles, no people, no dark or moody lighting, no lens-flare rings, no halo object, no CGI plastic look.
+```
+### B4: 6-second video from B1 (Kling, No Native Audio on)
+```
+SCENE: bright warm-white studio, soft gradient background to pale gold.
+CHARACTERS: no people. The exact Mayura Khamas perfume bottle from @product stands on a cream sandstone pedestal from frame one, with exactly 5 peacock feathers fanned behind it.
+BEATS:
+ 0.0-2.0s: Still hero shot; light slowly brightens across the glass from left to right.
+ 2.0-4.0s: The 5 feathers gently sway open a little, as if touched by a soft breeze.
+ 4.0-6.0s: A thin rim light grows behind the bottle and the amber liquid glows warmer.
+CAMERA: slow push-in toward the label over 6 seconds, Phase One 100mm macro look.
+STYLE: high-end commercial perfume ad, bright, clean, rich colour, softbox from upper left.
+NEGATIVE PROMPT: bottle and label must exactly match @product throughout, exactly 5 feathers, no extra objects, no dark or moody lighting, no smoke, no ring or halo object, no speech.
+```
+Finish Mode B lightly: `realism_finish.py image.png --preset still --strength 0.3`, or skip it. Add any text or logo in Canva, never in the prompt.
+
 ## Generate → check → finish
 1. Generate 4–6 versions of Prompt 1 with `@product` attached, and pick the best.
 2. Check it against §14: label matches exactly? Bottle shape right? Any garbled text? Real texture? Does it read as the Bur Dubai souq?

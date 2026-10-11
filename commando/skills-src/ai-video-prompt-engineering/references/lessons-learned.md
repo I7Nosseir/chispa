@@ -4,6 +4,14 @@ Real, observed failures and fixes from actual generations. Newest entries at the
 
 ---
 
+### Mayura sample came out like a dark film still, not an ad — 2026-10-11
+**Tool/model:** Nano Banana / Higgsfield (still)
+**What was asked for:** A product sample to impress a Dubai perfume shop in a cold DM.
+**What happened:** Realism was excellent (fingerprints, receipt, warm shop light), but the image read as a moody movie frame. The product was small in the frame, exposure was dark, and nothing said "luxury ad". The label text was invented by the model (no real @product photo was attached).
+**Root cause:** The prompt used documentary "real life" cues (lived-in shop, late-afternoon light, clutter) when the job needed a commercial hero image. And it had no real product reference.
+**Fix applied:** Added §16 Style Modes + commercial-recipes.md; rewrote the Mayura prompts in Mode B (bright studio, product 35–60% of the frame, story props such as peacock feathers, splash and desert podium). @product is required before generating for a real brand.
+**Generalizable rule:** Choose the style mode before writing; outreach and ad samples default to Mode B. Never generate a real brand's product without its real photo.
+
 ### Portfolio review: one face everywhere, blurry thumbnails, no product/UGC work — 2026-10-11
 **Tool/model:** Higgsfield (Kling 3.0 / Nano Banana), portfolio deck in Canva
 **What was asked for:** A spec-concept AI video showcase (9 brands) to win clients and jobs.
