@@ -1,4 +1,4 @@
-# Commando OS: handoff (updated 11 Oct 2026)
+# Commando OS: handoff (updated 11 Oct 2026, evening)
 
 The founder runs The Commando (Sparq Study, Ignite Uni, Nova). He doesn't code. This file is the single record of the work done with Claude since 7 Oct 2026. Read it first in any new chat.
 
@@ -7,6 +7,7 @@ The founder runs The Commando (Sparq Study, Ignite Uni, Nova). He doesn't code. 
   - `commando/skills-src/`: source of the new skills. `commando/skills-packaged/*.skill`: ready to upload in claude.ai Settings → Skills.
   - `commando/clients/rakha/`: colour, logo, board, design (build.mjs + rendered PNGs) and PDFs.
   - `commando/clients/la-margrita/`: prospect audit and call notes.
+  - `commando/leads/`: calling list (`leads-2026-10-11.xlsx` + `.csv`), `calling-playbook.md`, and `build_leads.py` (rebuilds the sheet).
   - `intel/`: GitHub Actions collector (collect.py, analyze.py, targets.yml, workflow `.github/workflows/intel-collect.yml`) and dated data in `intel/data/<date>/`.
 - Claude Docs (living documents on claude.ai):
   | Doc | id |
@@ -82,6 +83,29 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
 - Four different names, typos, a broken phone number, defensive review replies.
 - Offer: a free month of content, then a paid retainer. Packaging and logistics are the paid phase 2.
 - First call on 11 Oct 2026.
+
+## Lead list: 100 businesses to call (11 Oct 2026)
+- Files: `commando/leads/leads-2026-10-11.xlsx`.
+  - Sheets: Leads, Summary, Call playbook.
+  - A CSV copy sits next to it. `calling-playbook.md` is the script and the rules.
+- Source:
+  - Google Maps via Apify (`compass/crawler-google-places`, 6 runs, ~214 places).
+  - Areas: Sheikh Zayed, 6th of October, Hadayek al Ahram/Haram, New Cairo, Maadi.
+  - Cost about $1.30 of the $5 free credit ($0.004/place + $0.002 contacts add-on).
+- Excluded (founder's call): education/IGCSE centers and schools. Also excluded: chains/franchises, hotel restaurants, and listings without a phone.
+- Mix: 19 dental, 12 derma, 11 physio, 21 gyms, 18 beauty, 13 restaurants, 3 real estate, 2 padel, 1 café.
+- Tiers: A high-paying 20 · B mid 57 · C low/quick win 23. Sorted A→C, then by Need × Ability.
+- Strongest openers (verified gaps):
+  - Enhanced Dental: the Google "website" is a Google Form; 274 reviews at 5.0.
+  - La Vida Dental: the listing links a different name's Instagram, and its reviews are split with "The Dental Room".
+  - Air Gym / H2O Gym: name mismatch.
+  - Mira Dental: the "website" is its Yellow Pages profile.
+  - Big Maadi restaurants (Lucille's, Carmel, Bistro Paris) have no website on their listings.
+- "No socials linked" means none on Google or their site. Search their name before calling.
+- Next:
+  - The founder calls Tier A and logs Status/Call notes/Follow-up in the sheet.
+  - Bring outcomes back; Claude updates the sheet, drafts follow-ups and picks the next niche.
+  - Prices in the sheet are the PROPOSED ranges from commando-profiles. Confirm before quoting.
 
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).
