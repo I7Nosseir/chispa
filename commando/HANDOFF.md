@@ -107,6 +107,21 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
   - Bring outcomes back; Claude updates the sheet, drafts follow-ups and picks the next niche.
   - Prices in the sheet are the PROPOSED ranges from commando-profiles. Confirm before quoting.
 
+## Gulf leads + remote jobs (11 Oct 2026)
+- File: `commando/leads/gulf-leads-and-jobs-2026-10-11.xlsx`.
+  - Sheets: Gulf leads (Dubai), Remote jobs, Fair pricing, Where to look weekly.
+  - Also: a CSV copy, `gulf-and-jobs-playbook.md` (approach), and `build_gulf.py`.
+- 56 Dubai leads, from one Apify run (80 places) with chains removed:
+  - Niches: perfume, abaya, jewelry, skincare, aesthetic, dental, real estate, fitness, coffee, restaurants.
+  - Tiers: A 7 · B 33 · C 16.
+- Apify free credit is spent ($0.45 left). Saudi (Riyadh, Jeddah) and Doha weren't run; do them when the credit resets or on Starter ($29).
+- 14 remote/Gulf jobs from web search. Best fits: Whitecollars Senior Media Buyer (part-time, UAE e-com, Egypt-based) and Malaeb Media Buyer (remote).
+- Founder adds AI content creation (images, video, product shoots, AI UGC) plus websites/apps to the services. Update the Freelance Services profile.
+- CV + portfolio: the founder already has both (possibly on Canva). WAIT for his files and edit together.
+  - Claude made drafts, uncommitted: commando/portfolio/ and the private artifact https://claude.ai/artifact/Vu61HyZjPKZAy9JYwRMFQf.
+  - Use them only if he wants.
+- Canva connector isn't connected. With it connected, Claude can read/edit his Canva designs.
+
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).
 - Run everything through cringe-filter.
