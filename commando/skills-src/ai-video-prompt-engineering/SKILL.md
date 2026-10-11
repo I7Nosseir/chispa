@@ -19,7 +19,7 @@ A living methodology for writing AI generation prompts that actually produce wha
    Capture device · Light (source, direction, time) · Exact local place · Cast (different from the last 3 pieces)
    3+ imperfections · What must stay exact (product/label/colour) · Sound (room tone + foley, or silent)
    ```
-3. **Check `references/lessons-learned.md`**, then write the prompt with the Master Formula (§1) and the Negative Prompt Checklist (§9). Templates: `references/prompt-library.md`. **Before spending credits, run** `python3 scripts/prompt_lint.py prompt.txt` (`--image` for stills): it checks §1–§10 and §13 automatically and catches every failure already in the lessons log. Fix all ERRORs.
+3. **Check `references/taste-bank.md`** (the founder's decoded visual references; match the closest one) and **`references/lessons-learned.md`**, then write the prompt with the Master Formula (§1) and the Negative Prompt Checklist (§9). Templates: `references/prompt-library.md`. **Before spending credits, run** `python3 scripts/prompt_lint.py prompt.txt` (`--image` for stills): it checks §1–§10 and §13 automatically and catches every failure already in the lessons log. Fix all ERRORs.
 4. **Keyframes first:** generate 4–8 stills per shot, pick, fix by editing (not regenerating), lock character sheets. Then image-to-video from the approved still (start frame; end frame when the move matters). 2–4 takes per shot.
 5. **Realism QA gate (§14):** contact sheet per clip, 12-point check, any fail = regenerate that shot and log why.
 6. **Finish (§14):** edit, real-camera texture, room tone + foley, captions via commando-motion-studio.
