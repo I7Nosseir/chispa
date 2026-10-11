@@ -3,18 +3,16 @@
 Goes with `gulf-leads-and-jobs-2026-10-11.xlsx` (sheets: Gulf leads (Dubai), Remote jobs, Fair pricing, Where to look weekly), the portfolio page and `commando/portfolio/Ismail-Nosseir-CV.pdf`.
 
 ## Your order of work
-1. **Finish the portfolio and CV first.** Fill in WhatsApp, email and LinkedIn. Add the start dates for NovaX and The Commando. Add 6 AI samples (see below). Ask Mr Rakha if you can show his brand work.
+1. **Portfolio and CV are done.** Portfolio is in Canva ("Ismail Nosseir Portfolio"); set it to "anyone with the link can view" and add Watch links to the AI video slides. The CV is `commando/portfolio/Ismail-Nosseir-CV.pdf`.
 2. **Make your samples.** Pick 3 Dubai product leads (perfume, abaya, jewelry). Take one photo from each one's Google Maps/Instagram and make one AI product image per brand. That's your opener and your portfolio at the same time.
 3. **Gulf outreach:** 10 messages a day from the Dubai sheet, Tier A first.
 4. **Jobs:** apply to 3 roles a week from the Remote jobs sheet (start with #2 Whitecollars and #1 Malaeb). Check the "Where to look weekly" sheet every Sunday.
 5. **Egypt calls:** keep the Egypt list for calling. Gulf is message-first.
 
-## What to add to the portfolio (you don't have these in the repo yet)
-- 3 AI product images (perfume, abaya, jewelry) made from real brands' photos, as speculative samples. Label them "concept".
-- 2 AI UGC-style ads (15–25s, one Arabic and one English).
-- 1 website you've built (NovaxOps screenshot, or a landing page).
-- Optional: a Grapes Holiday or Rihla ad creative, if the client allows it. Numbers only if not.
-Send me the files and I'll add them to the page.
+## What to add to the portfolio next
+- 3 AI product images (perfume, abaya, jewelry) made from real Dubai leads' photos. Label them "spec concept".
+- 1–2 AI UGC-style talking ads (one Arabic, one English).
+- Watch links on every AI video slide (a PDF can't play video).
 
 ## Gulf: message first, then call
 Gulf owners and managers answer WhatsApp and Instagram DMs more than cold calls from a foreign number.
