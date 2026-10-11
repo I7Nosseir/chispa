@@ -130,7 +130,10 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
     - Rihla vs Grapes spend numbers conflict with the CV (54,822 vs 24,600).
     - "Promoting Website" and AFCON share identical stats.
     - The AI video slides need watch links (a PDF can't play video).
-- CV: his CV (3 pages) is reviewed but not yet rewritten. Waiting on the Rihla start date (2025 vs 2026) and whether to keep the Rakha teaching line.
+- CV: final 2-page PDF at commando/portfolio/Ismail-Nosseir-CV.pdf (source cv.html).
+  - Rihla start date confirmed as Jan 2026.
+  - Tutoring lines removed at the founder's request.
+  - Total ad spend for Rihla/Grapes left out until the conflicting numbers are resolved.
   - Claude's own drafts in commando/portfolio/ are superseded; use his.
 
 ## Standing rules
