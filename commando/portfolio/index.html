@@ -1,0 +1,175 @@
+<title>Ismail Nosseir Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: an operator's ledger. One narrow reading column, results set like a P&L, work laid on a contact sheet. */
+:root{
+  --bg:#F3F4F1; --surface:#FFFFFF; --ink:#12161C; --muted:#5B6470; --line:#D9DDD8;
+  --accent:#1F5BFF; --accent-ink:#FFFFFF; --win:#0E7A4F;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1216; --surface:#171B21; --ink:#ECEEF0; --muted:#9AA3AE; --line:#2A3038;
+  --accent:#6E93FF; --accent-ink:#0F1216; --win:#4CC38A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1216; --surface:#171B21; --ink:#ECEEF0; --muted:#9AA3AE; --line:#2A3038;
+  --accent:#6E93FF; --accent-ink:#0F1216; --win:#4CC38A; color-scheme:dark}
+body{background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); padding-inline:20px; padding-block:0 64px}
+.wrap{max-width:960px; margin:0 auto; display:grid; gap:72px}
+h1,h2,h3{font-family:var(--display); text-wrap:balance; margin:0; line-height:1.15}
+h2{font-size:clamp(22px,3.2vw,30px)}
+h3{font-size:17px; font-weight:500}
+p{margin:0; max-width:65ch}
+.eyebrow{font:500 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+
+header.hero{padding-top:56px; display:grid; gap:20px}
+.hero h1{font-size:clamp(34px,6.4vw,64px); font-weight:700; letter-spacing:-.01em}
+.hero h1 em{font-style:normal; color:var(--accent)}
+.hero .lede{font-size:clamp(17px,2vw,19px); color:var(--muted)}
+.tags{display:flex; flex-wrap:wrap; gap:8px}
+.tag{font:500 13px/1 var(--mono); padding:8px 10px; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
+
+.ledger{border-top:2px solid var(--ink)}
+.row{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) auto; gap:16px; align-items:baseline; padding:18px 0; border-bottom:1px solid var(--line)}
+.row .who{font-weight:600}
+.row .what{color:var(--muted)}
+.row .num{font:500 clamp(20px,3vw,28px)/1 var(--mono); color:var(--win); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap}
+@media (max-width:640px){.row{grid-template-columns:1fr auto}.row .what{grid-column:1/-1; order:3}}
+
+.section{display:grid; gap:24px}
+.cases{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:16px}
+.case{background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:22px; display:grid; gap:10px; align-content:start; min-width:0}
+.case .meta{font:500 12px/1.4 var(--mono); color:var(--muted)}
+.case ul{margin:0; padding-left:18px; display:grid; gap:4px}
+
+.sheet{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px}
+.sheet figure{margin:0; display:grid; gap:8px}
+.sheet img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:4px; border:1px solid var(--line); background:var(--surface)}
+.sheet figcaption{font:500 12px/1.4 var(--mono); color:var(--muted)}
+
+.services{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:0; border-top:2px solid var(--ink)}
+.svc{padding:18px 16px 18px 0; border-bottom:1px solid var(--line); display:grid; gap:6px; min-width:0}
+.svc p{color:var(--muted); font-size:15px}
+
+.stack{display:flex; flex-wrap:wrap; gap:8px}
+.process{display:grid; gap:0; counter-reset:step; border-top:2px solid var(--ink)}
+.process li{list-style:none; display:grid; grid-template-columns:48px minmax(0,1fr); gap:12px; padding:14px 0; border-bottom:1px solid var(--line)}
+.process li::before{counter-increment:step; content:"0" counter(step); font:500 14px/1.6 var(--mono); color:var(--accent)}
+.process{padding:0; margin:0}
+
+.contact{background:var(--ink); color:var(--bg); border-radius:8px; padding:32px; display:grid; gap:14px}
+.contact h2{color:var(--bg)}
+.contact p{color:var(--bg); opacity:.8}
+.contact .lines{display:grid; gap:6px; font:500 15px/1.5 var(--mono)}
+.contact .lines span{user-select:all}
+footer{font:500 12px/1.4 var(--mono); color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Ismail Nosseir · Cairo, working with Egypt and the Gulf</span>
+    <h1>Ads that bring in <em>revenue</em>, and the AI content that feeds them.</h1>
+    <p class="lede">I run paid media, build the websites and stores the ads land on, and produce the content in-house with AI: product shoots, UGC-style ads, motion graphics. One operator from creative to cost per lead.</p>
+    <div class="tags">
+      <span class="tag">Media buying</span><span class="tag">AI product shoots</span><span class="tag">AI UGC ads</span>
+      <span class="tag">Websites &amp; e-stores</span><span class="tag">Apps &amp; automation</span><span class="tag">Arabic + English</span>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="results">
+    <span class="eyebrow">Results</span>
+    <h2 id="results">What the work has returned</h2>
+    <div class="ledger">
+      <div class="row"><span class="who">Grapes Holiday · travel</span><span class="what">Marketing Director since Oct 2025. Ad spend reduced.</span><span class="num">−62.5% spend</span></div>
+      <div class="row"><span class="who">Grapes Holiday · travel</span><span class="what">Lead volume after the change.</span><span class="num">2.5× leads</span></div>
+      <div class="row"><span class="who">Grapes Holiday · travel</span><span class="what">Qualified leads delivered to the sales team.</span><span class="num">3,000+</span></div>
+      <div class="row"><span class="who">Rihla Travel · launch</span><span class="what">Founding Marketing Director, Jan 2026. Revenue in the first two weeks.</span><span class="num">350K+ EGP</span></div>
+      <div class="row"><span class="who">Ignite Uni · my EdTech product</span><span class="what">Users and sales with no paid marketing (July 2026: 20 sales).</span><span class="num">157 users</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cases">
+    <span class="eyebrow">Selected work</span>
+    <h2 id="cases">Case notes</h2>
+    <div class="cases">
+      <article class="case">
+        <span class="meta">Travel · Paid social · Lead generation</span>
+        <h3>Grapes Holiday</h3>
+        <ul><li>Marketing Director since Oct 2025.</li><li>Ad spend down 62.5% with 2.5× the leads.</li><li>3,000+ qualified leads handed to sales.</li></ul>
+      </article>
+      <article class="case">
+        <span class="meta">Travel · Launch · Funnel</span>
+        <h3>Rihla Travel</h3>
+        <ul><li>Founding Marketing Director from day one.</li><li>350,000+ EGP revenue in the first two weeks.</li></ul>
+      </article>
+      <article class="case">
+        <span class="meta">Saudi agency · AI · Internal software</span>
+        <h3>NovaX creative agency (KSA)</h3>
+        <ul><li>AI specialist on retail, dental, pet-care and manufacturing accounts.</li><li>Built NovaxOps, the agency's operations platform (novaxops.com).</li></ul>
+      </article>
+      <article class="case">
+        <span class="meta">EdTech · Product · Growth</span>
+        <h3>Ignite Uni</h3>
+        <ul><li>University study platform I founded and built with AI coding tools.</li><li>157 users; 20 sales with zero ad spend.</li><li>Raised investment from a development firm.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="design">
+    <span class="eyebrow">Brand &amp; content design</span>
+    <h2 id="design">An educator brand, built from zero</h2>
+    <p>For an IGCSE Business teacher: positioning, a signet logo, a full colour and type system, and carousel templates rendered in code so every post stays on-brand.</p>
+    <div class="sheet">
+      <figure><img src="img/rakha-margin-01.jpg" alt="Carousel cover: 'This answer knows everything. It still lost 2 marks.' over a marked student answer scored 4/6"><figcaption>“The Margin” series · carousel 1 of 7</figcaption></figure>
+      <figure><img src="img/rakha-0264-01.jpg" alt="Carousel cover announcing the IGCSE Business syllabus change from 0450 to 0264 in 2027"><figcaption>Syllabus-change explainer · carousel 1 of 6</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services">
+    <span class="eyebrow">Services</span>
+    <h2 id="services">What I do for brands</h2>
+    <div class="services">
+      <div class="svc"><h3>Media buying</h3><p>Meta, TikTok and Google campaigns built around cost per lead and ROAS, with weekly reporting.</p></div>
+      <div class="svc"><h3>AI product shoots</h3><p>Studio-quality product images and short clips from your existing photos. No studio, models or location.</p></div>
+      <div class="svc"><h3>AI UGC ads</h3><p>Creator-style video ads in Arabic or English, made to test hooks fast.</p></div>
+      <div class="svc"><h3>Websites &amp; e-stores</h3><p>Landing pages, business sites and Salla/Shopify stores with WhatsApp ordering and booking.</p></div>
+      <div class="svc"><h3>Content &amp; motion</h3><p>Reels, carousels and code-made motion graphics, planned as a monthly system.</p></div>
+      <div class="svc"><h3>Apps &amp; automation</h3><p>Internal tools and automations (n8n, AI agents) that save your team hours.</p></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="stack">
+    <span class="eyebrow">Toolkit</span>
+    <h2 id="stack">Tools I work in daily</h2>
+    <div class="stack">
+      <span class="tag">Meta Ads Manager</span><span class="tag">Higgsfield</span><span class="tag">Kling 3.0</span><span class="tag">Seedance</span><span class="tag">Nano Banana</span><span class="tag">Google Flow</span><span class="tag">Remotion</span><span class="tag">CapCut Pro</span><span class="tag">n8n</span><span class="tag">Claude Code</span>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how">
+    <span class="eyebrow">How we start</span>
+    <h2 id="how">From first message to first result</h2>
+    <ol class="process">
+      <li><div><strong>Free audit.</strong> I send a short video on what's costing you sales today: your listing, site, ads and content.</div></li>
+      <li><div><strong>Paid pilot.</strong> One contained project, such as 10 AI product images, 3 UGC ads or a landing page, so you can judge the work.</div></li>
+      <li><div><strong>Monthly system.</strong> Content, ads and reporting on a fixed scope. Paid by phase, two revision rounds.</div></li>
+    </ol>
+  </section>
+
+  <section class="contact" aria-labelledby="contact">
+    <h2 id="contact">Let's talk</h2>
+    <p>Send your Instagram or website and I'll reply with a free audit within 48 hours.</p>
+    <div class="lines">
+      <span>WhatsApp: [add your number]</span>
+      <span>Email: [add your email]</span>
+      <span>LinkedIn: [add your profile link]</span>
+    </div>
+  </section>
+
+  <footer>© 2026 Ismail Nosseir · Results quoted are from client work and my own ventures.</footer>
+</div>
