@@ -1,0 +1,467 @@
+{
+  "name": "rakha-A-black-tie",
+  "colors": [
+    {
+      "role": "base",
+      "name": "Bone",
+      "hex": "#F4EEE3",
+      "oklch": [
+        0.951,
+        0.016,
+        82.8
+      ],
+      "rgb": [
+        244,
+        238,
+        227
+      ],
+      "cmyk": [
+        0,
+        2,
+        7,
+        4
+      ],
+      "scale": [
+        "#F9F5ED",
+        "#E8E4DC",
+        "#CECAC2",
+        "#AFAAA1",
+        "#8E887F",
+        "#6D685F",
+        "#4E4A42",
+        "#33302A",
+        "#1D1A15"
+      ]
+    },
+    {
+      "role": "anchor",
+      "name": "Tuxedo Ink",
+      "hex": "#111013",
+      "oklch": [
+        0.176,
+        0.006,
+        300.9
+      ],
+      "rgb": [
+        17,
+        16,
+        19
+      ],
+      "cmyk": [
+        11,
+        16,
+        0,
+        93
+      ],
+      "scale": [
+        "#F5F4F7",
+        "#E5E4E7",
+        "#CBCACD",
+        "#ABAAAE",
+        "#8A888C",
+        "#69686C",
+        "#4B4A4D",
+        "#313032",
+        "#1B1A1C"
+      ]
+    },
+    {
+      "role": "accent",
+      "name": "Burgundy",
+      "hex": "#5A1A22",
+      "oklch": [
+        0.323,
+        0.094,
+        16.9
+      ],
+      "rgb": [
+        90,
+        26,
+        34
+      ],
+      "cmyk": [
+        0,
+        71,
+        62,
+        65
+      ],
+      "scale": [
+        "#FFF1F2",
+        "#FEDADB",
+        "#F7B8BA",
+        "#DA9698",
+        "#BA7275",
+        "#945357",
+        "#6E373B",
+        "#4D2024",
+        "#320C10"
+      ]
+    },
+    {
+      "role": "metal",
+      "name": "Antique Gold",
+      "hex": "#B8935A",
+      "oklch": [
+        0.685,
+        0.087,
+        77.3
+      ],
+      "rgb": [
+        184,
+        147,
+        90
+      ],
+      "cmyk": [
+        0,
+        20,
+        51,
+        28
+      ],
+      "scale": [
+        "#FFF3E3",
+        "#FCE0B7",
+        "#E4C699",
+        "#C6A574",
+        "#A6834C",
+        "#83632F",
+        "#604516",
+        "#422B01",
+        "#261700"
+      ]
+    },
+    {
+      "role": "neutral",
+      "name": "Smoke",
+      "hex": "#6B6460",
+      "oklch": [
+        0.508,
+        0.011,
+        51.9
+      ],
+      "rgb": [
+        107,
+        100,
+        96
+      ],
+      "cmyk": [
+        0,
+        7,
+        10,
+        58
+      ],
+      "scale": [
+        "#F9F4F1",
+        "#E9E3E0",
+        "#CFC9C5",
+        "#B0A9A5",
+        "#8F8783",
+        "#6E6764",
+        "#4F4946",
+        "#342F2D",
+        "#1D1A18"
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "a": "Bone",
+      "b": "Tuxedo Ink",
+      "ratio": 16.42,
+      "use": "body"
+    },
+    {
+      "a": "Bone",
+      "b": "Burgundy",
+      "ratio": 11.33,
+      "use": "body"
+    },
+    {
+      "a": "Bone",
+      "b": "Antique Gold",
+      "ratio": 2.47,
+      "use": "decor only"
+    },
+    {
+      "a": "Bone",
+      "b": "Smoke",
+      "ratio": 5.03,
+      "use": "AA text"
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Burgundy",
+      "ratio": 1.45,
+      "use": "decor only"
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Antique Gold",
+      "ratio": 6.65,
+      "use": "AA text"
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Smoke",
+      "ratio": 3.27,
+      "use": "large/display only"
+    },
+    {
+      "a": "Burgundy",
+      "b": "Antique Gold",
+      "ratio": 4.58,
+      "use": "AA text"
+    },
+    {
+      "a": "Burgundy",
+      "b": "Smoke",
+      "ratio": 2.25,
+      "use": "decor only"
+    },
+    {
+      "a": "Antique Gold",
+      "b": "Smoke",
+      "ratio": 2.03,
+      "use": "decor only"
+    }
+  ],
+  "cvd": [
+    {
+      "a": "Bone",
+      "b": "Tuxedo Ink",
+      "normal": 0.775,
+      "protan": 0.773,
+      "deutan": 0.777,
+      "tritan": 0.776
+    },
+    {
+      "a": "Bone",
+      "b": "Burgundy",
+      "normal": 0.634,
+      "protan": 0.67,
+      "deutan": 0.622,
+      "tritan": 0.634
+    },
+    {
+      "a": "Bone",
+      "b": "Antique Gold",
+      "normal": 0.275,
+      "protan": 0.292,
+      "deutan": 0.27,
+      "tritan": 0.27
+    },
+    {
+      "a": "Bone",
+      "b": "Smoke",
+      "normal": 0.442,
+      "protan": 0.443,
+      "deutan": 0.443,
+      "tritan": 0.443
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Burgundy",
+      "normal": 0.174,
+      "protan": 0.104,
+      "deutan": 0.16,
+      "tritan": 0.191
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Antique Gold",
+      "normal": 0.518,
+      "protan": 0.496,
+      "deutan": 0.525,
+      "tritan": 0.519
+    },
+    {
+      "a": "Tuxedo Ink",
+      "b": "Smoke",
+      "normal": 0.333,
+      "protan": 0.33,
+      "deutan": 0.334,
+      "tritan": 0.334
+    },
+    {
+      "a": "Burgundy",
+      "b": "Antique Gold",
+      "normal": 0.373,
+      "protan": 0.393,
+      "deutan": 0.366,
+      "tritan": 0.365
+    },
+    {
+      "a": "Burgundy",
+      "b": "Smoke",
+      "normal": 0.204,
+      "protan": 0.227,
+      "deutan": 0.181,
+      "tritan": 0.21
+    },
+    {
+      "a": "Antique Gold",
+      "b": "Smoke",
+      "normal": 0.193,
+      "protan": 0.176,
+      "deutan": 0.198,
+      "tritan": 0.19
+    }
+  ],
+  "avoid": [
+    {
+      "color": "Bone",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.345
+    },
+    {
+      "color": "Bone",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.007
+    },
+    {
+      "color": "Bone",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.301
+    },
+    {
+      "color": "Bone",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.557
+    },
+    {
+      "color": "Bone",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.188
+    },
+    {
+      "color": "Tuxedo Ink",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.525
+    },
+    {
+      "color": "Tuxedo Ink",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.781
+    },
+    {
+      "color": "Tuxedo Ink",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.562
+    },
+    {
+      "color": "Tuxedo Ink",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.22
+    },
+    {
+      "color": "Tuxedo Ink",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.593
+    },
+    {
+      "color": "Burgundy",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.428
+    },
+    {
+      "color": "Burgundy",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.639
+    },
+    {
+      "color": "Burgundy",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.399
+    },
+    {
+      "color": "Burgundy",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.101
+    },
+    {
+      "color": "Burgundy",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.452
+    },
+    {
+      "color": "Antique Gold",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.27
+    },
+    {
+      "color": "Antique Gold",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.281
+    },
+    {
+      "color": "Antique Gold",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.121
+    },
+    {
+      "color": "Antique Gold",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.299
+    },
+    {
+      "color": "Antique Gold",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.09
+    },
+    {
+      "color": "Smoke",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.252
+    },
+    {
+      "color": "Smoke",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.448
+    },
+    {
+      "color": "Smoke",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.264
+    },
+    {
+      "color": "Smoke",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.116
+    },
+    {
+      "color": "Smoke",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.26
+    }
+  ],
+  "hard_gate_failures": [],
+  "warnings": [
+    "Gate 3: Antique Gold on base is 2.47:1 \u2014 decoration only (lines, foil), no text.",
+    "Gate 5 (soft): Bone is close to sparq-parchment #F4F0E8 (\u0394E 0.007) \u2014 fine for a neutral/metal, but the signature colours must carry the difference.",
+    "Gate 5 (soft): Antique Gold is close to nova-sand #BFB290 (\u0394E 0.090) \u2014 fine for a neutral/metal, but the signature colours must carry the difference."
+  ]
+}

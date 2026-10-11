@@ -1,0 +1,467 @@
+{
+  "name": "rakha-B-whisky-lounge",
+  "colors": [
+    {
+      "role": "base",
+      "name": "Lounge Black",
+      "hex": "#141112",
+      "oklch": [
+        0.182,
+        0.005,
+        355.4
+      ],
+      "rgb": [
+        20,
+        17,
+        18
+      ],
+      "cmyk": [
+        0,
+        15,
+        10,
+        92
+      ],
+      "scale": [
+        "#F7F4F5",
+        "#E7E3E4",
+        "#CDC9CA",
+        "#ADAAAB",
+        "#8C8889",
+        "#6B6869",
+        "#4C494A",
+        "#322F30",
+        "#1C1A1B"
+      ]
+    },
+    {
+      "role": "anchor",
+      "name": "Bone",
+      "hex": "#F2E8D8",
+      "oklch": [
+        0.935,
+        0.024,
+        79.7
+      ],
+      "rgb": [
+        242,
+        232,
+        216
+      ],
+      "cmyk": [
+        0,
+        4,
+        11,
+        5
+      ],
+      "scale": [
+        "#FBF4E9",
+        "#EBE4D8",
+        "#D1C9BD",
+        "#B2AA9C",
+        "#91887A",
+        "#70685B",
+        "#50493E",
+        "#352F26",
+        "#1E1A12"
+      ]
+    },
+    {
+      "role": "accent",
+      "name": "Cognac",
+      "hex": "#8B4A2B",
+      "oklch": [
+        0.482,
+        0.099,
+        45.1
+      ],
+      "rgb": [
+        139,
+        74,
+        43
+      ],
+      "cmyk": [
+        0,
+        47,
+        69,
+        45
+      ],
+      "scale": [
+        "#FFF2ED",
+        "#FEDDCE",
+        "#F6BBA1",
+        "#D99A7D",
+        "#B97657",
+        "#94573A",
+        "#6E3A22",
+        "#4D220C",
+        "#300F01"
+      ]
+    },
+    {
+      "role": "metal",
+      "name": "Gold",
+      "hex": "#C69B3C",
+      "oklch": [
+        0.712,
+        0.122,
+        83.9
+      ],
+      "rgb": [
+        198,
+        155,
+        60
+      ],
+      "cmyk": [
+        0,
+        22,
+        70,
+        22
+      ],
+      "scale": [
+        "#FFF4DF",
+        "#FEE1A7",
+        "#E8C681",
+        "#CBA557",
+        "#AB8221",
+        "#856305",
+        "#5F4606",
+        "#3F2D01",
+        "#241800"
+      ]
+    },
+    {
+      "role": "neutral",
+      "name": "Taupe",
+      "hex": "#8A8580",
+      "oklch": [
+        0.62,
+        0.01,
+        67.6
+      ],
+      "rgb": [
+        138,
+        133,
+        128
+      ],
+      "cmyk": [
+        0,
+        4,
+        7,
+        46
+      ],
+      "scale": [
+        "#F8F4F1",
+        "#E8E4E0",
+        "#CECAC5",
+        "#AEAAA5",
+        "#8D8883",
+        "#6C6864",
+        "#4D4A46",
+        "#33302D",
+        "#1D1A18"
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "a": "Lounge Black",
+      "b": "Bone",
+      "ratio": 15.47,
+      "use": "body"
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Cognac",
+      "ratio": 2.78,
+      "use": "decor only"
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Gold",
+      "ratio": 7.29,
+      "use": "body"
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Taupe",
+      "ratio": 5.14,
+      "use": "AA text"
+    },
+    {
+      "a": "Bone",
+      "b": "Cognac",
+      "ratio": 5.56,
+      "use": "AA text"
+    },
+    {
+      "a": "Bone",
+      "b": "Gold",
+      "ratio": 2.12,
+      "use": "decor only"
+    },
+    {
+      "a": "Bone",
+      "b": "Taupe",
+      "ratio": 3.01,
+      "use": "large/display only"
+    },
+    {
+      "a": "Cognac",
+      "b": "Gold",
+      "ratio": 2.62,
+      "use": "decor only"
+    },
+    {
+      "a": "Cognac",
+      "b": "Taupe",
+      "ratio": 1.85,
+      "use": "decor only"
+    },
+    {
+      "a": "Gold",
+      "b": "Taupe",
+      "ratio": 1.42,
+      "use": "decor only"
+    }
+  ],
+  "cvd": [
+    {
+      "a": "Lounge Black",
+      "b": "Bone",
+      "normal": 0.753,
+      "protan": 0.75,
+      "deutan": 0.755,
+      "tritan": 0.754
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Cognac",
+      "normal": 0.315,
+      "protan": 0.268,
+      "deutan": 0.318,
+      "tritan": 0.326
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Gold",
+      "normal": 0.544,
+      "protan": 0.522,
+      "deutan": 0.553,
+      "tritan": 0.542
+    },
+    {
+      "a": "Lounge Black",
+      "b": "Taupe",
+      "normal": 0.438,
+      "protan": 0.437,
+      "deutan": 0.439,
+      "tritan": 0.438
+    },
+    {
+      "a": "Bone",
+      "b": "Cognac",
+      "normal": 0.46,
+      "protan": 0.491,
+      "deutan": 0.449,
+      "tritan": 0.461
+    },
+    {
+      "a": "Bone",
+      "b": "Gold",
+      "normal": 0.243,
+      "protan": 0.264,
+      "deutan": 0.237,
+      "tritan": 0.23
+    },
+    {
+      "a": "Bone",
+      "b": "Taupe",
+      "normal": 0.315,
+      "protan": 0.313,
+      "deutan": 0.317,
+      "tritan": 0.316
+    },
+    {
+      "a": "Cognac",
+      "b": "Gold",
+      "normal": 0.243,
+      "protan": 0.254,
+      "deutan": 0.236,
+      "tritan": 0.233
+    },
+    {
+      "a": "Cognac",
+      "b": "Taupe",
+      "normal": 0.164,
+      "protan": 0.185,
+      "deutan": 0.146,
+      "tritan": 0.175
+    },
+    {
+      "a": "Gold",
+      "b": "Taupe",
+      "normal": 0.146,
+      "protan": 0.136,
+      "deutan": 0.152,
+      "tritan": 0.126
+    }
+  ],
+  "avoid": [
+    {
+      "color": "Lounge Black",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.521
+    },
+    {
+      "color": "Lounge Black",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.774
+    },
+    {
+      "color": "Lounge Black",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.554
+    },
+    {
+      "color": "Lounge Black",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.213
+    },
+    {
+      "color": "Lounge Black",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.586
+    },
+    {
+      "color": "Bone",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.337
+    },
+    {
+      "color": "Bone",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.025
+    },
+    {
+      "color": "Bone",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.284
+    },
+    {
+      "color": "Bone",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.541
+    },
+    {
+      "color": "Bone",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.171
+    },
+    {
+      "color": "Cognac",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.334
+    },
+    {
+      "color": "Cognac",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.483
+    },
+    {
+      "color": "Cognac",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.24
+    },
+    {
+      "color": "Cognac",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.115
+    },
+    {
+      "color": "Cognac",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.293
+    },
+    {
+      "color": "Gold",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.306
+    },
+    {
+      "color": "Gold",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.268
+    },
+    {
+      "color": "Gold",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.115
+    },
+    {
+      "color": "Gold",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.335
+    },
+    {
+      "color": "Gold",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.091
+    },
+    {
+      "color": "Taupe",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.199
+    },
+    {
+      "color": "Taupe",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.337
+    },
+    {
+      "color": "Taupe",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.197
+    },
+    {
+      "color": "Taupe",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.226
+    },
+    {
+      "color": "Taupe",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.152
+    }
+  ],
+  "hard_gate_failures": [],
+  "warnings": [
+    "Gate 3: Cognac on base is 2.78:1 \u2014 decoration only (lines, foil), no text.",
+    "Gate 5 (soft): Bone is close to sparq-parchment #F4F0E8 (\u0394E 0.025) \u2014 fine for a neutral/metal, but the signature colours must carry the difference.",
+    "Gate 5 (soft): Gold is close to nova-sand #BFB290 (\u0394E 0.091) \u2014 fine for a neutral/metal, but the signature colours must carry the difference."
+  ]
+}

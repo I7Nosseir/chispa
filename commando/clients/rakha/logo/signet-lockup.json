@@ -1,0 +1,5 @@
+{"width":1000,"height":300,"elements":[
+{"type":"circle","cx":150,"cy":150,"r":128,"stroke":"#C69B3C","strokeWidth":6,"fill":"none"},
+{"type":"circle","cx":150,"cy":150,"r":111,"stroke":"#C69B3C","strokeWidth":2,"fill":"none"},
+{"type":"text","text":"R","font":"Cinzel","weight":600,"size":150,"x":150,"y":204,"anchor":"middle","fill":"#F2E8D8"},
+{"type":"text","text":"MR RAKHA","font":"Cinzel","weight":600,"size":104,"x":326,"y":188,"anchor":"start","tracking":0.08,"fill":"#F2E8D8"}]}

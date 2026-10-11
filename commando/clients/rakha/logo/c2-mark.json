@@ -1,0 +1,4 @@
+{"width":400,"height":400,"elements":[
+{"type":"circle","cx":200,"cy":200,"r":170,"stroke":"#C69B3C","strokeWidth":8,"fill":"none"},
+{"type":"circle","cx":200,"cy":200,"r":148,"stroke":"#C69B3C","strokeWidth":2.5,"fill":"none"},
+{"type":"text","text":"R","font":"Cinzel","weight":600,"size":210,"x":200,"y":274,"anchor":"middle","fill":"#F2E8D8"}]}

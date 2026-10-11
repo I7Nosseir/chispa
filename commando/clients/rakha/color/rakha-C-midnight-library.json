@@ -1,0 +1,466 @@
+{
+  "name": "rakha-C-midnight-library",
+  "colors": [
+    {
+      "role": "base",
+      "name": "Ivory",
+      "hex": "#F5F0E8",
+      "oklch": [
+        0.957,
+        0.012,
+        79.8
+      ],
+      "rgb": [
+        245,
+        240,
+        232
+      ],
+      "cmyk": [
+        0,
+        2,
+        5,
+        4
+      ],
+      "scale": [
+        "#F8F5EF",
+        "#E8E4DE",
+        "#CECAC4",
+        "#AEAAA4",
+        "#8D8881",
+        "#6C6862",
+        "#4D4A44",
+        "#33302B",
+        "#1D1A17"
+      ]
+    },
+    {
+      "role": "anchor",
+      "name": "Midnight",
+      "hex": "#0F172A",
+      "oklch": [
+        0.208,
+        0.04,
+        265.8
+      ],
+      "rgb": [
+        15,
+        23,
+        42
+      ],
+      "cmyk": [
+        64,
+        45,
+        0,
+        84
+      ],
+      "scale": [
+        "#F1F5FF",
+        "#DCE5F8",
+        "#C1CBE0",
+        "#A0ABC2",
+        "#7E89A1",
+        "#5F697F",
+        "#424A5D",
+        "#293040",
+        "#151A27"
+      ]
+    },
+    {
+      "role": "accent",
+      "name": "Oxblood",
+      "hex": "#6E1423",
+      "oklch": [
+        0.356,
+        0.123,
+        17.5
+      ],
+      "rgb": [
+        110,
+        20,
+        35
+      ],
+      "cmyk": [
+        0,
+        82,
+        68,
+        57
+      ],
+      "scale": [
+        "#FFF1F1",
+        "#FEDBDB",
+        "#FCB5B7",
+        "#E68E92",
+        "#C7696E",
+        "#A04A50",
+        "#782F35",
+        "#55181F",
+        "#37030C"
+      ]
+    },
+    {
+      "role": "metal",
+      "name": "Brass",
+      "hex": "#A8834A",
+      "oklch": [
+        0.633,
+        0.087,
+        76.9
+      ],
+      "rgb": [
+        168,
+        131,
+        74
+      ],
+      "cmyk": [
+        0,
+        22,
+        56,
+        34
+      ],
+      "scale": [
+        "#FFF3E3",
+        "#FDE0B7",
+        "#E4C599",
+        "#C6A574",
+        "#A6824B",
+        "#83622E",
+        "#604516",
+        "#422B00",
+        "#261700"
+      ]
+    },
+    {
+      "role": "neutral",
+      "name": "Smoke",
+      "hex": "#6B6460",
+      "oklch": [
+        0.508,
+        0.011,
+        51.9
+      ],
+      "rgb": [
+        107,
+        100,
+        96
+      ],
+      "cmyk": [
+        0,
+        7,
+        10,
+        58
+      ],
+      "scale": [
+        "#F9F4F1",
+        "#E9E3E0",
+        "#CFC9C5",
+        "#B0A9A5",
+        "#8F8783",
+        "#6E6764",
+        "#4F4946",
+        "#342F2D",
+        "#1D1A18"
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "a": "Ivory",
+      "b": "Midnight",
+      "ratio": 15.74,
+      "use": "body"
+    },
+    {
+      "a": "Ivory",
+      "b": "Oxblood",
+      "ratio": 10.36,
+      "use": "body"
+    },
+    {
+      "a": "Ivory",
+      "b": "Brass",
+      "ratio": 3.08,
+      "use": "large/display only"
+    },
+    {
+      "a": "Ivory",
+      "b": "Smoke",
+      "ratio": 5.12,
+      "use": "AA text"
+    },
+    {
+      "a": "Midnight",
+      "b": "Oxblood",
+      "ratio": 1.52,
+      "use": "decor only"
+    },
+    {
+      "a": "Midnight",
+      "b": "Brass",
+      "ratio": 5.11,
+      "use": "AA text"
+    },
+    {
+      "a": "Midnight",
+      "b": "Smoke",
+      "ratio": 3.07,
+      "use": "large/display only"
+    },
+    {
+      "a": "Oxblood",
+      "b": "Brass",
+      "ratio": 3.36,
+      "use": "large/display only"
+    },
+    {
+      "a": "Oxblood",
+      "b": "Smoke",
+      "ratio": 2.02,
+      "use": "decor only"
+    },
+    {
+      "a": "Brass",
+      "b": "Smoke",
+      "ratio": 1.66,
+      "use": "decor only"
+    }
+  ],
+  "cvd": [
+    {
+      "a": "Ivory",
+      "b": "Midnight",
+      "normal": 0.751,
+      "protan": 0.742,
+      "deutan": 0.756,
+      "tritan": 0.753
+    },
+    {
+      "a": "Ivory",
+      "b": "Oxblood",
+      "normal": 0.613,
+      "protan": 0.662,
+      "deutan": 0.594,
+      "tritan": 0.608
+    },
+    {
+      "a": "Ivory",
+      "b": "Brass",
+      "normal": 0.332,
+      "protan": 0.351,
+      "deutan": 0.327,
+      "tritan": 0.327
+    },
+    {
+      "a": "Ivory",
+      "b": "Smoke",
+      "normal": 0.448,
+      "protan": 0.45,
+      "deutan": 0.448,
+      "tritan": 0.448
+    },
+    {
+      "a": "Midnight",
+      "b": "Oxblood",
+      "normal": 0.205,
+      "protan": 0.095,
+      "deutan": 0.184,
+      "tritan": 0.238
+    },
+    {
+      "a": "Midnight",
+      "b": "Brass",
+      "normal": 0.444,
+      "protan": 0.416,
+      "deutan": 0.455,
+      "tritan": 0.444
+    },
+    {
+      "a": "Midnight",
+      "b": "Smoke",
+      "normal": 0.305,
+      "protan": 0.295,
+      "deutan": 0.31,
+      "tritan": 0.307
+    },
+    {
+      "a": "Oxblood",
+      "b": "Brass",
+      "normal": 0.298,
+      "protan": 0.326,
+      "deutan": 0.278,
+      "tritan": 0.281
+    },
+    {
+      "a": "Oxblood",
+      "b": "Smoke",
+      "normal": 0.191,
+      "protan": 0.213,
+      "deutan": 0.149,
+      "tritan": 0.196
+    },
+    {
+      "a": "Brass",
+      "b": "Smoke",
+      "normal": 0.147,
+      "protan": 0.131,
+      "deutan": 0.152,
+      "tritan": 0.142
+    }
+  ],
+  "avoid": [
+    {
+      "color": "Ivory",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.348
+    },
+    {
+      "color": "Ivory",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.001
+    },
+    {
+      "color": "Ivory",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.308
+    },
+    {
+      "color": "Ivory",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.563
+    },
+    {
+      "color": "Ivory",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.195
+    },
+    {
+      "color": "Midnight",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.484
+    },
+    {
+      "color": "Midnight",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.75
+    },
+    {
+      "color": "Midnight",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.543
+    },
+    {
+      "color": "Midnight",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.196
+    },
+    {
+      "color": "Midnight",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.565
+    },
+    {
+      "color": "Oxblood",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.419
+    },
+    {
+      "color": "Oxblood",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.612
+    },
+    {
+      "color": "Oxblood",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.364
+    },
+    {
+      "color": "Oxblood",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.108
+    },
+    {
+      "color": "Oxblood",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.427
+    },
+    {
+      "color": "Brass",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.273
+    },
+    {
+      "color": "Brass",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.332
+    },
+    {
+      "color": "Brass",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.138
+    },
+    {
+      "color": "Brass",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.249
+    },
+    {
+      "color": "Brass",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.139
+    },
+    {
+      "color": "Smoke",
+      "vs": "sparq-blue",
+      "hex": "#0099FF",
+      "deltaE": 0.252
+    },
+    {
+      "color": "Smoke",
+      "vs": "sparq-parchment",
+      "hex": "#F4F0E8",
+      "deltaE": 0.448
+    },
+    {
+      "color": "Smoke",
+      "vs": "ignite-orange",
+      "hex": "#F97316",
+      "deltaE": 0.264
+    },
+    {
+      "color": "Smoke",
+      "vs": "nova-cocoa",
+      "hex": "#52423B",
+      "deltaE": 0.116
+    },
+    {
+      "color": "Smoke",
+      "vs": "nova-sand",
+      "hex": "#BFB290",
+      "deltaE": 0.26
+    }
+  ],
+  "hard_gate_failures": [],
+  "warnings": [
+    "Gate 3: Brass on base is 3.08:1 \u2014 never body text; display \u2265 3:1 only.",
+    "Gate 5 (soft): Ivory is close to sparq-parchment #F4F0E8 (\u0394E 0.001) \u2014 fine for a neutral/metal, but the signature colours must carry the difference."
+  ]
+}

@@ -1,0 +1,4 @@
+{"width":900,"height":300,"elements":[
+{"type":"text","text":"RAKHA","font":"Bodoni Moda","weight":600,"size":150,"x":450,"y":175,"anchor":"middle","tracking":0.16,"fill":"#F2E8D8"},
+{"type":"line","x1":300,"y1":215,"x2":600,"y2":215,"stroke":"#C69B3C","strokeWidth":3},
+{"type":"text","text":"BUSINESS · ECONOMICS","font":"Inter","weight":500,"size":26,"x":450,"y":268,"anchor":"middle","tracking":0.32,"fill":"#C69B3C"}]}

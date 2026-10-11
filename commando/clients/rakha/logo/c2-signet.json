@@ -1,0 +1,6 @@
+{"width":1000,"height":300,"elements":[
+{"type":"circle","cx":150,"cy":150,"r":128,"stroke":"#C69B3C","strokeWidth":5,"fill":"none"},
+{"type":"circle","cx":150,"cy":150,"r":112,"stroke":"#C69B3C","strokeWidth":1.5,"fill":"none"},
+{"type":"text","text":"R","font":"Cinzel","weight":600,"size":150,"x":150,"y":204,"anchor":"middle","fill":"#F2E8D8"},
+{"type":"text","text":"MR RAKHA","font":"Cinzel","weight":600,"size":96,"x":330,"y":170,"anchor":"start","tracking":0.08,"fill":"#F2E8D8"},
+{"type":"text","text":"BUSINESS, EXPLAINED LIKE IT MATTERS.","font":"Inter","weight":500,"size":22,"x":334,"y":222,"anchor":"start","tracking":0.18,"fill":"#C69B3C"}]}

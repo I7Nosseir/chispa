@@ -1,0 +1,4 @@
+{"width":900,"height":320,"elements":[
+{"type":"text","text":"MR","font":"Inter","weight":600,"size":30,"x":450,"y":70,"anchor":"middle","tracking":0.5,"fill":"#C69B3C"},
+{"type":"text","text":"Rakha","font":"Pinyon Script","weight":400,"size":190,"x":450,"y":235,"anchor":"middle","fill":"#F2E8D8"},
+{"type":"line","x1":330,"y1":275,"x2":570,"y2":275,"stroke":"#C69B3C","strokeWidth":2}]}
