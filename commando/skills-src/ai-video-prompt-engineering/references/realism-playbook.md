@@ -74,6 +74,6 @@ Why AI looks like AI, and how to remove each tell.
 12. The "friend test": show it to someone without context — do they question it? If yes, find out what tipped them and log it.
 
 ## 8. Finishing (post)
-- `scripts/realism_finish.py` presets: `phone` (social/UGC: slight sharpening, phone-style noise, mild compression), `cinema` (film grain, gentle halation-like softness, vignette, 24 fps), `still` (grain, subtle chromatic aberration, vignette, JPEG quality ~88).
+- `scripts/realism_finish.py` (see SKILL.md §14) presets: `phone` (social/UGC: slight sharpening, phone-style noise, mild compression), `cinema` (film grain, gentle halation-like softness, vignette, 24 fps), `still` (grain, subtle chromatic aberration, vignette, JPEG quality ~88).
 - Grade down: lower saturation 5–10%, lift blacks slightly, keep skin natural.
 - Mix: room tone under everything, foley on every touch, loudness -14 LUFS for social.

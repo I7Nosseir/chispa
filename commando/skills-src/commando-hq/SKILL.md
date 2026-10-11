@@ -31,7 +31,7 @@ Routes work; doesn't duplicate what other skills do.
 | Platform specs, sizes, safe zones, which format where | platform-playbook |
 | Carousels, static posts, thumbnails, covers, ad images | commando-design-studio |
 | Motion graphics, brand films, captions over footage | commando-motion-studio |
-| AI images and AI video that pass as real: product shoots, AI UGC, lifestyle, cinematic concepts | ai-realism-studio |
+| AI images and AI video that pass as real: prompts, product shoots, AI UGC, lifestyle, cinematic concepts, fixing failed generations | ai-video-prompt-engineering |
 | Bios, handles, highlights, covers, WhatsApp Business | social-profile-optimizer |
 | Briefs/production packs for Adam, Anas, editors, collaborators | production-docs |
 | Real live numbers for any account (followers, views, outliers, rhythm) | social-auditor |
@@ -46,9 +46,10 @@ Routes work; doesn't duplicate what other skills do.
 - **New brand / quarterly reset:** profiles → market-research → reference-bank (list) → social-auditor (live data) → competitor-scanner → avatar-creator → brand-persona (Mode A) → color-system → logo-system → brand-board → social-profile-optimizer → strategy-partner
 - **Monthly plan:** social-auditor (refresh references + own accounts) → retention-lab (drop-off library review) → performance-tracker (monthly report) → reference-bank (new outliers → mechanics) → trend-radar (monthly scan) → strategy-partner (calendar)
 - **After every published video (48–72 h):** retention-lab (curve + traffic sources) → performance-tracker log → rules back to commando-content-studio
-- **Each piece:** idea-elevator (if the idea feels familiar) or twist-lab (if it needs a new concept) → brand-persona (Mode B) → commando-content-studio (video) / ai-realism-studio (AI-generated stills or footage) / copy-engine + commando-design-studio (carousel, static) / commando-motion-studio (motion film) → cringe-filter → senior-reviewer → (approve English) → egyptian-voice → publish → repurposing
+- **Each piece:** idea-elevator (if the idea feels familiar) or twist-lab (if it needs a new concept) → brand-persona (Mode B) → commando-content-studio (video) / ai-video-prompt-engineering (AI-generated stills or footage) / copy-engine + commando-design-studio (carousel, static) / commando-motion-studio (motion film) → cringe-filter → senior-reviewer → (approve English) → egyptian-voice → publish → repurposing
 - **Fast lane (daily posts, stories, replies, small captions):** copy-engine → cringe-filter → founder approves → publish. Use the full "each piece" pipeline only for hero pieces, launches, series openers and ads.
-- **AI production (product set, AI UGC, concept film):** twist-lab or idea-elevator (concept films only) → ai-realism-studio (realism card → keyframes → motion → QA gate → finish) → commando-motion-studio (captions/titles) → copy-engine → cringe-filter → senior-reviewer → founder approves → publish with the platform's AI label
+- **AI production (product set, AI UGC, concept film):** twist-lab or idea-elevator (concept films only) → ai-video-prompt-engineering (realism card → beat-formula prompt → prompt_lint → keyframes → motion → QA gate → finish → lessons log) → commando-motion-studio (captions/titles) → copy-engine → cringe-filter → senior-reviewer → founder approves → publish with the platform's AI label
+- **After every AI generation the founder reports on:** ai-video-prompt-engineering logs it in lessons-learned (repeat failures get promoted into the skill's rules)
 - **Collaborator handover:** after approval → production-docs (Plan Overview / Production Pack)
 - **Launch/event:** launch-planner → pieces through the "each piece" pipeline
 - **Weekly rhythm:** Monday plan the week's pieces; batch-film day; Friday performance-tracker weekly report + community-manager digest

@@ -41,11 +41,16 @@ The founder runs The Commando (Sparq Study, Ignite Uni, Nova). He doesn't code. 
 - **social-auditor:** live data, then outliers (≥2× the account's own median), flops and timing.
 - **retention-lab:** retention curves, drop-offs and traffic sources.
 - **reference-bank:** benchmarks and competitors → mechanics → ideas with the client's personality.
-- **ai-realism-studio** (11 Oct):
-  - Photoreal AI images/video: realism card → keyframes first → image-to-video, one action per shot → 12-point realism QA gate → real-camera finish.
-  - Scripts: `contact_sheet.py` (QA frames) and `realism_finish.py` (phone/cinema/still presets).
-  - Refs: realism playbook, prompt library (perfume, abaya, jewelry, skincare, food, UGC, concept), tool matrix (Veo 3.1 / Kling 3.0 / Seedance 2.0 / Nano Banana).
-  - Rules: product truth, no real faces without consent, AI UGC never shown as real reviews, platform AI labels on.
+- **ai-video-prompt-engineering** (the founder's own skill, merged and extended 11 Oct):
+  - His core is unchanged: beat formula, atomic actions, exact counts, identity/product lock, add/replace/already-there, calm verbs, ring/halo guard, audio, negative checklist, brand safety, model choice, story beats.
+  - His lessons log is kept and grows over time.
+  - Added: §0 workflow with a realism card; §14 realism QA gate + finishing; §15 rules and disclosure.
+  - Added references: realism playbook, prompt library in beat format (perfume, abaya, jewelry, skincare, food, product reveal, UGC, B-roll, concept, character sheet), tool matrix.
+  - Added scripts:
+    - `prompt_lint.py` checks prompts against his rules; it catches every logged failure.
+    - `contact_sheet.py` makes QA frame sheets.
+    - `realism_finish.py` applies phone/cinema/still presets.
+  - The interim ai-realism-studio was folded into it and deleted.
 - **commando-hq:** routing updated for all of the above (+ AI production pipeline).
 
 ## Client 1: Mr Mohamed Rakha (free; Sparq's first teacher)
