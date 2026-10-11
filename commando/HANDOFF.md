@@ -41,7 +41,12 @@ The founder runs The Commando (Sparq Study, Ignite Uni, Nova). He doesn't code. 
 - **social-auditor:** live data, then outliers (≥2× the account's own median), flops and timing.
 - **retention-lab:** retention curves, drop-offs and traffic sources.
 - **reference-bank:** benchmarks and competitors → mechanics → ideas with the client's personality.
-- **commando-hq:** routing updated for all of the above.
+- **ai-realism-studio** (11 Oct):
+  - Photoreal AI images/video: realism card → keyframes first → image-to-video, one action per shot → 12-point realism QA gate → real-camera finish.
+  - Scripts: `contact_sheet.py` (QA frames) and `realism_finish.py` (phone/cinema/still presets).
+  - Refs: realism playbook, prompt library (perfume, abaya, jewelry, skincare, food, UGC, concept), tool matrix (Veo 3.1 / Kling 3.0 / Seedance 2.0 / Nano Banana).
+  - Rules: product truth, no real faces without consent, AI UGC never shown as real reviews, platform AI labels on.
+- **commando-hq:** routing updated for all of the above (+ AI production pipeline).
 
 ## Client 1: Mr Mohamed Rakha (free; Sparq's first teacher)
 - **Who he is:**
