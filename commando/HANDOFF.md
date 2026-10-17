@@ -212,6 +212,14 @@ Built by a parallel session on the same day as the Command Center above. The Com
 - Positioning: small fixed jobs for owner-run, single-location businesses, never "marketing management". Go back to parked leads after 2–3 local case studies.
 - Next: batch 2 = Tier B (57 Egypt + 33 Dubai) once batch 1 outcomes are logged.
 
+## Pricing (17 Oct 2026)
+- `reports/pricing-2026-10-17.md`: first-deal menu for owner-run businesses. The founder confirms prices before quoting.
+- Door-opener: Google listing fix, 1,500–2,500 EGP.
+- One-page site: 6–10K EGP. Starter bundle: 8–11K EGP.
+- Content: 5–8K EGP/month. Ads management: 3–5K EGP/month.
+- Gulf: 10 AI images $250–400, 3 UGC ads $300–500.
+- Terms: 50% deposit, 3-month minimum on monthly plans, no discounts (cut scope instead).
+
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).
 - Run everything through cringe-filter.
