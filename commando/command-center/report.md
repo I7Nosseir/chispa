@@ -71,7 +71,7 @@
 ## Phase 6: Lead engine, CV and portfolio (11 Oct, parallel sessions)
 **What I did**
 - **100 Egypt leads** from Google Maps across Sheikh Zayed, 6th of October, Hadayek al Ahram/Haram, New Cairo and Maadi:
-  - Mix: 25 dental, 21 gyms, 18 beauty, 18 restaurants, 12 derma, 11 physio and others.
+  - Mix: 21 gyms, 19 dental, 18 beauty, 13 restaurants, 12 derma, 11 physio and others.
   - Tiers: A 20, B 57, C 23.
 - **56 Dubai leads:** perfume, abaya, jewelry, skincare, aesthetic, dental, real estate, fitness, coffee. Tiers: A 7, B 33, C 16.
 - **14 remote Gulf jobs.** Best fits: Whitecollars (part-time Senior Media Buyer) and Malaeb.

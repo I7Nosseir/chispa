@@ -1,0 +1,450 @@
+<title>Commando Copy Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a working kit — sticky tab bar, then dense cards of paste-ready text, one column on phones. */
+:root {
+  --bg: #F3F5F4; --surface: #FFFFFF; --ink: #142420; --muted: #56655F;
+  --line: #D6DEDA; --accent: #0E7C6B; --accent-ink: #FFFFFF; --mark: #FCE8B2; --ok: #1E7A3A;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0F1715; --surface: #17221F; --ink: #E4EEEA; --muted: #9AACA5;
+  --line: #2A3A35; --accent: #3FC1A8; --accent-ink: #062019; --mark: #4A3D12; --ok: #5FD38A; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0F1715; --surface: #17221F; --ink: #E4EEEA; --muted: #9AACA5;
+  --line: #2A3A35; --accent: #3FC1A8; --accent-ink: #062019; --mark: #4A3D12; --ok: #5FD38A; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.wrap { max-width: 980px; margin: 0 auto }
+.intro { padding-block: 28px 12px; display: grid; gap: 8px }
+h1 { font: 800 clamp(28px, 5vw, 40px)/1.05 var(--display); margin: 0; letter-spacing: -0.02em; text-wrap: balance }
+.lede { margin: 0; color: var(--muted); max-width: 65ch }
+.rules { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px }
+.rules li { font-size: 12.5px; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--muted); background: var(--surface) }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid var(--line) }
+.tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 3px }
+.tab { font: 600 14px var(--body); border: 0; background: transparent; color: var(--muted); padding: 7px 14px; border-radius: 7px; cursor: pointer }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink) }
+.count { font-size: 12px; opacity: .8; margin-left: 4px; font-variant-numeric: tabular-nums }
+#q { flex: 1 1 200px; min-width: 0; font: 14px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px }
+#q:focus-visible, .tab:focus-visible, .copy:focus-visible, pre:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.group h2 { font: 700 13px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 28px 0 10px }
+.cards { display: grid; gap: 12px }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0 }
+.card-head { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between }
+.card-titles { display: grid; gap: 2px; min-width: 0 }
+h3 { font: 600 17px/1.3 var(--display); margin: 0; text-wrap: balance }
+.tag { font: 12.5px var(--mono); color: var(--accent) }
+.note { margin: 0; font-size: 13.5px; color: var(--muted) }
+pre { margin: 0; font: 13px/1.6 var(--mono); white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px; max-height: 340px; overflow: auto }
+pre b { color: var(--accent); font-weight: 600 }
+mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px }
+.copy { flex: none; font: 600 14px var(--body); border: 0; background: var(--accent); color: var(--accent-ink); padding: 8px 16px; border-radius: 8px; cursor: pointer; min-width: 84px }
+.copy.done { background: var(--ok) }
+.empty { color: var(--muted); padding: 24px 0 }
+@media (prefers-reduced-motion: no-preference) { .copy { transition: background .15s } }
+</style>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Commando Copy Kit</h1>
+    <p class="lede">Every AI prompt and outreach message, ready to paste. Tap <b>Copy</b>, paste it into Higgsfield, WhatsApp or LinkedIn, then replace the <mark>[highlighted]</mark> parts.</p>
+    <ul class="rules">
+      <li>Attach the real product as @product</li><li>Never send an invented label</li>
+      <li>Label samples "spec concept"</li><li>AI UGC is an ad, never a fake review</li><li>Turn on the platform's AI label</li>
+    </ul>
+  </div>
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" role="tab" id="tab-ai" aria-selected="true" aria-controls="panel-ai">AI prompts<span class="count">20</span></button>
+      <button type="button" class="tab" role="tab" id="tab-msg" aria-selected="false" aria-controls="panel-msg">Messages<span class="count">15</span></button>
+    </div>
+    <input id="q" type="search" placeholder="Search: perfume, day 3, receptionist…" aria-label="Search prompts and messages">
+  </div>
+  <div id="panel-ai" role="tabpanel" aria-labelledby="tab-ai"><section class="group"><h2>Start here</h2><div class="cards">
+<article class="card" data-search="test bottle: peacock pedestal (no real product needed) still · nano banana / soul / gpt-image high-end commercial product photography, phase one camera, 100mm macro, f/11, crisp focus edge to edge. an original unbranded luxury perfume bottle: tall faceted clear glass, amber liquid, a polished gold cap shaped like a closed peacock tail, and a plain cream label with no text. it stands at the center of a bright, airy scene, filling about half the frame, on a smooth cream sandstone pedestal surrounded by exactly 5 real peacock feathers fanned out behind it like a crown, their blue-green eyes sharp and iridescent. soft warm-white background with a gentle gradient to pale gold. lighting: large softbox from the upper left for clean highlights on the glass, a thin rim light from behind that makes the amber liquid glow, a soft fill from the right. exactly 3 small amber droplets resting on the pedestal. bright, luxurious, clean, rich colour, glossy magazine advertising look.
+negative: no text or letters anywhere, no logo, no real brand, exactly 1 bottle, exactly 5 feathers, no dark or moody lighting, no smoke, no ring or halo object, no plastic cgi look.">
+  <header class="card-head"><div class="card-titles"><h3>Test bottle: peacock pedestal (no real product needed)</h3><span class="tag">Still · Nano Banana / Soul / GPT-Image</span></div>
+  <button type="button" class="copy" data-target="ai1" aria-label="Copy: Test bottle: peacock pedestal (no real product needed)">Copy</button></header>
+  <p class="note">Use this to test the bright commercial look tonight. Unbranded, so no product photo needed.</p><pre id="ai1" tabindex="0">High-end commercial product photography, Phase One camera, 100mm macro, f/11, crisp focus edge to edge. An original unbranded luxury perfume bottle: tall faceted clear glass, amber liquid, a polished gold cap shaped like a closed peacock tail, and a plain cream label with no text. It stands at the center of a bright, airy scene, filling about half the frame, on a smooth cream sandstone pedestal surrounded by exactly 5 real peacock feathers fanned out behind it like a crown, their blue-green eyes sharp and iridescent. Soft warm-white background with a gentle gradient to pale gold. Lighting: large softbox from the upper left for clean highlights on the glass, a thin rim light from behind that makes the amber liquid glow, a soft fill from the right. Exactly 3 small amber droplets resting on the pedestal. Bright, luxurious, clean, rich colour, glossy magazine advertising look.
+<b>NEGATIVE:</b> no text or letters anywhere, no logo, no real brand, exactly 1 bottle, exactly 5 feathers, no dark or moody lighting, no smoke, no ring or halo object, no plastic CGI look.</pre>
+</article>
+<article class="card" data-search="mode b building blocks any still opener: high-end commercial product photography, [phase one / sony a1], [90–100mm macro], f/8–f/11, crisp focus edge to edge.
+closer: bright, clean, rich colour, glossy magazine advertising look.
+negative add-on: no dark or moody lighting, no muddy exposure, no plastic cgi look, no invented text.">
+  <header class="card-head"><div class="card-titles"><h3>Mode B building blocks</h3><span class="tag">Any still</span></div>
+  <button type="button" class="copy" data-target="ai2" aria-label="Copy: Mode B building blocks">Copy</button></header>
+  <p class="note">Paste the opener at the start, the closer at the end, and the negative add-on after your NEGATIVE line.</p><pre id="ai2" tabindex="0"><b>OPENER:</b> High-end commercial product photography, <mark>[Phase One / Sony A1]</mark>, <mark>[90–100mm macro]</mark>, f/8–f/11, crisp focus edge to edge.
+<b>CLOSER:</b> Bright, clean, rich colour, glossy magazine advertising look.
+<b>NEGATIVE ADD-ON:</b> no dark or moody lighting, no muddy exposure, no plastic CGI look, no invented text.</pre>
+</article>
+<article class="card" data-search="commercial hero: fill-in recipe still · attach @product high-end commercial product photography, sony a1, 100mm macro, f/11, crisp focus edge to edge. the exact [brand] [product] from @product stands at the center of a bright scene, filling about half the frame — already there, same shape, label and colour as the reference. [one visual idea from the recipe list: on a marble pedestal with exactly 4 [story prop] behind it / a frozen splash of [liquid] with exactly 7 droplets / on a mossy rock in a sunlit forest with exactly 3 small white flowers / on a sand dune crest at golden hour]. background: soft gradient in [brand colour 1] to [brand colour 2]. lighting: large softbox from the upper left, thin rim light from behind on the glass edges, soft fill from the right. bright, clean, rich colour, glossy magazine advertising look.
+negative: label and product must exactly match @product, no invented text or logo, no extra products, no dark or moody lighting, no muddy exposure, no ring or halo object, no plastic cgi look, no watermark or reference-image border bleed.">
+  <header class="card-head"><div class="card-titles"><h3>Commercial hero: fill-in recipe</h3><span class="tag">Still · attach @product</span></div>
+  <button type="button" class="copy" data-target="ai3" aria-label="Copy: Commercial hero: fill-in recipe">Copy</button></header>
+  <p class="note">Pick one idea in the brackets, delete the others. One visual idea per image.</p><pre id="ai3" tabindex="0">High-end commercial product photography, Sony A1, 100mm macro, f/11, crisp focus edge to edge. The exact <mark>[brand]</mark> <mark>[product]</mark> from @product stands at the center of a bright scene, filling about half the frame — already there, same shape, label and colour as the reference. <mark>[ONE visual idea from the recipe list: on a marble pedestal with exactly 4 [story prop]</mark> behind it / a frozen splash of <mark>[liquid]</mark> with exactly 7 droplets / on a mossy rock in a sunlit forest with exactly 3 small white flowers / on a sand dune crest at golden hour]. Background: soft gradient in <mark>[brand colour 1]</mark> to <mark>[brand colour 2]</mark>. Lighting: large softbox from the upper left, thin rim light from behind on the glass edges, soft fill from the right. Bright, clean, rich colour, glossy magazine advertising look.
+<b>NEGATIVE:</b> label and product must exactly match @product, no invented text or logo, no extra products, no dark or moody lighting, no muddy exposure, no ring or halo object, no plastic CGI look, no watermark or reference-image border bleed.</pre>
+</article>
+</div></section>
+<section class="group"><h2>Mayura Khamas (attach their real bottle as @product)</h2><div class="cards">
+<article class="card" data-search="b1: peacock pedestal (send this one) still · mode b high-end commercial product photography, phase one camera, 100mm macro, f/11, crisp focus edge to edge. the exact mayura khamas perfume bottle from @product stands at the center of a bright, airy scene, filling about half the frame — already there, same bottle shape, cap, label and amber liquid as the reference. it sits on a smooth cream sandstone pedestal surrounded by exactly 5 real peacock feathers fanned out behind it like a crown, their blue-green eyes sharp and iridescent. soft warm-white background with a gentle gradient to pale gold. lighting: large softbox from the upper left for clean highlights on the glass, a thin rim light from behind that makes the amber liquid glow, a soft fill from the right. exactly 3 small amber droplets resting on the pedestal. bright, luxurious, clean, rich colour, glossy magazine advertising look.
+negative: label and bottle must exactly match @product, no invented text or logo, no extra bottles, no dark or moody lighting, no smoke, no ring or halo object, no plastic cgi look, no watermark or reference-image border bleed.">
+  <header class="card-head"><div class="card-titles"><h3>B1: Peacock pedestal (send this one)</h3><span class="tag">Still · Mode B</span></div>
+  <button type="button" class="copy" data-target="ai4" aria-label="Copy: B1: Peacock pedestal (send this one)">Copy</button></header>
+  <p class="note">Commercial hero. Bright, product half the frame.</p><pre id="ai4" tabindex="0">High-end commercial product photography, Phase One camera, 100mm macro, f/11, crisp focus edge to edge. The exact Mayura Khamas perfume bottle from @product stands at the center of a bright, airy scene, filling about half the frame — already there, same bottle shape, cap, label and amber liquid as the reference. It sits on a smooth cream sandstone pedestal surrounded by exactly 5 real peacock feathers fanned out behind it like a crown, their blue-green eyes sharp and iridescent. Soft warm-white background with a gentle gradient to pale gold. Lighting: large softbox from the upper left for clean highlights on the glass, a thin rim light from behind that makes the amber liquid glow, a soft fill from the right. Exactly 3 small amber droplets resting on the pedestal. Bright, luxurious, clean, rich colour, glossy magazine advertising look.
+<b>NEGATIVE:</b> label and bottle must exactly match @product, no invented text or logo, no extra bottles, no dark or moody lighting, no smoke, no ring or halo object, no plastic CGI look, no watermark or reference-image border bleed.</pre>
+</article>
+<article class="card" data-search="b2: amber splash still · mode b high-end commercial product photography, sony a1, 90mm macro, f/8, high-speed flash freezing motion. the exact mayura khamas perfume bottle from @product floats in mid-air at a slight angle, filling about half the frame — already there, same shape, cap, label and amber liquid as the reference. around it, a frozen splash of golden amber liquid curls in one clean ribbon from the lower left to the upper right, with exactly 7 crisp droplets suspended in the air. background: smooth deep-teal to emerald gradient inspired by peacock colours. lighting: strong key light from the right, white rim light outlining the glass, bright highlights in the droplets. crisp, saturated, premium perfume-ad look.
+negative: label and bottle must exactly match @product, no invented text, exactly 7 droplets, no extra bottles, no muddy or dark exposure, no smoke, no glow halo, no plastic cgi look.">
+  <header class="card-head"><div class="card-titles"><h3>B2: Amber splash</h3><span class="tag">Still · Mode B</span></div>
+  <button type="button" class="copy" data-target="ai5" aria-label="Copy: B2: Amber splash">Copy</button></header>
+  <p class="note">High-speed splash on a peacock teal gradient.</p><pre id="ai5" tabindex="0">High-end commercial product photography, Sony A1, 90mm macro, f/8, high-speed flash freezing motion. The exact Mayura Khamas perfume bottle from @product floats in mid-air at a slight angle, filling about half the frame — already there, same shape, cap, label and amber liquid as the reference. Around it, a frozen splash of golden amber liquid curls in one clean ribbon from the lower left to the upper right, with exactly 7 crisp droplets suspended in the air. Background: smooth deep-teal to emerald gradient inspired by peacock colours. Lighting: strong key light from the right, white rim light outlining the glass, bright highlights in the droplets. Crisp, saturated, premium perfume-ad look.
+<b>NEGATIVE:</b> label and bottle must exactly match @product, no invented text, exactly 7 droplets, no extra bottles, no muddy or dark exposure, no smoke, no glow halo, no plastic CGI look.</pre>
+</article>
+<article class="card" data-search="b3: dubai dune at golden hour still · mode b high-end commercial product photography, 85mm, f/5.6, golden hour. the exact mayura khamas perfume bottle from @product stands on the crest of a smooth sand dune in the dubai desert, filling about a third of the frame — already there, same shape, cap, label and amber liquid as the reference. the sun sits low behind it on the left, shining through the amber liquid so the bottle glows warmly, with a long soft shadow across the sand. clean wind ripples in the sand, a clear pale-blue sky fading to warm gold at the horizon, exactly 1 peacock feather lying in the sand beside the bottle. bright, warm, airy, luxurious gulf perfume campaign.
+negative: label and bottle must exactly match @product, no invented text, no extra bottles, no people, no dark or moody lighting, no lens-flare rings, no halo object, no cgi plastic look.">
+  <header class="card-head"><div class="card-titles"><h3>B3: Dubai dune at golden hour</h3><span class="tag">Still · Mode B</span></div>
+  <button type="button" class="copy" data-target="ai6" aria-label="Copy: B3: Dubai dune at golden hour">Copy</button></header>
+  <p class="note">Backlit so the amber liquid glows.</p><pre id="ai6" tabindex="0">High-end commercial product photography, 85mm, f/5.6, golden hour. The exact Mayura Khamas perfume bottle from @product stands on the crest of a smooth sand dune in the Dubai desert, filling about a third of the frame — already there, same shape, cap, label and amber liquid as the reference. The sun sits low behind it on the left, shining through the amber liquid so the bottle glows warmly, with a long soft shadow across the sand. Clean wind ripples in the sand, a clear pale-blue sky fading to warm gold at the horizon, exactly 1 peacock feather lying in the sand beside the bottle. Bright, warm, airy, luxurious Gulf perfume campaign.
+<b>NEGATIVE:</b> label and bottle must exactly match @product, no invented text, no extra bottles, no people, no dark or moody lighting, no lens-flare rings, no halo object, no CGI plastic look.</pre>
+</article>
+<article class="card" data-search="b4: 6-second video from b1 video · kling, no native audio on scene: bright warm-white studio, soft gradient background to pale gold.
+characters: no people. the exact mayura khamas perfume bottle from @product stands on a cream sandstone pedestal from frame one, with exactly 5 peacock feathers fanned behind it.
+beats:
+ 0.0-2.0s: still hero shot; light slowly brightens across the glass from left to right.
+ 2.0-4.0s: the 5 feathers gently sway open a little, as if touched by a soft breeze.
+ 4.0-6.0s: a thin rim light grows behind the bottle and the amber liquid glows warmer.
+camera: slow push-in toward the label over 6 seconds, phase one 100mm macro look.
+style: high-end commercial perfume ad, bright, clean, rich colour, softbox from upper left.
+negative prompt: bottle and label must exactly match @product throughout, exactly 5 feathers, no extra objects, no dark or moody lighting, no smoke, no ring or halo object, no speech.">
+  <header class="card-head"><div class="card-titles"><h3>B4: 6-second video from B1</h3><span class="tag">Video · Kling, No Native Audio on</span></div>
+  <button type="button" class="copy" data-target="ai7" aria-label="Copy: B4: 6-second video from B1">Copy</button></header>
+  <p class="note">Start frame = your best B1 image.</p><pre id="ai7" tabindex="0"><b>SCENE:</b> bright warm-white studio, soft gradient background to pale gold.
+<b>CHARACTERS:</b> no people. The exact Mayura Khamas perfume bottle from @product stands on a cream sandstone pedestal from frame one, with exactly 5 peacock feathers fanned behind it.
+<b>BEATS:</b>
+ 0.0-2.0s: Still hero shot; light slowly brightens across the glass from left to right.
+ 2.0-4.0s: The 5 feathers gently sway open a little, as if touched by a soft breeze.
+ 4.0-6.0s: A thin rim light grows behind the bottle and the amber liquid glows warmer.
+<b>CAMERA:</b> slow push-in toward the label over 6 seconds, Phase One 100mm macro look.
+<b>STYLE:</b> high-end commercial perfume ad, bright, clean, rich colour, softbox from upper left.
+<b>NEGATIVE PROMPT:</b> bottle and label must exactly match @product throughout, exactly 5 feathers, no extra objects, no dark or moody lighting, no smoke, no ring or halo object, no speech.</pre>
+</article>
+<article class="card" data-search="v1: souq counter (real-life look) still · mode a close product photo, sony a7 iv, 90mm macro, f/5.6. the exact mayura khamas perfume bottle from @product stands on the glass counter of a small perfume shop in the old bur dubai souq (meena bazaar) — already there, same bottle shape, cap, label and liquid colour as the reference. behind it, out of focus: wooden shelves with exactly 8 unbranded glass attar bottles, a brass tray and warm yellow shop light. late afternoon: one hard light from the upper left draws a bright edge along the glass and puts a small golden reflection of the liquid on the counter. real-life details: 2 faint fingerprints on the glass, 3 tiny dust specks on the counter, a folded paper receipt soft at the bottom-right edge of the frame. true-to-life colour, slight film grain, unretouched raw-photo quality.
+negative: label, logo and bottle shape must exactly match @product, no invented text or arabic letters, no extra branded bottles, no glow or sparkle effects, no smoke, no plastic sheen, no background or watermark bleeding in from the reference image.">
+  <header class="card-head"><div class="card-titles"><h3>V1: Souq counter (real-life look)</h3><span class="tag">Still · Mode A</span></div>
+  <button type="button" class="copy" data-target="ai8" aria-label="Copy: V1: Souq counter (real-life look)">Copy</button></header>
+  <p class="note">Documentary realism. Use only if they want a &#x27;real shop&#x27; vibe.</p><pre id="ai8" tabindex="0">Close product photo, Sony A7 IV, 90mm macro, f/5.6. The exact Mayura Khamas perfume bottle from @product stands on the glass counter of a small perfume shop in the old Bur Dubai souq (Meena Bazaar) — already there, same bottle shape, cap, label and liquid colour as the reference. Behind it, out of focus: wooden shelves with exactly 8 unbranded glass attar bottles, a brass tray and warm yellow shop light. Late afternoon: one hard light from the upper left draws a bright edge along the glass and puts a small golden reflection of the liquid on the counter. Real-life details: 2 faint fingerprints on the glass, 3 tiny dust specks on the counter, a folded paper receipt soft at the bottom-right edge of the frame. True-to-life colour, slight film grain, unretouched raw-photo quality.
+<b>NEGATIVE:</b> label, logo and bottle shape must exactly match @product, no invented text or Arabic letters, no extra branded bottles, no glow or sparkle effects, no smoke, no plastic sheen, no background or watermark bleeding in from the reference image.</pre>
+</article>
+<article class="card" data-search="v1: in-hand snapshot still · mode a snapshot on iphone 1x lens, vertical 4:5, slightly tilted framing. a man&#x27;s hand, mid-30s, light-brown skin, a plain silver ring, holds the exact mayura khamas perfume bottle from @product at the shop counter in the bur dubai souq — already in his hand, label facing the camera, same shape, cap and colour as the reference. background, soft focus: the shopkeeper&#x27;s arm reaching for a shelf, wooden shelves of unbranded attar bottles, warm fluorescent light from above. exactly 1 small paper tester strip on the counter. natural skin texture with visible knuckle lines, slight motion blur on the shopkeeper&#x27;s arm, auto exposure, a little noise in the shadows.
+negative: label and bottle must exactly match @product, exactly 1 hand in focus, no extra fingers, no invented logo or text, no studio lighting, no retouching, no glow.">
+  <header class="card-head"><div class="card-titles"><h3>V1: In-hand snapshot</h3><span class="tag">Still · Mode A</span></div>
+  <button type="button" class="copy" data-target="ai9" aria-label="Copy: V1: In-hand snapshot">Copy</button></header>
+  <p class="note">iPhone look, hand only.</p><pre id="ai9" tabindex="0">Snapshot on iPhone 1x lens, vertical 4:5, slightly tilted framing. A man&#x27;s hand, mid-30s, light-brown skin, a plain silver ring, holds the exact Mayura Khamas perfume bottle from @product at the shop counter in the Bur Dubai souq — already in his hand, label facing the camera, same shape, cap and colour as the reference. Background, soft focus: the shopkeeper&#x27;s arm reaching for a shelf, wooden shelves of unbranded attar bottles, warm fluorescent light from above. Exactly 1 small paper tester strip on the counter. Natural skin texture with visible knuckle lines, slight motion blur on the shopkeeper&#x27;s arm, auto exposure, a little noise in the shadows.
+<b>NEGATIVE:</b> label and bottle must exactly match @product, exactly 1 hand in focus, no extra fingers, no invented logo or text, no studio lighting, no retouching, no glow.</pre>
+</article>
+<article class="card" data-search="v1: 5-second counter video video · kling scene: glass counter of a small perfume shop in the old bur dubai souq, late afternoon, quiet, warm yellow shop light.
+characters: one hand only, mid-30s, light-brown skin, plain silver ring, no face in frame. the exact mayura khamas perfume bottle from @product stands on the counter from frame one.
+beats:
+ 0.0-1.5s: still shot of the bottle; a soft shadow passes behind it as someone walks by.
+ 1.5-3.5s: the hand enters from the right and gently lifts the bottle.
+ 3.5-5.0s: the hand slowly turns the bottle a quarter so the label faces the camera.
+camera: locked-off tripod, sony a7 iv 90mm macro look, no movement.
+style: true-to-life colour, slight grain, one hard light from the upper left catching the glass edge.
+negative prompt: bottle, cap and label must exactly match @product throughout, exactly 1 hand, no slow motion, no glow, no smoke, no speech, no background bleed.">
+  <header class="card-head"><div class="card-titles"><h3>V1: 5-second counter video</h3><span class="tag">Video · Kling</span></div>
+  <button type="button" class="copy" data-target="ai10" aria-label="Copy: V1: 5-second counter video">Copy</button></header>
+  <p class="note">Start frame = the V1 souq still.</p><pre id="ai10" tabindex="0"><b>SCENE:</b> glass counter of a small perfume shop in the old Bur Dubai souq, late afternoon, quiet, warm yellow shop light.
+<b>CHARACTERS:</b> one hand only, mid-30s, light-brown skin, plain silver ring, no face in frame. The exact Mayura Khamas perfume bottle from @product stands on the counter from frame one.
+<b>BEATS:</b>
+ 0.0-1.5s: Still shot of the bottle; a soft shadow passes behind it as someone walks by.
+ 1.5-3.5s: The hand enters from the right and gently lifts the bottle.
+ 3.5-5.0s: The hand slowly turns the bottle a quarter so the label faces the camera.
+<b>CAMERA:</b> locked-off tripod, Sony A7 IV 90mm macro look, no movement.
+<b>STYLE:</b> true-to-life colour, slight grain, one hard light from the upper left catching the glass edge.
+<b>NEGATIVE PROMPT:</b> bottle, cap and label must exactly match @product throughout, exactly 1 hand, no slow motion, no glow, no smoke, no speech, no background bleed.</pre>
+</article>
+</div></section>
+<section class="group"><h2>Real-life stills (Mode A)</h2><div class="cards">
+<article class="card" data-search="perfume: gulf souq shelf still · attach @product close product photo, sony a7 iv, 90mm macro, f/5.6. the exact [brand] [variant name] bottle from @product stands on a dark oud-wood shelf in a deira souq perfume shop — already there, same label, cap and glass colour as the reference. background: out-of-focus mirrored shelves with exactly 6 other unbranded bottles, warm fluorescent shop light. a small hard light from upper left draws a bright edge on the glass and a soft reflection on the wood. fingerprints on the glass, 3 tiny dust specks, a price tag soft at the frame edge. true-to-life colour, slight film grain, unretouched.
+negative: no invented logo or text, label must exactly match @product, no extra branded bottles, no glow, no plastic sheen, no watermark or reference-image border bleed.">
+  <header class="card-head"><div class="card-titles"><h3>Perfume: Gulf souq shelf</h3><span class="tag">Still · attach @product</span></div>
+  <button type="button" class="copy" data-target="ai11" aria-label="Copy: Perfume: Gulf souq shelf">Copy</button></header>
+  <pre id="ai11" tabindex="0">Close product photo, Sony A7 IV, 90mm macro, f/5.6. The exact <mark>[brand]</mark> <mark>[variant name]</mark> bottle from @product stands on a dark oud-wood shelf in a Deira souq perfume shop — already there, same label, cap and glass colour as the reference. Background: out-of-focus mirrored shelves with exactly 6 other unbranded bottles, warm fluorescent shop light. A small hard light from upper left draws a bright edge on the glass and a soft reflection on the wood. Fingerprints on the glass, 3 tiny dust specks, a price tag soft at the frame edge. True-to-life colour, slight film grain, unretouched.
+<b>NEGATIVE:</b> no invented logo or text, label must exactly match @product, no extra branded bottles, no glow, no plastic sheen, no watermark or reference-image border bleed.</pre>
+</article>
+<article class="card" data-search="abaya: editorial in a real place still · attach @product full-length fashion photo, 50mm, f/2.8. a [age] [gulf / egyptian] woman, natural makeup, visible skin texture, wears the exact [brand] abaya from @product — same fabric, embroidery and cut. she walks past a sunlit villa entrance in [riyadh / dubai] at 4 pm, mid-step, not looking at the camera. warm side light, long shadow on a limestone wall. fabric creases at the elbows; the hem lifts slightly in a light breeze. muted colour, slight grain.
+negative: no change to embroidery pattern or colour, no extra people, no airbrushed skin, no studio backdrop.">
+  <header class="card-head"><div class="card-titles"><h3>Abaya: editorial in a real place</h3><span class="tag">Still · attach @product</span></div>
+  <button type="button" class="copy" data-target="ai12" aria-label="Copy: Abaya: editorial in a real place">Copy</button></header>
+  <pre id="ai12" tabindex="0">Full-length fashion photo, 50mm, f/2.8. A <mark>[age]</mark> <mark>[Gulf / Egyptian]</mark> woman, natural makeup, visible skin texture, wears the exact <mark>[brand]</mark> abaya from @product — same fabric, embroidery and cut. She walks past a sunlit villa entrance in <mark>[Riyadh / Dubai]</mark> at 4 pm, mid-step, not looking at the camera. Warm side light, long shadow on a limestone wall. Fabric creases at the elbows; the hem lifts slightly in a light breeze. Muted colour, slight grain.
+<b>NEGATIVE:</b> no change to embroidery pattern or colour, no extra people, no airbrushed skin, no studio backdrop.</pre>
+</article>
+<article class="card" data-search="jewelry: macro on skin still · attach @product macro photo, 100mm, f/4. the exact [brand] necklace from @product rests on the collarbone of a woman in her [30s] — already there. real skin: fine hairs, one small mole, natural shine. a single small hard light makes sparkle points on the stones. black knit top, warm blurred interior. slight focus falloff at the edges. unretouched.
+negative: necklace design must exactly match @product, no extra jewelry, no plastic skin, no glow halo.">
+  <header class="card-head"><div class="card-titles"><h3>Jewelry: macro on skin</h3><span class="tag">Still · attach @product</span></div>
+  <button type="button" class="copy" data-target="ai13" aria-label="Copy: Jewelry: macro on skin">Copy</button></header>
+  <pre id="ai13" tabindex="0">Macro photo, 100mm, f/4. The exact <mark>[brand]</mark> necklace from @product rests on the collarbone of a woman in her <mark>[30s]</mark> — already there. Real skin: fine hairs, one small mole, natural shine. A single small hard light makes sparkle points on the stones. Black knit top, warm blurred interior. Slight focus falloff at the edges. Unretouched.
+<b>NEGATIVE:</b> necklace design must exactly match @product, no extra jewelry, no plastic skin, no glow halo.</pre>
+</article>
+<article class="card" data-search="skincare: real bathroom (phone look) still · attach @product snapshot on iphone 1x lens, slightly tilted framing. the exact [brand] serum bottle from @product sits on a real bathroom shelf in a cairo apartment next to exactly 1 toothbrush cup, 1 hair tie and 1 half-used tube. morning light through a frosted window on the right, 4 water droplets on the bottle, edge of a mirror reflection. everyday, unstyled.
+negative: label must exactly match @product, no extra products with logos, no studio lighting, no perfection.">
+  <header class="card-head"><div class="card-titles"><h3>Skincare: real bathroom (phone look)</h3><span class="tag">Still · attach @product</span></div>
+  <button type="button" class="copy" data-target="ai14" aria-label="Copy: Skincare: real bathroom (phone look)">Copy</button></header>
+  <pre id="ai14" tabindex="0">Snapshot on iPhone 1x lens, slightly tilted framing. The exact <mark>[brand]</mark> serum bottle from @product sits on a real bathroom shelf in a Cairo apartment next to exactly 1 toothbrush cup, 1 hair tie and 1 half-used tube. Morning light through a frosted window on the right, 4 water droplets on the bottle, edge of a mirror reflection. Everyday, unstyled.
+<b>NEGATIVE:</b> label must exactly match @product, no extra products with logos, no studio lighting, no perfection.</pre>
+</article>
+<article class="card" data-search="food: egyptian table (overhead) still overhead photo, 35mm, phone-like colour. a plate of [dish] on a real restaurant table in [area], with exactly 1 half-drunk glass of tea, 2 crumpled napkins, a few torn bread pieces counted as exactly 3, and a phone at the frame edge. steam rising gently, sauce drips on the rim. warm lamp light from top right; shadow of a hand reaching in.
+negative: no food-styling perfection, no extra plates, no text, no glow.">
+  <header class="card-head"><div class="card-titles"><h3>Food: Egyptian table (overhead)</h3><span class="tag">Still</span></div>
+  <button type="button" class="copy" data-target="ai15" aria-label="Copy: Food: Egyptian table (overhead)">Copy</button></header>
+  <p class="note">Good for restaurant leads like Lucille&#x27;s or La Margrita.</p><pre id="ai15" tabindex="0">Overhead photo, 35mm, phone-like colour. A plate of <mark>[dish]</mark> on a real restaurant table in <mark>[area]</mark>, with exactly 1 half-drunk glass of tea, 2 crumpled napkins, a few torn bread pieces counted as exactly 3, and a phone at the frame edge. Steam rising gently, sauce drips on the rim. Warm lamp light from top right; shadow of a hand reaching in.
+<b>NEGATIVE:</b> no food-styling perfection, no extra plates, no text, no glow.</pre>
+</article>
+</div></section>
+<section class="group"><h2>Video (image-to-video, 5–8 s)</h2><div class="cards">
+<article class="card" data-search="product reveal (silent) video · start from an approved still scene: [real surface + place], late afternoon, quiet shop.
+characters: one hand only, [skin tone], no face in frame. the exact [variant] [product] from @product is already on the surface from frame one.
+beats:
+ 0.0-1.5s: still shot of the [product] on the surface; light shifts slightly as a shadow passes.
+ 1.5-3.5s: the hand enters from the right and gently lifts the [product].
+ 3.5-5.0s: the hand slowly turns it a quarter so the label faces the camera.
+camera: locked-off tripod, no movement.
+style: sony a7 iv, 90mm macro look, true-to-life colour, slight grain, one hard light from upper left.
+negative prompt: product and label must exactly match @product throughout, exactly 1 hand, no slow motion, no glow, no speech, no background bleed.">
+  <header class="card-head"><div class="card-titles"><h3>Product reveal (silent)</h3><span class="tag">Video · start from an approved still</span></div>
+  <button type="button" class="copy" data-target="ai16" aria-label="Copy: Product reveal (silent)">Copy</button></header>
+  <pre id="ai16" tabindex="0"><b>SCENE:</b> <mark>[real surface + place]</mark>, late afternoon, quiet shop.
+<b>CHARACTERS:</b> one hand only, <mark>[skin tone]</mark>, no face in frame. The exact <mark>[variant]</mark> <mark>[product]</mark> from @product is already on the surface from frame one.
+<b>BEATS:</b>
+ 0.0-1.5s: Still shot of the <mark>[product]</mark> on the surface; light shifts slightly as a shadow passes.
+ 1.5-3.5s: The hand enters from the right and gently lifts the <mark>[product]</mark>.
+ 3.5-5.0s: The hand slowly turns it a quarter so the label faces the camera.
+<b>CAMERA:</b> locked-off tripod, no movement.
+<b>STYLE:</b> Sony A7 IV, 90mm macro look, true-to-life colour, slight grain, one hard light from upper left.
+<b>NEGATIVE PROMPT:</b> product and label must exactly match @product throughout, exactly 1 hand, no slow motion, no glow, no speech, no background bleed.</pre>
+</article>
+<article class="card" data-search="ugc creator-style ad video · lock @creator first scene: lived-in bedroom in [cairo / dubai], window light from the left, unmade bed edge in frame.
+characters: [identity lock] a [age] [egyptian / gulf] [man/woman] matching @creator exactly. the exact [product] from @product is already in their hand.
+beats:
+ 0.0-1.5s: vertical selfie framing; they glance at the lens and raise their eyebrows.
+ 1.5-3.0s: they bring the [product] closer to the camera, label facing the lens.
+ 3.0-5.0s: they tap the [product] twice with one finger and nod, mouth closed.
+camera: handheld front-camera at arm&#x27;s length, slight natural shake, small reframe at 3.0s.
+style: iphone front-camera look, auto exposure, light shadow noise, no grading.
+negative prompt: [identity lock], product must exactly match @product, no speech, no lip movement, exactly 1 person, no ring light reflection object, no text.">
+  <header class="card-head"><div class="card-titles"><h3>UGC creator-style ad</h3><span class="tag">Video · lock @creator first</span></div>
+  <button type="button" class="copy" data-target="ai17" aria-label="Copy: UGC creator-style ad">Copy</button></header>
+  <p class="note">Add voice-over in the edit. Label it as an ad, never as a real customer review.</p><pre id="ai17" tabindex="0"><b>SCENE:</b> lived-in bedroom in <mark>[Cairo / Dubai]</mark>, window light from the left, unmade bed edge in frame.
+<b>CHARACTERS:</b> <mark>[IDENTITY LOCK]</mark> a <mark>[age]</mark> <mark>[Egyptian / Gulf]</mark> <mark>[man/woman]</mark> matching @creator exactly. The exact <mark>[product]</mark> from @product is already in their hand.
+<b>BEATS:</b>
+ 0.0-1.5s: Vertical selfie framing; they glance at the lens and raise their eyebrows.
+ 1.5-3.0s: They bring the <mark>[product]</mark> closer to the camera, label facing the lens.
+ 3.0-5.0s: They tap the <mark>[product]</mark> twice with one finger and nod, mouth closed.
+<b>CAMERA:</b> handheld front-camera at arm&#x27;s length, slight natural shake, small reframe at 3.0s.
+<b>STYLE:</b> iPhone front-camera look, auto exposure, light shadow noise, no grading.
+<b>NEGATIVE PROMPT:</b> <mark>[IDENTITY LOCK]</mark>, product must exactly match @product, no speech, no lip movement, exactly 1 person, no ring light reflection object, no text.</pre>
+</article>
+<article class="card" data-search="lifestyle b-roll video scene: exit of a [maadi café / dubai mall], 5 pm sun, light street traffic.
+characters: [identity lock] person from @creator, holding the exact [product] from @product, already in hand.
+beats:
+ 0.0-2.0s: they push the glass door open and step out.
+ 2.0-4.0s: they walk right at a natural pace, glancing at the street.
+ 4.0-5.0s: they pass a window; a soft lens flare crosses the frame.
+camera: handheld 35mm following slightly behind and to the side, small reframe.
+style: natural colour, slight grain, real street sound.
+negative prompt: [identity lock], product unchanged, exactly 1 main subject, no slow motion, no speech, no extra branded logos.">
+  <header class="card-head"><div class="card-titles"><h3>Lifestyle B-roll</h3><span class="tag">Video</span></div>
+  <button type="button" class="copy" data-target="ai18" aria-label="Copy: Lifestyle B-roll">Copy</button></header>
+  <pre id="ai18" tabindex="0"><b>SCENE:</b> exit of a <mark>[Maadi café / Dubai mall]</mark>, 5 pm sun, light street traffic.
+<b>CHARACTERS:</b> <mark>[IDENTITY LOCK]</mark> person from @creator, holding the exact <mark>[product]</mark> from @product, already in hand.
+<b>BEATS:</b>
+ 0.0-2.0s: They push the glass door open and step out.
+ 2.0-4.0s: They walk right at a natural pace, glancing at the street.
+ 4.0-5.0s: They pass a window; a soft lens flare crosses the frame.
+<b>CAMERA:</b> handheld 35mm following slightly behind and to the side, small reframe.
+<b>STYLE:</b> natural colour, slight grain, real street sound.
+<b>NEGATIVE PROMPT:</b> <mark>[IDENTITY LOCK]</mark>, product unchanged, exactly 1 main subject, no slow motion, no speech, no extra branded logos.</pre>
+</article>
+<article class="card" data-search="cinematic concept (one impossible beat) video scene: [ordinary real place], [time], [atmosphere].
+characters: [identity lock] [person from @creator]. the exact [product] from @product already in [hand / on table].
+beats:
+ 0.0-2.0s: [relatable tension, one atomic action].
+ 2.0-3.5s: [the product enters the moment, one atomic action].
+ 3.5-5.5s: [the one impossible beat, calm verb, tied to light/reflection/steam/scale].
+ 5.5-7.0s: [settles back to ordinary; genuine relief].
+camera: [named sequence, e.g. slow push-in → locked hold]. (if any orbit: camera motion only — no ring, halo or portal object.)
+style: sony fx3, 35mm, f/2, 24 fps, motivated light from [source], subtle grain.
+negative prompt: [identity lock], product exactly as @product, [count discipline], no ring/halo/portal, no chaos or extra effects beyond the one beat, no speech.">
+  <header class="card-head"><div class="card-titles"><h3>Cinematic concept (one impossible beat)</h3><span class="tag">Video</span></div>
+  <button type="button" class="copy" data-target="ai19" aria-label="Copy: Cinematic concept (one impossible beat)">Copy</button></header>
+  <p class="note">Fill every bracket. Only one impossible moment.</p><pre id="ai19" tabindex="0"><b>SCENE:</b> <mark>[ordinary real place]</mark>, <mark>[time]</mark>, <mark>[atmosphere]</mark>.
+<b>CHARACTERS:</b> <mark>[IDENTITY LOCK]</mark> <mark>[person from @creator]</mark>. The exact <mark>[product]</mark> from @product already in <mark>[hand / on table]</mark>.
+<b>BEATS:</b>
+ 0.0-2.0s: <mark>[relatable tension, one atomic action]</mark>.
+ 2.0-3.5s: <mark>[the product enters the moment, one atomic action]</mark>.
+ 3.5-5.5s: <mark>[the ONE impossible beat, calm verb, tied to light/reflection/steam/scale]</mark>.
+ 5.5-7.0s: <mark>[settles back to ordinary; genuine relief]</mark>.
+<b>CAMERA:</b> <mark>[named sequence, e.g. slow push-in → locked hold]</mark>. (If any orbit: camera motion only — no ring, halo or portal object.)
+<b>STYLE:</b> Sony FX3, 35mm, f/2, 24 fps, motivated light from <mark>[source]</mark>, subtle grain.
+<b>NEGATIVE PROMPT:</b> <mark>[IDENTITY LOCK]</mark>, product exactly as @product, <mark>[count discipline]</mark>, no ring/halo/portal, no chaos or extra effects beyond the one beat, no speech.</pre>
+</article>
+</div></section>
+<section class="group"><h2>Characters</h2><div class="cards">
+<article class="card" data-search="character reference sheet still · make before any recurring person character reference sheet: the same person in exactly 3 photos side by side — front, three-quarter, profile. [age], [region], [hair], [distinguishing features: small scar on left eyebrow, freckles], wearing [wardrobe]. neutral grey backdrop, soft even light, visible skin texture, unretouched.
+negative: the 3 photos must show the identical person, no changing jaw width or face proportions, no extra people.">
+  <header class="card-head"><div class="card-titles"><h3>Character reference sheet</h3><span class="tag">Still · make before any recurring person</span></div>
+  <button type="button" class="copy" data-target="ai20" aria-label="Copy: Character reference sheet">Copy</button></header>
+  <p class="note">Lock the face first, then reuse it as @creator.</p><pre id="ai20" tabindex="0">Character reference sheet: the same person in exactly 3 photos side by side — front, three-quarter, profile. <mark>[Age]</mark>, <mark>[region]</mark>, <mark>[hair]</mark>, <mark>[distinguishing features: small scar on left eyebrow, freckles]</mark>, wearing <mark>[wardrobe]</mark>. Neutral grey backdrop, soft even light, visible skin texture, unretouched.
+<b>NEGATIVE:</b> the 3 photos must show the identical person, no changing jaw width or face proportions, no extra people.</pre>
+</article>
+</div></section></div>
+  <div id="panel-msg" role="tabpanel" aria-labelledby="tab-msg" hidden><section class="group"><h2>Egypt: calls and WhatsApp</h2><div class="cards">
+<article class="card" data-search="call opener (say it in your own arabic) phone hi, i&#x27;m ismail from the commando. i work with [clinics / restaurants / gyms] in [area]. quick question: who handles your marketing or social media?
+
+i looked at [business] before calling. your reviews are strong ([x] on google), but [one gap from the sheet]. that usually means people who already like you online end up calling someone else.
+
+for grapes holiday we cut ad spend 62% and got 2.5× the leads. can i send you a free 2-minute audit on whatsapp showing exactly what i&#x27;d fix? no cost, no commitment. what&#x27;s the best whatsapp, and what&#x27;s your name?">
+  <header class="card-head"><div class="card-titles"><h3>Call opener (say it in your own Arabic)</h3><span class="tag">Phone</span></div>
+  <button type="button" class="copy" data-target="msg1" aria-label="Copy: Call opener (say it in your own Arabic)">Copy</button></header>
+  <p class="note">Goal: the owner&#x27;s name, their WhatsApp, and permission to send the audit.</p><pre id="msg1" tabindex="0">Hi, I&#x27;m Ismail from The Commando. I work with <mark>[clinics / restaurants / gyms]</mark> in <mark>[area]</mark>. Quick question: who handles your marketing or social media?
+
+I looked at <mark>[Business]</mark> before calling. Your reviews are strong (<mark>[X]</mark> on Google), but <mark>[one gap from the sheet]</mark>. That usually means people who already like you online end up calling someone else.
+
+For Grapes Holiday we cut ad spend 62% and got 2.5× the leads. Can I send you a free 2-minute audit on WhatsApp showing exactly what I&#x27;d fix? No cost, no commitment. What&#x27;s the best WhatsApp, and what&#x27;s your name?</pre>
+</article>
+<article class="card" data-search="same-day follow-up whatsapp whatsapp hi [name], ismail from the commando. thanks for your time today. as promised, here&#x27;s the quick audit for [business]: [gap 1], [gap 2]. happy to walk you through the fix in 10 minutes. does [day] at [time] work?">
+  <header class="card-head"><div class="card-titles"><h3>Same-day follow-up WhatsApp</h3><span class="tag">WhatsApp</span></div>
+  <button type="button" class="copy" data-target="msg2" aria-label="Copy: Same-day follow-up WhatsApp">Copy</button></header>
+  <p class="note">Send within a few hours of the call.</p><pre id="msg2" tabindex="0">Hi <mark>[Name]</mark>, Ismail from The Commando. Thanks for your time today. As promised, here&#x27;s the quick audit for <mark>[Business]</mark>: <mark>[gap 1]</mark>, <mark>[gap 2]</mark>. Happy to walk you through the fix in 10 minutes. Does <mark>[day]</mark> at <mark>[time]</mark> work?</pre>
+</article>
+<article class="card" data-search="day 2 nudge whatsapp hi [name], just checking you saw the audit for [business]. the quickest win is [gap 1]. want me to show you how i&#x27;d fix it this week?">
+  <header class="card-head"><div class="card-titles"><h3>Day 2 nudge</h3><span class="tag">WhatsApp</span></div>
+  <button type="button" class="copy" data-target="msg3" aria-label="Copy: Day 2 nudge">Copy</button></header>
+  <pre id="msg3" tabindex="0">Hi <mark>[Name]</mark>, just checking you saw the audit for <mark>[Business]</mark>. The quickest win is <mark>[gap 1]</mark>. Want me to show you how I&#x27;d fix it this week?</pre>
+</article>
+<article class="card" data-search="receptionist won&#x27;t pass you on phone no problem. what&#x27;s the owner&#x27;s or manager&#x27;s name, so i address it to the right person? is there a whatsapp number where management reads messages? i noticed [specific gap, e.g. the phone number on your instagram is wrong]. could you let them know? i&#x27;ll send the details on whatsapp. when are they usually in?">
+  <header class="card-head"><div class="card-titles"><h3>Receptionist won&#x27;t pass you on</h3><span class="tag">Phone</span></div>
+  <button type="button" class="copy" data-target="msg4" aria-label="Copy: Receptionist won&#x27;t pass you on">Copy</button></header>
+  <p class="note">Ask for a name, not a transfer.</p><pre id="msg4" tabindex="0">No problem. What&#x27;s the owner&#x27;s or manager&#x27;s name, so I address it to the right person? Is there a WhatsApp number where management reads messages? I noticed <mark>[specific gap, e.g. the phone number on your Instagram is wrong]</mark>. Could you let them know? I&#x27;ll send the details on WhatsApp. When are they usually in?</pre>
+</article>
+<article class="card" data-search="&quot;we already have someone for social media&quot; phone great, that&#x27;s good to hear. do they also handle the website, the google maps profile and replying to reviews? most social media people don&#x27;t. can i send a free audit anyway? if your person is doing a great job, it&#x27;ll confirm it. if not, you&#x27;ll know what to ask them for.">
+  <header class="card-head"><div class="card-titles"><h3>&quot;We already have someone for social media&quot;</h3><span class="tag">Phone</span></div>
+  <button type="button" class="copy" data-target="msg5" aria-label="Copy: &quot;We already have someone for social media&quot;">Copy</button></header>
+  <pre id="msg5" tabindex="0">Great, that&#x27;s good to hear. Do they also handle the website, the Google Maps profile and replying to reviews? Most social media people don&#x27;t. Can I send a free audit anyway? If your person is doing a great job, it&#x27;ll confirm it. If not, you&#x27;ll know what to ask them for.</pre>
+</article>
+<article class="card" data-search="instagram dm (when the call doesn&#x27;t get through) instagram dm hi [business] team, i&#x27;m ismail from the commando. i tried calling earlier. i noticed [one gap] on your google page, which means people searching for you may not find [your booking link / your menu / your website]. i made a 2-minute audit with the fix. can i send it here?">
+  <header class="card-head"><div class="card-titles"><h3>Instagram DM (when the call doesn&#x27;t get through)</h3><span class="tag">Instagram DM</span></div>
+  <button type="button" class="copy" data-target="msg6" aria-label="Copy: Instagram DM (when the call doesn&#x27;t get through)">Copy</button></header>
+  <pre id="msg6" tabindex="0">Hi <mark>[Business]</mark> team, I&#x27;m Ismail from The Commando. I tried calling earlier. I noticed <mark>[one gap]</mark> on your Google page, which means people searching for you may not find <mark>[your booking link / your menu / your website]</mark>. I made a 2-minute audit with the fix. Can I send it here?</pre>
+</article>
+<article class="card" data-search="referral ask (week 2 with a client) whatsapp hi [name], glad the [website / content] is working. one quick favour: do you know 1 or 2 other business owners who have the same problem with [google / instagram / bookings]? i&#x27;d look after them the same way.">
+  <header class="card-head"><div class="card-titles"><h3>Referral ask (week 2 with a client)</h3><span class="tag">WhatsApp</span></div>
+  <button type="button" class="copy" data-target="msg7" aria-label="Copy: Referral ask (week 2 with a client)">Copy</button></header>
+  <pre id="msg7" tabindex="0">Hi <mark>[Name]</mark>, glad the <mark>[website / content]</mark> is working. One quick favour: do you know 1 or 2 other business owners who have the same problem with <mark>[Google / Instagram / bookings]</mark>? I&#x27;d look after them the same way.</pre>
+</article>
+</div></section>
+<section class="group"><h2>Gulf: message first</h2><div class="cards">
+<article class="card" data-search="first message, with the ai sample attached whatsapp / instagram dm hi [brand] team, i&#x27;m ismail, a performance marketer and ai content producer. i made this image of your [product] as a quick example of what we can do without a studio shoot (attached). i make product visuals and ugc-style video ads for gulf brands and run the ads too. want me to send 3 more for free so you can test them in your ads?">
+  <header class="card-head"><div class="card-titles"><h3>First message, with the AI sample attached</h3><span class="tag">WhatsApp / Instagram DM</span></div>
+  <button type="button" class="copy" data-target="msg8" aria-label="Copy: First message, with the AI sample attached">Copy</button></header>
+  <p class="note">English for Dubai. Send 10 AM–1 PM Gulf time.</p><pre id="msg8" tabindex="0">Hi <mark>[Brand]</mark> team, I&#x27;m Ismail, a performance marketer and AI content producer. I made this image of your <mark>[product]</mark> as a quick example of what we can do without a studio shoot (attached). I make product visuals and UGC-style video ads for Gulf brands and run the ads too. Want me to send 3 more for free so you can test them in your ads?</pre>
+</article>
+<article class="card" data-search="mayura khamas message whatsapp +971 4 352 2319 hi mayura khamas team, i&#x27;m ismail, a performance marketer and ai content creator. i made this image of your perfume as a quick example of what&#x27;s possible without a studio shoot (attached). with 856 reviews you clearly have loyal customers, but there&#x27;s no website or instagram linked on your google listing for new people to see the product. i make product visuals and ads for gulf brands. want me to send 3 more for free that you can use on instagram or whatsapp?">
+  <header class="card-head"><div class="card-titles"><h3>Mayura Khamas message</h3><span class="tag">WhatsApp +971 4 352 2319</span></div>
+  <button type="button" class="copy" data-target="msg9" aria-label="Copy: Mayura Khamas message">Copy</button></header>
+  <p class="note">Only send it with their real bottle in the image.</p><pre id="msg9" tabindex="0">Hi Mayura Khamas team, I&#x27;m Ismail, a performance marketer and AI content creator. I made this image of your perfume as a quick example of what&#x27;s possible without a studio shoot (attached). With 856 reviews you clearly have loyal customers, but there&#x27;s no website or Instagram linked on your Google listing for new people to see the product. I make product visuals and ads for Gulf brands. Want me to send 3 more for free that you can use on Instagram or WhatsApp?</pre>
+</article>
+<article class="card" data-search="day 3 follow-up whatsapp / dm hi, just checking you saw the [product] image. happy to send the 3 free versions this week. which product should i use?">
+  <header class="card-head"><div class="card-titles"><h3>Day 3 follow-up</h3><span class="tag">WhatsApp / DM</span></div>
+  <button type="button" class="copy" data-target="msg10" aria-label="Copy: Day 3 follow-up">Copy</button></header>
+  <pre id="msg10" tabindex="0">Hi, just checking you saw the <mark>[product]</mark> image. Happy to send the 3 free versions this week. Which product should I use?</pre>
+</article>
+<article class="card" data-search="day 8: last note whatsapp / dm last note from me. if product visuals or ad creatives become a priority, i&#x27;m here. portfolio: [link].">
+  <header class="card-head"><div class="card-titles"><h3>Day 8: last note</h3><span class="tag">WhatsApp / DM</span></div>
+  <button type="button" class="copy" data-target="msg11" aria-label="Copy: Day 8: last note">Copy</button></header>
+  <p class="note">Then stop.</p><pre id="msg11" tabindex="0">Last note from me. If product visuals or ad creatives become a priority, I&#x27;m here. Portfolio: <mark>[link]</mark>.</pre>
+</article>
+<article class="card" data-search="when they ask &quot;how much?&quot; whatsapp / dm a starter pack is 10 product images + 3 short video ads for $[x]. most brands then move to a monthly pack for fresh ad creatives every week.">
+  <header class="card-head"><div class="card-titles"><h3>When they ask &quot;how much?&quot;</h3><span class="tag">WhatsApp / DM</span></div>
+  <button type="button" class="copy" data-target="msg12" aria-label="Copy: When they ask &quot;how much?&quot;">Copy</button></header>
+  <p class="note">Confirm the price before you quote.</p><pre id="msg12" tabindex="0">A starter pack is 10 product images + 3 short video ads for $<mark>[X]</mark>. Most brands then move to a monthly pack for fresh ad creatives every week.</pre>
+</article>
+<article class="card" data-search="&quot;we already have an agency / photographer&quot; whatsapp / dm makes sense. most brands i work with keep their photographer for hero shoots and use me for the weekly ad creatives the photographer can&#x27;t produce fast enough. want to test 3 against your current ads?">
+  <header class="card-head"><div class="card-titles"><h3>&quot;We already have an agency / photographer&quot;</h3><span class="tag">WhatsApp / DM</span></div>
+  <button type="button" class="copy" data-target="msg13" aria-label="Copy: &quot;We already have an agency / photographer&quot;">Copy</button></header>
+  <pre id="msg13" tabindex="0">Makes sense. Most brands I work with keep their photographer for hero shoots and use me for the weekly ad creatives the photographer can&#x27;t produce fast enough. Want to test 3 against your current ads?</pre>
+</article>
+</div></section>
+<section class="group"><h2>Jobs</h2><div class="cards">
+<article class="card" data-search="cover message applications i&#x27;m a performance marketer who also produces ad creative with ai. as marketing director at grapes holiday i cut ad spend by 62.5% while generating 2.5× the leads (3,000+ qualified leads). at rihla travel&#x27;s launch we made 350k+ egp in the first two weeks. i build the landing pages and ai creatives myself, so tests ship fast. portfolio: [link]. i&#x27;m in cairo and available [full-time/part-time] remotely.">
+  <header class="card-head"><div class="card-titles"><h3>Cover message</h3><span class="tag">Applications</span></div>
+  <button type="button" class="copy" data-target="msg14" aria-label="Copy: Cover message">Copy</button></header>
+  <p class="note">Fill in full-time or part-time.</p><pre id="msg14" tabindex="0">I&#x27;m a performance marketer who also produces ad creative with AI. As Marketing Director at Grapes Holiday I cut ad spend by 62.5% while generating 2.5× the leads (3,000+ qualified leads). At Rihla Travel&#x27;s launch we made 350K+ EGP in the first two weeks. I build the landing pages and AI creatives myself, so tests ship fast. Portfolio: <mark>[link]</mark>. I&#x27;m in Cairo and available <mark>[full-time/part-time]</mark> remotely.</pre>
+</article>
+<article class="card" data-search="linkedin note to the hiring manager linkedin hi [name], i just applied for the [role]. quick context: at grapes holiday i cut ad spend 62.5% while lead volume grew 2.5×. happy to show how in 10 minutes.">
+  <header class="card-head"><div class="card-titles"><h3>LinkedIn note to the hiring manager</h3><span class="tag">LinkedIn</span></div>
+  <button type="button" class="copy" data-target="msg15" aria-label="Copy: LinkedIn note to the hiring manager">Copy</button></header>
+  <p class="note">Send right after you apply.</p><pre id="msg15" tabindex="0">Hi <mark>[Name]</mark>, I just applied for the <mark>[role]</mark>. Quick context: at Grapes Holiday I cut ad spend 62.5% while lead volume grew 2.5×. Happy to show how in 10 minutes.</pre>
+</article>
+</div></section></div>
+  <p class="empty" id="empty" hidden>Nothing matches that search.</p>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  var q = document.getElementById('q');
+  function show(id) {
+    tabs.forEach(function (t) {
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    try { localStorage.setItem('kit-tab', id); } catch (e) {}
+    filter();
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.id); }); });
+  function filter() {
+    var term = q.value.trim().toLowerCase(), any = false;
+    var panel = document.querySelector('[role=tabpanel]:not([hidden])');
+    panel.querySelectorAll('.group').forEach(function (g) {
+      var visible = 0;
+      g.querySelectorAll('.card').forEach(function (c) {
+        var hit = !term || c.dataset.search.indexOf(term) !== -1;
+        c.hidden = !hit; if (hit) visible++;
+      });
+      g.hidden = visible === 0; if (visible) any = true;
+    });
+    document.getElementById('empty').hidden = any;
+  }
+  q.addEventListener('input', filter);
+  function selectText(el) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.copy'); if (!b) return;
+    var pre = document.getElementById(b.dataset.target);
+    var text = pre.innerText;
+    function ok(label) { b.textContent = label; b.classList.add('done');
+      setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1800); }
+    function fallback() {
+      selectText(pre);
+      var done = false; try { done = document.execCommand('copy'); } catch (err) {}
+      ok(done ? 'Copied' : 'Selected: press Ctrl+C');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { ok('Copied'); }, fallback);
+    } else { fallback(); }
+  });
+  var saved = null; try { saved = localStorage.getItem('kit-tab'); } catch (e) {}
+  if (saved && document.getElementById(saved)) show(saved);
+})();
+</script>

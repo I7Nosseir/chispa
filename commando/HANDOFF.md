@@ -154,6 +154,27 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
 - Forecast (realistic, day 90): 2–3 Egypt retainers (~15–30K EGP/month) + 1 website/shoot project + 1 Gulf pilot. Capacity cap is about 4 retainers while studying.
 - Still open: the La Margrita call outcome isn't logged; prices are still proposals; Rakha approvals; CV number conflict; Apify credit (monthly refill or Starter $29).
 
+## Report pack (17 Oct 2026)
+Files in `commando/reports/`:
+Built by a parallel session on the same day as the Command Center above. The Command Center is the main interactive page; these are plain-file copies plus a fuller prompt kit.
+- `boss-report-2026-10-17.md`: everything done from 7 to 17 Oct, phase by phase, with what was found, the costs, the open items and the forecast.
+  - Month 1, base case: 2 Egypt clients + 1 Gulf pilot ≈ 40–45K EGP cash in (first projects).
+  - Month 3: aligned with the Command Center (2–4 Egypt retainers ≈ 15–40K EGP/month + 1–2 Gulf pilots, cap about 4 retainers while studying).
+  - Assumes about 50 EGP per $1 and the proposed prices.
+- The Command Center report's niche mix was corrected to the lead file's real counts (dental 19, restaurants 13).
+- `all-businesses-2026-10-17.md`: all 156 leads (100 Egypt + 56 Dubai) with area, niche and one key fact.
+- `how-to-approach-simple.md`: one page on how to sound warm, not like a cold caller. It covers the 4-step call, Gulf message-first, the warm vs cold table, and the daily rhythm.
+- `copy-paste-kit.html` (rebuilt by `build_copy_kit.py`, which reads the prompt library and the Mayura sample):
+  - 20 AI prompts and 15 outreach messages, each with a copy button.
+  - Published privately at https://claude.ai/artifact/5GUiAH9AJKA1bZkrLKDSEh.
+- Still waiting on the founder:
+  - the first calls
+  - the La Margrita call outcome
+  - portfolio sharing and Watch links
+  - the Rihla/Grapes spend number
+  - a real product photo for the first Gulf sample
+  - the Rakha items
+
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).
 - Run everything through cringe-filter.
