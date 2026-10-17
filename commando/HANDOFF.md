@@ -93,6 +93,9 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
 - Four different names, typos, a broken phone number, defensive review replies.
 - Offer: a free month of content, then a paid retainer. Packaging and logistics are the paid phase 2.
 - First call on 11 Oct 2026.
+- Call outcome (reported 17 Oct): they want to go **local**, reaching everyday people and leaving premium to the big brands.
+  - The content direction was rewritten around Hamza, street reactions, visible value and neighbourhood moments ("Local direction" in the audit).
+  - Next: send the free-month scope and book shoot day 1.
 
 ## Lead list: 100 businesses to call (11 Oct 2026)
 - Files: `commando/leads/leads-2026-10-11.xlsx`.
@@ -137,13 +140,15 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
     - Ignite 157 users; Sparq described correctly; Novax renamed NovaxOps.
     - Typos fixed; no Rakha content.
   - Open:
-    - Rihla vs Grapes spend numbers conflict with the CV (54,822 vs 24,600).
+    - Resolved 17 Oct: Rihla spend is 54,822 EGP (18 campaigns, 2,747 leads, 19.96 EGP CPL). It is now on the CV.
     - "Promoting Website" and AFCON share identical stats.
     - The AI video slides need watch links (a PDF can't play video).
+    - Fix: share the Canva link instead of a PDF; videos play there. The Canva tools can't change share settings, so the founder does it once: Share → Share link → Anyone with the link → Can view.
+    - Final view link: canva.com/d/fDOo1enlio7FeO9. The CV now uses it; the old CV link hHAmPiW466qMtnH matched neither design.
 - CV: final 2-page PDF at commando/portfolio/Ismail-Nosseir-CV.pdf (source cv.html).
   - Rihla start date confirmed as Jan 2026.
   - Tutoring lines removed at the founder's request.
-  - Total ad spend for Rihla/Grapes left out until the conflicting numbers are resolved.
+  - Rihla line added 17 Oct: 54,822 EGP across 18 campaigns, 2,747 leads at 19.96 EGP. The Grapes total stays off.
   - Claude's own drafts in commando/portfolio/ are superseded; use his.
 
 ## Command Center (17 Oct 2026)
