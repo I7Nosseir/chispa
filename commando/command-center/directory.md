@@ -1,0 +1,175 @@
+# Business Directory (17 Oct 2026)
+
+156 leads (100 Egypt, 56 Dubai) plus 2 clients. Key fact = the most specific verified gap on their Google listing (Apify, 11 Oct). Check it on your phone before contacting.
+
+## Clients and prospects
+- **Mr Mohamed Rakha** (Client (free)) · Egypt: own center + online · IGCSE Business & Economics teacher. Sparq Study's first teacher. Full brand (Whisky Lounge palette, signet logo) and Shoot Day 1 pack ready; waiting on his approvals.
+- **La Margrita** (Prospect (free month offered)) · Hadayek al Ahram, 3rd Gate (Fayoum Rd) · Neapolitan pizza & pasta. 175K TikTok followers but ~7K views per recent video; one clip hit 13.7M. 4.6★ on Google. Four different names and a broken phone number in one post.
+
+## Egypt: Tier A: high-paying (20)
+- **ZOEYA Beauty Lounge (Maadi)** · Zahraa El Maadi · Beauty · 4.5★/555 · 01155018818. 47 one-star reviews out of 555 (8%).
+- **Physiocure Egypt** · Zahraa El Maadi · Physio · 4.6★/217 · 01129736666. 19 one-star reviews out of 217 (9%).
+- **Lucille's** · Maadi (Road 9) · Restaurant · 4.4★/2866 · 01092915000. No website on their Google Maps listing.
+- **Carmel California** · Maadi (Street 18) · Restaurant · 4.7★/1907 · 01550067619. No website on their Google Maps listing.
+- **Bistro Paris (Maadi)** · Maadi (Street 18) · Restaurant · 4.7★/1267 · 01289994449. No website on their Google Maps listing.
+- **Dr Karim Fawzy (Cosmetic Dentist)** · Maadi (Street 221) · Dental · 5.0★/327 · 01015166629. No website on their Google Maps listing.
+- **Smile Me Clinic** · Maadi (Degla Square) · Dental · 4.9★/280 · 01144499432. No website on their Google Maps listing.
+- **Boom Restaurant** · Haram (Abou Al Hool St, by the Pyramids) · Restaurant · 4.9★/781 · 01111201750. No website on their Google Maps listing.
+- **Fish Time** · Maadi (Al Nasser St) · Restaurant · 4.9★/419 · 01116862555. No website on their Google Maps listing.
+- **Enhanced Dental Clinic** · 6th of October (Westgate Business Hub) · Dental · 5.0★/274 · 01033522085. Google 'website' button opens a Google Form, not a website: 274 reviews at 5.0 and nowhere to land.
+- **DentoCare Dental Clinic** · 6th of October (Borai Plaza, Central Axis) · Dental · 5.0★/246 · 01114448686. No website on their Google Maps listing.
+- **Dental Care Clinic (Maadi)** · Maadi (Street 233) · Dental · 5.0★/59 · 01012055421. No website on their Google Maps listing.
+- **Transformers Fitness Club** · Maadi (Street 104) · Gym · 4.0★/559 · 01021219000. Google 'website' is not a real site (facebook.com/Transformersfitnesscenter).
+- **Mira Dental Center** · Maadi · Dental · 4.9★/235 · 01111197399. Google 'website' opens their Yellow Pages profile, not their own site.
+- **Dutch Physiotherapy (Royal Dutch Cure)** · Maadi · Physio · 4.8★/275 · 01274520212. Website is a free WordPress.com blog subdomain.
+- **A-Touch Clinics (Dr Amr Kotb)** · New Cairo (Cairo Business Plaza) · Dermatology · 4.7★/95 · 01022222072. Google 'website' is not a real site (facebook.com/atouchclinics).
+- **Damas Derma Clinic** · New Cairo (Elegantry Mall) · Dermatology · 4.6★/73 · 01148829045. Google 'website' is not a real site (instagram.com/damas.dermaclinic).
+- **Bell's Restaurant & Cafe** · Maadi (Mostafa Kamel Sq) · Restaurant · 4.3★/2543 · 01093077077. Google 'website' is not a real site (facebook.com/BellsRestaurantandCafe).
+- **Calisto Restaurant & Cafe** · Maadi (Family Land) · Restaurant · 4.7★/526 · 01029107026. Google 'website' is not a real site (facebook.com/calistotegypt).
+- **La Rosa Beauty Lounge** · Maadi (Al Lasilki) · Beauty · 4.7★/840 · 01114033048. Google 'website' is not a real site (facebook.com/LaRosaEGY).
+
+## Egypt: Tier B: mid (57)
+- **Vein Gym** · New Cairo (Street 15) · Gym · 3.9★/475 · 01280693774. 65 one-star reviews out of 475 (14%): reputation/review replies needed.
+- **Cure Dental Center (Hadayek)** · Hadayek al Ahram (2nd gate) · Dental · 3.6★/14 · 0233808383. 4 one-star reviews out of 14 (29%): reputation/review replies needed.
+- **Kriss Beauty Salons** · Sheikh Zayed · Beauty · 4.3★/491 · 01026566002. 67 one-star reviews out of 491 (14%): reputation/review replies needed.
+- **U Clinic Laser & Skin Care** · 6th of October (October Plaza) · Dermatology · 4.4★/67 · 01010570712. 9 one-star reviews out of 67 (13%): reputation/review replies needed.
+- **Pizza King (Hadayek)** · Hadayek al Ahram (El Lebeny Axis) · Restaurant · 3.7★/150 · 01500254855. 28 one-star reviews out of 150 (19%): reputation/review replies needed.
+- **Dr Doaa Ibrahim El-Desouky (Derma)** · 6th of October (El Nasr St) · Dermatology · 4.4★/16 · 01551990964. 2 one-star reviews out of 16 (12%): reputation/review replies needed.
+- **Vedette Clinic (Dr Gihan Yehia)** · 6th of October (Magda Square) · Dermatology · 4.5★/15 · 01012534051. 2 one-star reviews out of 15 (13%): reputation/review replies needed.
+- **Power Gym (216 D)** · Hadayek al Ahram · Gym · 4.1★/558 · 01118521333. 37 one-star reviews out of 558 (7%).
+- **Beauty Salon Josy** · Maadi (Road 206) · Beauty · 4.5★/288 · 0225196009. Website is a free Weebly subdomain.
+- **Evalee Beauty Salon** · Maadi (Degla, Street 231) · Beauty · 4.7★/263 · 01005676444. 18 one-star reviews out of 263 (7%).
+- **Smile Lounge Dental Clinic** · Hadayek al Ahram (Gardenia St) · Dental · 4.7★/57 · 01014442318. 4 one-star reviews out of 57 (7%).
+- **Physio Masr (New Maadi)** · New Maadi (Palestine Rd) · Physio · 4.7★/51 · 01208444042. 4 one-star reviews out of 51 (8%).
+- **Glam Dental Clinic** · Sheikh Zayed (A Plaza mall) · Dental · 5.0★/19 · 01116930569. No website on their Google Maps listing.
+- **Hebe Skin & Laser (Dr Heba Diab)** · New Cairo (Street 17) · Dermatology · 3.9★/11 · 01121271449. Google 'website' is not a real site (m.facebook.com/SkinCosmetologyCenter).
+- **Golden Dental Spa** · Sheikh Zayed (Beverly Hills) · Dental · 5.0★/9 · 01011000550. No website on their Google Maps listing.
+- **MT Dental Clinic** · Sheikh Zayed (16th district) · Dental · 4.7★/6 · 01507050048. No website on their Google Maps listing.
+- **West Dental Clinic (Dr Omar Tarek)** · Sheikh Zayed · Dental · 5.0★/6 · 01148722217. No website on their Google Maps listing.
+- **New Way Real Estate** · Sheikh Zayed (Gamal Abdel Nasser) · Real estate · 4.5★/4 · 01000847267. No website on their Google Maps listing.
+- **Piclama Group (Real Estate)** · New Cairo (Street 48) · Real estate · 5.0★/3 · 01500098110. No website on their Google Maps listing.
+- **Jamar Real Estate** · New Cairo (Town Center, Bank District) · Real estate · 5.0★/1 · 01111605818. No website on their Google Maps listing.
+- **Alfred & Mina Beauty Salon (Zayed)** · Sheikh Zayed (Isle Promenade mall) · Beauty · 4.0★/190 · 01070232319. 44 one-star reviews out of 190 (23%): reputation/review replies needed.
+- **Habiba Elkeraby (Beautician)** · New Cairo (Elegantry Mall) · Beauty · 4.5★/174 · 01017542691. 19 one-star reviews out of 174 (11%): reputation/review replies needed.
+- **Town Fit Gym** · New Cairo · Gym · 4.0★/121 · 01118186598. 22 one-star reviews out of 121 (18%): reputation/review replies needed.
+- **SD Skin Clinic (Dr Hadeel Refaat)** · 6th of October (Central Axis) · Dermatology · 4.7★/13 · 01280364424. Google 'website' is a YouTube channel.
+- **The Match Padel Tennis** · Sheikh Zayed · Padel · 4.7★/312 · 01114999092. Google 'website' is only a Skedda booking page: no brand site, no packages/coaching page.
+- **Infinity Physio Clinic Maadi** · Maadi (Carrefour Rd) · Physio · 4.8★/171 · 01153313513. No website on their Google Maps listing.
+- **Stride Clinic (Physio & Rehab)** · Zahraa El Maadi · Physio · 5.0★/128 · 01550551291. No website on their Google Maps listing.
+- **Perfecta Clinic October** · 6th of October (Central Axis) · Dermatology · 4.9★/119 · 01080649181. No website on their Google Maps listing.
+- **Dr Mohammed El-Baz Physiotherapy** · Sheikh Zayed (Beverly Hills) · Physio · 4.9★/60 · 01025540253. No website on their Google Maps listing.
+- **LEVATIO Dental Clinic** · Sheikh Zayed (Badr El Din center) · Dental · 4.9★/47 · 01090356639. No website on their Google Maps listing.
+- **Smile Care Dental Clinics** · Sheikh Zayed (Badr El Din center) · Dental · 4.9★/42 · 01233323094. No website on their Google Maps listing.
+- **Grand Dental Clinic** · Hadayek al Ahram (Ahmose gate) · Dental · 4.9★/13 · 01037073921. No website on their Google Maps listing.
+- **Dr Tamer Emara Dental Clinic** · Hadayek al Ahram (old 2nd gate) · Dental · 4.9★/10 · 01018706261. No website on their Google Maps listing.
+- **Peak Motion Therapy** · Sheikh Zayed (Fithub Gym) · Physio · 5.0★/6 · 01069494211. No website on their Google Maps listing.
+- **PrimePhysio Clinics** · Sheikh Zayed (West Park) · Physio · 5.0★/6 · 01155015489. No website on their Google Maps listing.
+- **White Coats Dermatology & Cosmetic Center** · 6th of October (American Towers) · Dermatology · 5.0★/4 · 01220225339. No website on their Google Maps listing.
+- **Tona Fish Restaurant** · Hadayek al Ahram (Al Amira Fadia) · Restaurant · 4.7★/199 · 01120862267. No website on their Google Maps listing.
+- **Kadoli Nubian Beauty** · Maadi (Street 104) · Beauty · 4.9★/172 · 01093344839. No website on their Google Maps listing.
+- **The Grand Pharaoh Restaurant** · Haram (Pyramids St) · Restaurant · 4.6★/154 · 01091799977. No website on their Google Maps listing.
+- **Town Gym Maadi** · Maadi (Misr-Helwan Agri Rd) · Gym · 4.5★/151 · 01098982242. No website on their Google Maps listing.
+- **Sense Beauty Salon** · Sheikh Zayed (El Zohour) · Beauty · 4.7★/113 · 01000200210. No website on their Google Maps listing.
+- **Hermood Lady's Fitness Club** · Maadi (near Family Land) · Gym · 4.8★/99 · 01029857223. No website on their Google Maps listing.
+- **Hair Look Salon** · Maadi (Dmshek) · Beauty · 5.0★/71 · 01285885655. No website on their Google Maps listing.
+- **Diamora Dental Clinic** · 6th of October (Diamond Mall, El Hosary) · Dental · 5.0★/42 · 01023389998. No website on their Google Maps listing.
+- **PT Squad Clinic** · Sheikh Zayed (Al Shabab Rd) · Physio · 5.0★/41 · 01283724881. No website on their Google Maps listing.
+- **Hur Clinic** · 6th of October (October Plaza) · Dermatology · 4.9★/41 · 01111230124. No website on their Google Maps listing.
+- **Aldermatic (Dr Omar & Dr Mohamed El Ghanam)** · 6th of October (El Hosary) · Dermatology · 4.9★/37 · 01000954280. No website on their Google Maps listing.
+- **C Rancho** · New Cairo (Street 2) · Restaurant · 4.8★/24 · 01061060662. No website on their Google Maps listing.
+- **Health Physiotherapy Center (Dr Mostafa Galal)** · Maadi (Hegaz Grand Plaza) · Physio · 5.0★/21 · 01507333491. No website on their Google Maps listing.
+- **The One Beauty Salon** · Maadi (Degla Square) · Beauty · 4.4★/355 · 01099990940. Google 'website' is not a real site (instagram.com/theonebeautysalon_).
+- **Heaven Lounge & Rooftop View** · Haram (Abou El Hol St) · Restaurant · 3.7★/283 · 01064789249. 47 one-star reviews out of 283 (17%): reputation/review replies needed.
+- **Tooth Time Dental Clinic (Dr Ahmed ElRefaey)** · Sheikh Zayed (A Plaza mall) · Dental · 5.0★/18 · 01003885594. Google 'website' is the doctor's personal Instagram, not a clinic page.
+- **Queen Secret October** · 6th of October (Central Axis) · Dermatology · 4.7★/14 · 01050757396. Google 'website' is not a real site (facebook.com/QueenSecretclinic).
+- **Island Gym** · New Cairo (Platinum Mall) · Gym · 4.3★/357 · 01016666144. Google 'website' is not a real site (m.facebook.com/IslandGymEg).
+- **Beauty Station** · Sheikh Zayed (Beverly Hills, Gate Mall) · Beauty · 4.8★/345 · 01000148349. Google 'website' button opens a personal Instagram (beautybyraniaelbana), not an account named Beauty Station.
+- **La Vida Dental Clinic** · Hadayek al Ahram (Khafraa gate) · Dental · 4.9★/99 · 01555673212. Google 'website' opens the Instagram of a different name (the_dentalroom). A second Maps listing, 'The Dental Room', has the same phone, so the reviews are split.
+- **Physio Plus Clinic** · Maadi (Street 300) · Physio · 4.8★/50 · 01094599366. Website is a free lovable.app subdomain (no own domain); Maps name is stuffed with keywords.
+
+## Egypt: Tier C: quick wins (23)
+- **The Padel Club** · Sheikh Zayed (26th of July) · Padel · 3.1★/11 · 01001122422. 4 one-star reviews out of 11 (36%): reputation/review replies needed.
+- **Boost Gym** · Haram (King Faisal St) · Gym · 4.4★/113 · 01002317566. 13 one-star reviews out of 113 (12%): reputation/review replies needed.
+- **Bahgat Gym** · 6th of October · Gym · 4.1★/84 · 01142884444. 9 one-star reviews out of 84 (11%): reputation/review replies needed.
+- **Abood Beauty Salon** · Sheikh Zayed (6th district) · Beauty · 4.6★/30 · 01098695192. 3 one-star reviews out of 30 (10%): reputation/review replies needed.
+- **Fit Miss Gym** · Hadayek al Ahram · Gym · 3.0★/11 · 01152866286. Google 'website' opens a single Facebook photo.
+- **Evolution Fitness Gym** · 6th of October (Square Mall) · Gym · 3.8★/31 · 01050006974. 7 one-star reviews out of 31 (23%): reputation/review replies needed.
+- **Avengers Fitness Gym** · 6th of October (2nd district) · Gym · 3.9★/24 · 01013603137. 4 one-star reviews out of 24 (17%): reputation/review replies needed.
+- **Eccentric Beauty Salon** · Sheikh Zayed (The Gate Plaza) · Beauty · 3.8★/17 · 01031175000. Google 'website' is not a real site (instagram.com/eccentric_beautysalon).
+- **Corto Lab Cafe** · 6th of October · Cafe · 4.3★/74 · 01555422268. 10 one-star reviews out of 74 (14%): reputation/review replies needed.
+- **Kingdom Gym** · Hadayek al Ahram · Gym · 4.6★/40 · 01118600135. 4 one-star reviews out of 40 (10%): reputation/review replies needed.
+- **Baggi Gym** · 6th of October · Gym · 4.6★/146 · 01095088111. No website on their Google Maps listing.
+- **Star Gym October** · 6th of October (El Higaz) · Gym · 4.8★/119 · 01005682407. No website on their Google Maps listing.
+- **S.A Salon** · Hadayek al Ahram · Beauty · 4.9★/105 · 01055084709. No website on their Google Maps listing.
+- **Diva Gym & Spa (Ladies Only)** · 6th of October (Dolphin Mall) · Gym · 3.9★/94 · 01067117444. Google 'website' is not a real site (facebook.com/divagymandspaforher).
+- **Pain & Gain Gym** · 6th of October (2nd district) · Gym · 3.8★/59 · 01010446245. Google 'website' is not a real site (facebook.com/paingaingymoct).
+- **New You Gym** · 6th of October (Central Axis) · Gym · 4.8★/55 · 01011228891. No website on their Google Maps listing.
+- **Global Gym (Maadi)** · Maadi (Al Mearag Rd) · Gym · 4.4★/40 · 01029597545. No website on their Google Maps listing.
+- **Sheba Grill Restaurant** · Haram (Zaghloul) · Restaurant · 4.8★/26 · 01066523383. No website on their Google Maps listing.
+- **Flex Gym New Cairo** · New Cairo (Street 4) · Gym · 4.8★/26 · 01274998232. No website on their Google Maps listing.
+- **Wolverine Gym** · 6th of October (El Hosary) · Gym · 4.9★/18 · 01063910840. No website on their Google Maps listing.
+- **Seymour Salon** · Hadayek al Ahram (1st gate) · Beauty · 4.9★/18 · 01224079888. No website on their Google Maps listing.
+- **Maha Farid Beauty Salon** · El Shorouk (Galaxy Mall) · Beauty · 4.3★/165 · 01031432463. Google 'website' is not a real site (instagram.com/mahafarid.beautysalon).
+- **Be Perfect Beauty Salon** · Sheikh Zayed (El Karma entrance) · Beauty · 4.2★/36 · 01003774707. Google 'website' is not a real site (facebook.com (profile page)).
+
+## Dubai: Tier A: high-paying (7)
+- **Mayura Khamas Perfumes** · Bur Dubai (Street 33B) · Perfume · 4.8★/856 · +971 4 352 2319. No website on the Google Maps listing.
+- **iSmile Dental Clinic** · Dubai (near Jovial Center) · Dental · 4.9★/1313 · +971 54 712 8458. No website on the Google Maps listing.
+- **Fakhruddin Perfumes (FK Perfumes)** · Deira (Gold Souq) · Perfume · 5.0★/4007 · +971 4 226 6943. Maps name, Instagram and website all use different names (Fakhruddin / FK Perfumes / scentpercent.com).
+- **IDOL Perfumes** · Bur Dubai (Meena Bazaar) · Perfume · 4.9★/2896 · +971 55 849 3585. Big review base and active socials already: pitch AI UGC ads + product videos for the e-shop, not a rebuild. • Product business: needs a steady flow of product visuals + ad creatives (AI shoot/UGC fit).
+- **Nishka Jewellery** · Karama Center · Jewelry · 4.9★/1337 · +971 56 545 0916. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Cocoage Aesthetics Clinic** · Sheikh Zayed Rd (Fairmont Tower) · Aesthetic · 4.7★/550 · +971 54 793 2796. 38 one-star of 550 (7%).
+- **Mila Gold and Diamonds** · Karama Center · Jewelry · 4.9★/1058 · +971 4 251 4733. Product business: needs a steady flow of product visuals + ad creatives (AI shoot/UGC fit).
+
+## Dubai: Tier B: mid (33)
+- **Inayah Abaya** · Bur Dubai (Al Ghubaiba bus station) · Abaya · 5.0★/235 · +971 54 563 7860. No website on the Google Maps listing.
+- **Essence And Oud Perfumes** · Bur Dubai (Meena Bazar) · Perfume · 5.0★/17 · +971 54 783 7846. No website on the Google Maps listing.
+- **Paulomi's World Of Fitness** · Khalid Bin Al Waleed Rd · Fitness · 4.9★/906 · +971 58 551 9113. No website on the Google Maps listing.
+- **SAL Dream Gold & Diamonds** · Karama (Kuwait St) · Jewelry · 5.0★/51 · +971 4 335 7763. No website on the Google Maps listing.
+- **Flat12 Cafe** · Port Rashid (Marina Cubes) · Coffee · 4.7★/1509 · +971 4 228 7123. Google 'website' is not a real site (instagram.com/flat12cafe).
+- **The Glow Rituals Aesthetics Clinic** · Dubai · Aesthetic · 5.0★/128 · +971 58 871 2188. No website on the Google Maps listing.
+- **Abaya Palace** · Bur Dubai (50c St) · Abaya · 4.9★/84 · +971 55 567 0370. Maps name 'Abaya Palace' but the Instagram is 'abayo.ae'. Two names.
+- **Smart Folks Real Estate Brokers** · Bur Dubai (BurJuman) · Real estate · 4.8★/52 · +971 55 282 8039. Google 'website' points to an Indian domain (themegahub.in), not a UAE brokerage site.
+- **FCITY Perfume** · Deira (Gold Souq) + Al Ghubaiba · Perfume · 4.9★/51 · +971 55 914 1455. No Instagram/TikTok linked on Google or their site.
+- **The Coffee Lab (+ From Scratch)** · Dubai (Marina Views) · Coffee · 4.7★/4397 · +971 4 546 4670. From Scratch shares the same phone number on Maps. Two brands, one team: pitch content for both.
+- **ANFA Skincare** · Deira (Al Rigga Rd) · Skincare · 4.9★/411 · +971 58 895 1408. No Instagram/TikTok linked on Google or their site.
+- **Adaa Lounge Perfumes** · Bur Dubai (Al Fahidi St) · Perfume · 4.8★/211 · +971 55 563 6072. No Instagram/TikTok linked on Google or their site.
+- **Skin Culture Dubai** · Dubai (Crystal Business Center) · Skincare · 5.0★/148 · +971 55 655 9858. No Instagram/TikTok linked on Google or their site.
+- **Auric Acres Real Estate** · Bur Dubai (Atrium Center) · Real estate · 4.7★/29 · +971 52 957 8280. No Instagram/TikTok linked on Google or their site.
+- **Maitha Abaya** · Deira (Naif Rd) · Abaya · 4.8★/300 · +971 55 999 5888. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Seagull Aesthetic Clinic** · Jumeirah (Al Ghazal Mall) · Aesthetic · 4.6★/211 · +971 4 345 6080. 18 one-star of 211 (9%).
+- **R A M Perfumes** · Deira (Al Souq Al Kabeer) · Perfume · 4.8★/90 · +971 52 406 1618. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Halcyon Aesthetics Clinic** · Jumeirah Garden · Aesthetic · 4.9★/86 · +971 56 143 0966. No Instagram/TikTok linked on Google or their site.
+- **Restart Fitness Center & Gym** · Al Mankhool + Al Raffa · Fitness · 4.8★/693 · +971 56 891 0323. The Instagram links on their site are personal coach accounts, not a gym brand account.
+- **Beauty Korea Dubai** · BurJuman (Al Maha Bldg) · Skincare · 4.6★/285 · +971 50 969 3232. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Al Abrah Clinic** · Deira (Al Khor St) · Dental · 4.8★/196 · +971 4 226 3299. No Instagram/TikTok linked on Google or their site.
+- **Contour Aesthetic Clinic** · Dubai (Wasl Port Views) · Aesthetic · 4.9★/86 · +971 4 238 4406. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Arabian Fish House Restaurant & Cafe** · Al Fahidi (Creek St) · Restaurant · 4.9★/2200 · +971 54 993 0057. No TikTok linked, the cheapest place to test UGC-style ads.
+- **AB Fitness** · Dubai · Fitness · 4.5★/665 · +971 4 225 6437. 58 one-star of 665 (9%).
+- **Aalmar Real Estate Broker** · Deira (One Deira Plaza) · Real estate · 5.0★/22 · +971 50 276 7550. Only 22 Google reviews: low visibility.
+- **National Medical Center** · Jumeirah (Al Diyafah St) · Clinic · 4.8★/731 · +971 4 345 3906. .
+- **DentisTree Dental Clinic** · Dubai (Al Mina St) · Dental · 4.9★/479 · +971 4 252 9935. .
+- **Pure Smile Dental Clinic** · Deira (Doha Center) · Dental · 5.0★/215 · +971 4 575 0768. .
+- **City Smile Dental Clinic** · Bur Dubai (The Atrium) · Dental · 4.8★/214 · +971 4 340 8949. .
+- **Excel Properties** · Sheikh Zayed Rd · Real estate · 4.8★/73 · +971 4 336 4447. .
+- **GoldCoast Real Estate Broker** · Umm Hurair (Golden Gate) · Real estate · 4.8★/40 · +971 4 399 4944. .
+- **Vihaan Real Estate Brokerage** · Bur Dubai (Al Jawhara 2) · Real estate · 4.8★/38 · +971 56 727 6363. .
+- **Pinas Aesthetic Polyclinic** · Dubai (Real Estate Center Bldg) · Aesthetic · 4.9★/36 · +971 4 576 6234. .
+
+## Dubai: Tier C: quick wins (16)
+- **Abaya Fashion (Safi Garden)** · Deira (Souq Al Wasl) · Abaya · 4.3★/10 · +971 55 468 1115. 1 one-star of 10 (10%): reputation work.
+- **Qasr Al Ameera Abaya** · Dubai (38th St) · Abaya · 4.5★/12 · +971 50 969 6628. Google 'website' is a YouTube channel.
+- **Lamya Abayas** · Bur Dubai (50c St) · Abaya · 4.7★/28 · +971 58 612 9285. No website on the Google Maps listing.
+- **Top Naif Abaya Trading** · Deira (Al Manal Centre) · Abaya · 4.6★/68 · +971 56 312 1218. No website on the Google Maps listing.
+- **Jawhara Abaya & Sheila** · Deira (Souq Al Wasl) · Abaya · 4.9★/30 · +971 55 930 3002. Google 'website' is only a WhatsApp link: no catalogue or online store.
+- **New Maritime Restaurant** · Dubai Maritime City · Restaurant · 3.8★/114 · +971 56 631 8440. 8 one-star of 114 (7%).
+- **Total Fitness Studio** · Bur Dubai (Al Safa) · Fitness · 4.5★/35 · +971 58 548 9016. 4 one-star of 35 (11%): reputation work.
+- **2 Group Cafe** · Dubai (Shop W459) · Restaurant · 4.5★/135 · +971 58 126 4522. No website on the Google Maps listing.
+- **Mehran Restaurant** · Dubai · Restaurant · 4.0★/77 · +971 50 346 6061. 7 one-star of 77 (9%).
+- **Doppio Roasters** · Dubai (Al Mina St) · Coffee · 4.7★/105 · +971 4 324 1686. No Instagram/TikTok linked on Google or their site.
+- **Real Smile Dental Clinic** · Dubai (Al Mina Rd) · Dental · 5.0★/65 · +971 4 355 0112. Google 'website' is not a real site (facebook.com/realsmiledc).
+- **Time 2 Body Fitness Studio** · Al Mankhool Rd · Fitness · 4.5★/45 · +971 4 351 0201. 3 one-star of 45 (7%).
+- **Specialty Batch Coffee Roastery** · Port Rashid (Marina Cubes) · Coffee · 4.7★/43 · +971 4 299 1113. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Star Momo House Restaurant** · Bur Dubai (City Center) · Restaurant · 4.7★/157 · +971 4 331 2767. No TikTok linked, the cheapest place to test UGC-style ads.
+- **Virgo Fitness and Beauty Studio** · Jumeirah (Al Ghazal Mall) · Fitness · 4.9★/77 · +971 55 826 0026. No TikTok linked, the cheapest place to test UGC-style ads.
+- **mereu. Speciality Coffee** · Dubai (Wasl Port Views) · Coffee · 4.9★/68 · +971 55 521 0688. Product business: needs a steady flow of product visuals + ad creatives (AI shoot/UGC fit).

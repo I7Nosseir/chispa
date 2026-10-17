@@ -1,4 +1,4 @@
-# Commando OS: handoff (updated 11 Oct 2026, evening)
+# Commando OS: handoff (updated 17 Oct 2026)
 
 The founder runs The Commando (Sparq Study, Ignite Uni, Nova). He doesn't code. This file is the single record of the work done with Claude since 7 Oct 2026. Read it first in any new chat.
 
@@ -145,6 +145,14 @@ See `commando/clients/la-margrita/audit-2026-10-11.md`. In short:
   - Tutoring lines removed at the founder's request.
   - Total ad spend for Rihla/Grapes left out until the conflicting numbers are resolved.
   - Claude's own drafts in commando/portfolio/ are superseded; use his.
+
+## Command Center (17 Oct 2026)
+- Page: https://claude.ai/artifact/9dUi5FVtR34gyXo6Rdv1y1 (source `commando/command-center/`, rebuild with `python3 build.py`).
+  - Tabs: Report (phase by phase), Businesses (156 leads + 2 clients, filters, per-lead status saved in the browser), Copy kit, Approach, Forecast.
+  - Each lead has: a warm note, a warm call opener, day-3 and day-8 follow-ups, and an AI audit prompt. Gulf product brands get a sample-first message and an AI image prompt instead.
+- Files: `report.md` (boss report + 90-day forecast), `approach.md` (warm ladder: look → engage → give first → call only after a reply), `directory.md` (every business with location, niche, key fact).
+- Forecast (realistic, day 90): 2–3 Egypt retainers (~15–30K EGP/month) + 1 website/shoot project + 1 Gulf pilot. Capacity cap is about 4 retainers while studying.
+- Still open: the La Margrita call outcome isn't logged; prices are still proposals; Rakha approvals; CV number conflict; Apify credit (monthly refill or Starter $29).
 
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).

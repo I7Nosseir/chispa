@@ -1,0 +1,210 @@
+<title>Commando Command Center</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky tab bar over a single reading column; businesses as a filterable ledger of cards with copy drawers */
+:root{
+  --bg:#F4F6F7; --surface:#FFFFFF; --sunk:#EAEEF0; --fg:#14202B; --muted:#5A6B78; --line:#D5DDE2;
+  --accent:#0E6E64; --accent-ink:#FFFFFF; --accent-soft:#DCEFEC;
+  --tierA:#8A5A00; --tierA-bg:#F8ECD3; --tierB:#1F4E79; --tierB-bg:#DDE8F3; --tierC:#56616B; --tierC-bg:#E6EAED;
+  --ok:#1E7A3C; --ok-bg:#DDF1E3;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F171E; --surface:#16212A; --sunk:#1C2933; --fg:#E6EDF2; --muted:#93A4B1; --line:#2A3A46;
+  --accent:#3FB8A8; --accent-ink:#06201C; --accent-soft:#16352F;
+  --tierA:#F0C36B; --tierA-bg:#3A2E14; --tierB:#8DB8E6; --tierB-bg:#1B2E44; --tierC:#AAB6C0; --tierC-bg:#26323C;
+  --ok:#6FD394; --ok-bg:#163223; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F171E; --surface:#16212A; --sunk:#1C2933; --fg:#E6EDF2; --muted:#93A4B1; --line:#2A3A46;
+  --accent:#3FB8A8; --accent-ink:#06201C; --accent-soft:#16352F;
+  --tierA:#F0C36B; --tierA-bg:#3A2E14; --tierB:#8DB8E6; --tierB-bg:#1B2E44; --tierC:#AAB6C0; --tierC-bg:#26323C;
+  --ok:#6FD394; --ok-bg:#163223; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:28px 14px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 clamp(28px,5vw,40px)/1.1 var(--display);margin:8px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0;max-width:65ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--muted)}
+.stats b{color:var(--fg);font-variant-numeric:tabular-nums}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs button{font:600 14px var(--body);color:var(--muted);background:none;border:0;padding:14px 12px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+nav.tabs button:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{padding-block:22px 60px}
+.prose{max-width:72ch}
+.prose h1{font-size:28px}
+.prose h2{font:600 22px/1.25 var(--display);margin:30px 0 8px;text-wrap:balance}
+.prose h3{font-size:15px;margin:18px 0 6px}
+.prose p,.prose li{max-width:68ch}
+.prose ul,.prose ol{padding-left:20px}
+.prose li{margin:3px 0}
+.tablebox{overflow-x:auto;margin:10px 0 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.prose table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.prose th{background:var(--sunk);font-weight:600}
+.prose tr:last-child td{border-bottom:0}
+.prose strong{font-weight:650}
+/* businesses */
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:8px;margin-bottom:12px}
+@media (max-width:720px){.filters{grid-template-columns:1fr 1fr}.filters .search{grid-column:1/-1}}
+.filters input,.filters select{width:100%;font:14px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 10px}
+.count{font-size:13px;color:var(--muted);margin:4px 0 12px}
+.clients{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:20px}
+.client{background:var(--accent-soft);border-radius:8px;padding:12px 14px}
+.client h3{margin:0;font:600 17px var(--display)}
+.client .k{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+.client p{margin:4px 0 0;font-size:14px}
+.list{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.card .row1{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.card h3{margin:0;font:600 17px/1.3 var(--display);min-width:0}
+.pill{font:600 11px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:999px}
+.pill.A{color:var(--tierA);background:var(--tierA-bg)}.pill.B{color:var(--tierB);background:var(--tierB-bg)}.pill.C{color:var(--tierC);background:var(--tierC-bg)}
+.pill.st{color:var(--ok);background:var(--ok-bg)}
+.meta{font-size:13px;color:var(--muted);margin-top:2px}
+.fact{margin:6px 0 8px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.btn{font:600 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:6px;padding:6px 10px;cursor:pointer;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.copied{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+.phone{font:500 13px var(--mono)}
+.card select{font:13px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 6px}
+.drawer{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:10px}
+.detail{font-size:13px;color:var(--muted)}
+.detail b{color:var(--fg);font-weight:600}
+.copy{background:var(--sunk);border-radius:6px;padding:10px 12px;min-width:0}
+.copy .lab{display:flex;justify-content:space-between;gap:8px;align-items:center;font:600 12px var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.copy pre{margin:0;white-space:pre-wrap;word-break:break-word;font:14px/1.5 var(--body);color:var(--fg)}
+.note{background:var(--accent-soft);border-radius:8px;padding:12px 14px;font-size:14px;margin-bottom:16px;max-width:72ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">The Commando · Report to the founder · 17 Oct 2026</div>
+  <h1>Command Center</h1>
+  <p class="sub">What was done, every business in the pipeline with a ready message, how to approach them warmly, and what to expect in 90 days.</p>
+  <div class="stats" id="stats"></div>
+</div></header>
+
+<nav class="tabs" aria-label="Sections"><div class="wrap" role="tablist">
+  <button role="tab" data-tab="report" aria-selected="true">Report</button>
+  <button role="tab" data-tab="biz" aria-selected="false">Businesses</button>
+  <button role="tab" data-tab="kit" aria-selected="false">Copy kit</button>
+  <button role="tab" data-tab="approach" aria-selected="false">Approach</button>
+  <button role="tab" data-tab="forecast" aria-selected="false">Forecast</button>
+</div></nav>
+
+<main class="wrap">
+  <section id="report" class="prose"></section>
+  <section id="biz" hidden>
+    <div class="clients" id="clients"></div>
+    <div class="filters">
+      <input class="search" id="q" type="search" placeholder="Search name, area or gap" aria-label="Search businesses">
+      <select id="fRegion" aria-label="Region"><option value="">All regions</option><option>Egypt</option><option>Dubai</option></select>
+      <select id="fTier" aria-label="Tier"><option value="">All tiers</option><option value="A">Tier A</option><option value="B">Tier B</option><option value="C">Tier C</option></select>
+      <select id="fNiche" aria-label="Niche"><option value="">All niches</option></select>
+      <select id="fStatus" aria-label="Status"><option value="">Any status</option></select>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="list" id="list"></div>
+  </section>
+  <section id="kit" hidden>
+    <div class="note">Messages for each business sit inside its card on the <b>Businesses</b> tab (open "Messages &amp; AI prompts"). Below are the ones you use for everyone. Every copy button puts the text on your clipboard, ready to paste into WhatsApp, Instagram or Claude.</div>
+    <div class="list" id="general"></div>
+  </section>
+  <section id="approach" class="prose" hidden></section>
+  <section id="forecast" class="prose" hidden></section>
+</main>
+
+<script>
+const DATA = /*@@DATA@@*/null;
+const STAGES = ['Not started','Warmed up','Note sent','Replied','Meeting booked','Won','Not now'];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function store(k, v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k, v);}catch(e){ return null; } }
+
+async function copy(text, btn){
+  try{ await navigator.clipboard.writeText(text); }
+  catch(e){ const pre = btn.closest('.copy')?.querySelector('pre'); if(pre){ const r=document.createRange(); r.selectNodeContents(pre); const s=getSelection(); s.removeAllRanges(); s.addRange(r);} btn.textContent='Selected: press copy'; return; }
+  const old = btn.textContent; btn.textContent = 'Copied'; btn.classList.add('copied');
+  setTimeout(()=>{ btn.textContent = old; btn.classList.remove('copied'); }, 1400);
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if(!b) return;
+  copy(b.dataset.copy === 'self' ? b.closest('.copy').querySelector('pre').textContent : b.dataset.copy, b);
+});
+
+// tables scroll inside their own box
+function wrapTables(el){ el.querySelectorAll('table').forEach(t=>{ const d=document.createElement('div'); d.className='tablebox'; t.replaceWith(d); d.appendChild(t); }); }
+const cut = DATA.report.indexOf('<h2>Forecast');
+$('#report').innerHTML = cut > 0 ? DATA.report.slice(0, cut) : DATA.report;
+$('#forecast').innerHTML = cut > 0 ? DATA.report.slice(cut) : '';
+$('#approach').innerHTML = DATA.approach;
+['#report','#forecast','#approach'].forEach(s=>wrapTables($(s)));
+
+const L = DATA.leads;
+$('#stats').innerHTML = `<span><b>${L.length}</b> businesses</span><span><b>${L.filter(l=>l.region==='Egypt').length}</b> Egypt</span><span><b>${L.filter(l=>l.region==='Dubai').length}</b> Dubai</span><span><b>${L.filter(l=>l.tier==='A').length}</b> Tier A</span><span><b>2</b> clients</span>`;
+$('#clients').innerHTML = DATA.clients.map(c=>`<div class="client"><div class="k">${esc(c.kind)}</div><h3>${esc(c.name)}</h3><p><b>${esc(c.niche)}</b> · ${esc(c.area)}</p><p>${esc(c.fact)}</p></div>`).join('');
+[...new Set(L.map(l=>l.niche))].sort().forEach(n=>$('#fNiche').insertAdjacentHTML('beforeend',`<option>${esc(n)}</option>`));
+STAGES.forEach(s=>$('#fStatus').insertAdjacentHTML('beforeend',`<option>${s}</option>`));
+
+const status = id => store('st-'+id) || 'Not started';
+function card(l){
+  const st = status(l.id);
+  const rating = l.rating ? `${l.rating}★ · ${l.reviews} reviews` : '';
+  return `<article class="card" data-id="${l.id}">
+    <div class="row1"><span class="pill ${l.tier}">Tier ${l.tier}</span>${st!=='Not started'?`<span class="pill st">${esc(st)}</span>`:''}<h3>${esc(l.name)}</h3></div>
+    <div class="meta">${esc(l.niche)} · ${esc(l.area)}${l.region==='Dubai'?', Dubai':''}${rating?' · '+rating:''}</div>
+    <p class="fact">${esc(l.fact)}.</p>
+    <div class="actions">
+      <span class="phone">${esc(l.phone)}</span>
+      <button class="btn" data-copy="${esc(l.phone)}">Copy number</button>
+      ${l.wa?`<a class="btn" href="${esc(l.wa)}" target="_blank" rel="noopener">WhatsApp</a>`:''}
+      <a class="btn" href="${esc(l.maps)}" target="_blank" rel="noopener">Maps</a>
+      <button class="btn primary" data-open="${l.id}" aria-expanded="false">Messages &amp; AI prompts</button>
+      <label class="detail">Status <select data-st="${l.id}" aria-label="Status for ${esc(l.name)}">${STAGES.map(s=>`<option${s===st?' selected':''}>${s}</option>`).join('')}</select></label>
+    </div>
+    <div class="drawer" hidden></div>
+  </article>`;
+}
+function drawer(l){
+  return `<div class="detail"><b>How to reach:</b> ${esc(l.how)}</div>
+    <div class="detail"><b>All gaps:</b> ${esc(l.gaps)}</div>
+    <div class="detail"><b>Offer:</b> ${esc(l.offer)} · <b>Deal size:</b> ${esc(l.deal)} (proposed, approve before quoting)</div>
+    <div class="detail"><b>Why you:</b> ${esc(l.why)}</div>
+    ${l.copies.map(c=>`<div class="copy"><div class="lab"><span>${esc(c.label)}</span><button class="btn" data-copy="self">Copy</button></div><pre>${esc(c.text)}</pre></div>`).join('')}`;
+}
+function render(){
+  const q = $('#q').value.trim().toLowerCase(), r=$('#fRegion').value, t=$('#fTier').value, n=$('#fNiche').value, s=$('#fStatus').value;
+  const out = L.filter(l => (!r||l.region===r) && (!t||l.tier===t) && (!n||l.niche===n) && (!s||status(l.id)===s) &&
+    (!q || (l.name+' '+l.area+' '+l.gaps+' '+l.niche).toLowerCase().includes(q)));
+  $('#count').textContent = `${out.length} of ${L.length} businesses · sorted by priority (Tier A first)`;
+  $('#list').innerHTML = out.map(card).join('') || '<p class="detail">No business matches these filters.</p>';
+}
+['#q','#fRegion','#fTier','#fNiche','#fStatus'].forEach(s=>$(s).addEventListener('input',render));
+$('#list').addEventListener('click', e=>{
+  const b = e.target.closest('[data-open]'); if(!b) return;
+  const d = b.closest('.card').querySelector('.drawer'); const l = L.find(x=>x.id==b.dataset.open);
+  if(d.hidden){ d.innerHTML = drawer(l); d.hidden=false; b.setAttribute('aria-expanded','true'); b.textContent='Hide messages'; }
+  else { d.hidden=true; b.setAttribute('aria-expanded','false'); b.innerHTML='Messages &amp; AI prompts'; }
+});
+$('#list').addEventListener('change', e=>{ const s=e.target.closest('[data-st]'); if(!s) return; store('st-'+s.dataset.st, s.value); const c=s.closest('.card'); const open=!c.querySelector('.drawer').hidden; const l=L.find(x=>x.id==s.dataset.st); const tmp=document.createElement('div'); tmp.innerHTML=card(l); c.replaceWith(tmp.firstElementChild); if(open){ const nc=document.querySelector(`.card[data-id="${l.id}"]`); nc.querySelector('[data-open]').click(); } });
+$('#general').innerHTML = DATA.general.map(c=>`<div class="copy"><div class="lab"><span>${esc(c.label)}</span><button class="btn" data-copy="self">Copy</button></div><pre>${esc(c.text)}</pre></div>`).join('');
+render();
+
+// tabs
+function show(tab){
+  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected', b.dataset.tab===tab));
+  ['report','biz','kit','approach','forecast'].forEach(id=>$('#'+id).hidden = id!==tab);
+  store('tab', tab);
+}
+document.querySelectorAll('[role=tab]').forEach(b=>b.addEventListener('click',()=>{ show(b.dataset.tab); window.scrollTo({top:0}); }));
+const start = (location.hash||'').slice(1); show(['report','biz','kit','approach','forecast'].includes(start) ? start : (store('tab')||'report'));
+</script>
