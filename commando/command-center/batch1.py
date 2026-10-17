@@ -71,26 +71,26 @@ B = [
          check="Search their Instagram first. If they have one, the gap is 'not linked on Google'."),
     dict(n=4, region="Egypt", name="Carmel California", area="Maadi (13 Street 18)", niche="Restaurant",
          phone="01550067619", when="4–6 PM",
-         them="4.7★ from 1,907 reviews; no website or socials linked on Google. Same address as Bistro Paris (13 Street 18).",
+         them="4.7★ from 1,907 reviews; no website or socials linked on Google. It went viral on TikTok in 2023 (Cairo360), so its content already works. It sits in the Building 13 dining complex on Street 18.",
          rival="On Street 18 itself, Ovio (4.4★) and Moishi (4.8★) both link a website, Instagram and TikTok.",
          opener="Hi, this is Ismail. I work on restaurant marketing in Maadi. I was looking at Street 18 on Google Maps and noticed Carmel has a better rating than Ovio but a weaker listing. 30 seconds?",
          insight="You're rated 4.7, higher than Ovio's 4.4 on the same street. But Ovio and Moishi link their menu, Instagram and TikTok on Google, and Carmel links nothing. Someone standing on Street 18 deciding where to sit sees their food first.",
-         questions=["Is Carmel connected to Bistro Paris? You share an address.",
+         questions=["Who looks after the website and Google side?",
                     "Who handles the Instagram now?",
                     "Do you want more weekday dinners or weekend brunch?"],
          proof=PROOF_LAUNCH,
-         ask="I'll send the audit on WhatsApp for free, and if Bistro Paris is yours too, I'll do both in one. Who should get it?",
+         ask="Would it help if I sent a one-page idea for a simple menu and booking site? Free. Who should get it?",
          objection=("We're full on weekends.",
                     "Then this is about Sunday to Wednesday. The listing works every day. Can I send the audit and you decide?"),
          future="A couple on Street 18 opens Maps, sees 4.7 and your brunch photos, and walks in instead of next door.",
-         check="Ask about Bistro Paris before pitching both. Never assume they're the same owner."),
+         check="Their social media works. Pitch only the website, never content."),
     dict(n=5, region="Egypt", name="Bistro Paris (Maadi)", area="Maadi (13 Street 18)", niche="Restaurant",
          phone="01289994449", when="4–6 PM",
-         them="4.7★ from 1,267 reviews; no website or socials linked on Google. Same address as Carmel California.",
+         them="4.7★ from 1,267 reviews; no website or socials linked on Google. It has 3 branches (Maadi, Hydeout New Cairo, LakeYard Hacienda Bay, per Enterprise, 2023), so it is a group with its own marketing.",
          rival="Ovio and Moishi, on the same street, link a website, Instagram and TikTok. Moishi is 4.8★ with only 417 reviews and still wins on visibility.",
          opener="Hi, this is Ismail. I do restaurant marketing in Maadi. I was comparing the Street 18 restaurants on Google, and Bistro Paris stood out for a good reason and a bad one. 30 seconds?",
          insight="4.7 from 1,267 reviews is excellent. But Moishi, with a third of your reviews, links its site, Instagram and TikTok, so it looks bigger online than you. French food sells on photos, and right now no photo of yours is one tap away.",
-         questions=["Who decides on marketing for Bistro Paris? Is it the same team as Carmel?",
+         questions=["Who decides on marketing across the branches?",
                     "Do you do events or set menus I could help fill?",
                     "Do you have a menu online anywhere?"],
          proof=PROOF_LAUNCH,
@@ -98,7 +98,7 @@ B = [
          objection=("Send it by email.",
                     "Sure. What's the email? I'll also send it on WhatsApp so it doesn't get lost, and call Thursday to hear what you think."),
          future="Your crêpes and steak frites show up on Maps and Instagram, and the people choosing between you and Moishi pick you.",
-         check="If Carmel already said yes, mention it only with their permission."),
+         check="A group with 3 branches. Only approach it once you have local case studies."),
     dict(n=6, region="Egypt", name="Dr Karim Fawzy (Cosmetic Dentist)", area="Maadi (Street 221)", niche="Cosmetic dentistry",
          phone="01015166629", when="Before clinic hours; ask the receptionist when the doctor is free",
          them="5.0★ from 327 reviews; no website or socials linked on Google.",
@@ -452,6 +452,31 @@ Belfort's competitor-insight opener is one tactic. Each call sheet below combine
 | **Future pacing** | Belfort / NLP selling | Expert method | One sentence picturing their customer once it's fixed |
 | **Warm, calm tone** | Voss; Gong | Strong | A friendly voice beats a perfect script; speak your own Egyptian Arabic |
 
+**Why would they talk to a 19-year-old freelancer?**
+
+Most of them won't, if you sell "marketing management". That's what agencies with teams sell. Some will, if you bring:
+1. **A specific broken thing** they didn't know about (the Google Form, the Yellow Pages links, the wrong Instagram). Nobody cares about your age when you point at their own listing.
+2. **A small fixed job with a price**, not a monthly retainer: the listing fixed, a one-page site, review replies for a month, 3 product images.
+3. **Proof:** Grapes Holiday and Rihla are real numbers from real money.
+4. **Speed and direct access:** you answer WhatsApp yourself, the same day.
+
+**Who to aim at now:**
+- Owner-run, single-location businesses where the owner is in the building: clinics, salons, small restaurants, padel clubs.
+- Not groups with branches, and not places whose social media already works.
+- After 2–3 local case studies with before/after numbers, go back to the parked ones.
+
+**Your age and size:**
+- Don't lead with your age, and don't hide it if asked. "I'm 19, and here's what I did for Grapes" is fine.
+- Don't say "we" as if you had a team you don't have.
+
+**Getting past the order line, the right way.** I won't dig up managers' personal mobile numbers. Calling a private number nobody gave you is exactly what makes you a cold caller, and it can get you blocked or reported. Use the routes the business itself publishes:
+1. **Ask for a name, not a transfer.** "Who's the manager, and when is he usually in?" Then call back and ask for him by name. A name changes how the next person treats you.
+2. **The Instagram or Facebook DM.** In restaurants and salons, the owner or the marketing person reads it, not the order-taker.
+3. **The business email or "for business" number** in their Instagram bio, Facebook "About" page or website. They published it for exactly this.
+4. **LinkedIn.** Search "[business] owner" or "marketing manager" and send a short connection note with the one fact.
+5. **Walk in** at a quiet hour (3–5 PM for restaurants, late morning for salons and gyms) and ask for the manager. This works best for places near you: Zayed, October, Hadayek, Haram.
+6. **Mutual contacts.** Ask friends and GUC classmates whether anyone knows the owner.
+
 **The call in order (each sheet follows it):**
 1. **Permission + reason** (first 4–10 seconds): who you are, why you're calling, 30 seconds?
 2. **Insight:** the competitor fact, short.
@@ -482,6 +507,53 @@ Belfort's competitor-insight opener is one tactic. Each call sheet below combine
 - Josh Braun, Poke the Bear course: https://joshbraun.teachable.com/courses/poke/lectures/45769066
 - Belfort, *The Way of the Wolf* (summary): https://www.theinvestorspodcast.com/blog/the-way-of-the-wolf-straight-line-selling-book-summary/
 """
+
+# Realism check (17 Oct): can a solo 19-year-old freelancer with 2 case studies win this one now?
+#   GO     = owner-run, one location, a clear broken thing, the owner is reachable
+#   PILOT  = possible, but only for one small fixed job
+#   PARK   = already served or too big; come back after 2–3 local case studies
+# "route" = how to reach the person who decides, through channels the business itself publishes.
+R_CLINIC = "The receptionist answers. Ask for the doctor's name and when he or she is free, then call back and ask for them by name. Or leave the audit for the doctor on the clinic's WhatsApp."
+R_SALON = "The owner is usually on site. Ask for her name and best time, or DM the salon's Instagram (owners often read it). If it's near you, walk in at 12–2 PM on a weekday."
+R_REST = "The listed number is for orders. Ask the person who answers: 'Who's the manager or owner, and when is he in?' Then call back between 4 and 6 PM and ask for him by name, or DM the Instagram/Facebook page, which marketing reads."
+REALITY = {
+    "ZOEYA Beauty Lounge (Maadi)": ("GO", "One salon, probably owner-run, with nothing linked online.", R_SALON),
+    "Physiocure Egypt": ("GO", "The clinic's owner is usually the head therapist and decides alone.", R_CLINIC),
+    "Lucille's": ("PARK", "A Maadi institution for 20+ years (Time wrote about it in 2007). It doesn't need a new marketer to survive, and the number is an order line.", R_REST),
+    "Carmel California": ("PARK", "Went viral on TikTok in 2023, so its social media already works. The only opening is a website, and only once you have case studies.", R_REST),
+    "Bistro Paris (Maadi)": ("PARK", "3 branches means a group with its own marketing people or agency.", R_REST),
+    "Dr Karim Fawzy (Cosmetic Dentist)": ("GO", "A one-doctor brand. The doctor decides, and cosmetic work has a budget.", R_CLINIC),
+    "Smile Me Clinic": ("GO", "A single clinic with nothing linked.", R_CLINIC),
+    "Boom Restaurant": ("GO", "A family restaurant on the tourist strip, close to you in Giza. An English menu page is a small, clear job.", "Walk in at 11 AM–12 PM before the tour groups, ask for the owner, and show the listing on your phone. Their number is for bookings."),
+    "Fish Time": ("GO", "Small, single location, 4.9 rating, nothing online.", R_REST),
+    "Enhanced Dental Clinic": ("GO", "A clearly broken listing (Google Form + Google Workspace's Instagram). Easiest yes in the batch.", R_CLINIC),
+    "DentoCare Dental Clinic": ("GO", "A single clinic. A review plan is a small first job.", R_CLINIC),
+    "Dental Care Clinic (Maadi)": ("GO", "Small clinic with a small budget. Pitch the review plan only.", R_CLINIC),
+    "Transformers Fitness Club": ("PILOT", "A mid-size gym. Offer only the one-star review replies as a fixed job.", "Ask at reception for the owner or general manager and when they're in (gyms are quiet 11 AM–1 PM). Or DM the Facebook page."),
+    "Mira Dental Center": ("GO", "A clearly broken listing (Yellow Pages links).", R_CLINIC),
+    "Dutch Physiotherapy (Royal Dutch Cure)": ("GO", "Already on Instagram and TikTok, so it values marketing. The job is a real website.", R_CLINIC),
+    "A-Touch Clinics (Dr Amr Kotb)": ("GO", "A doctor-led clinic with Facebook as its website.", R_CLINIC),
+    "Damas Derma Clinic": ("GO", "A newer clinic with a smaller budget. Start with reviews.", R_CLINIC),
+    "Bell's Restaurant & Cafe": ("PARK", "A big, long-running café (2,543 reviews). It likely has a marketing person already.", R_REST),
+    "Calisto Restaurant & Cafe": ("PILOT", "A single location. Pitch one family-weekend campaign, not a retainer.", R_REST),
+    "La Rosa Beauty Lounge": ("GO", "The most-reviewed salon in Maadi, with Facebook as its only link.", R_SALON),
+    "Mayura Khamas Perfumes": ("GO", "Nothing online at all. A free sample is a strong opener.", "The listed number is a landline, so WhatsApp may not reach it. Look for their Instagram and DM the sample there, or call once and ask for the shop's WhatsApp. Souq shop managers answer messages more than calls."),
+    "iSmile Dental Clinic": ("GO", "1,313 reviews and no website at all. A booking page is a clear sale.", "The listed number is a mobile, so WhatsApp it. Ask for the clinic manager by name in the reply."),
+    "Fakhruddin Perfumes (FK Perfumes)": ("PARK", "4,007 reviews and its own online shop brand (scentpercent.com), so it likely has an in-house team.", "Later, through scentpercent.com's contact page, with case studies."),
+    "IDOL Perfumes": ("PILOT", "Already strong online, so the reply odds are low. A free 3-video test costs them nothing to say yes to.", "DM the Instagram account; e-commerce teams read DMs. The listed number is a mobile."),
+    "Nishka Jewellery": ("PILOT", "Strong already. Pitch one TikTok test only.", "DM the Instagram account."),
+    "Cocoage Aesthetics Clinic": ("PARK", "A Sheikh Zayed Road clinic with health-ad rules (DHA). Likely already has an agency.", "Later, through the website contact form, with health-sector case studies."),
+    "Mila Gold and Diamonds": ("PILOT", "Already on TikTok and competing with big chains. Low odds; a free test only.", "DM the Instagram account."),
+}
+# Owner-run Tier B leads near home that replace the parked Egypt slots
+REPLACEMENTS = [
+    ("Perfecta Clinic October", "6th of October (Central Axis)", "01080649181", "4.9★ from 119 reviews and nothing linked on Google. Close to you."),
+    ("The Match Padel Tennis", "Sheikh Zayed", "01114999092", "4.7★ from 312 reviews, but the 'website' is only a Skedda booking page: no packages or coaching page. Padel players are young and spend."),
+    ("SD Skin Clinic (Dr Hadeel Refaat)", "6th of October (Central Axis)", "01280364424", "The Google 'website' is a YouTube channel. A doctor-led clinic, so the owner decides."),
+    ("Kriss Beauty Salons", "Sheikh Zayed", "01026566002", "491 reviews, 67 of them one-star (14%), nothing linked. A review-reply job is easy to start."),
+]
+ORDER = {"GO": 0, "PILOT": 1, "PARK": 2}
+LABEL = {"GO": "Go now", "PILOT": "Pilot only", "PARK": "Park for later"}
 
 # Poke-the-bear question per business (Josh Braun): neutral, no pitch, then stop talking.
 POKE = {
@@ -541,13 +613,17 @@ def written(b):
 def build_md():
     out = ["# Batch 1 call sheets: Tier A, 27 businesses (17 Oct 2026)", "",
            "Batch 1 = every Tier A lead in the Command Center: 20 in Egypt (call) and 7 in Dubai (message first). "
+           "Each one is rated for realism: **Go now** (owner-run, winnable), **Pilot only** (one small fixed job) or **Park for later** (too big or already served; come back with case studies). "
            "Competitor facts come from the Google Maps pulls of 11 Oct 2026. **Check each fact on your phone before you call; reviews change.**", "",
            METHOD, ""]
     for region in ["Egypt", "UAE (Dubai)"]:
         out += [f"## {region}", ""]
-        for b in [x for x in B if x["region"] == region]:
-            out += [f"### {b['n']}. {b['name']}",
+        for b in sorted([x for x in B if x["region"] == region], key=lambda x: (ORDER[REALITY[x['name']][0]], x['n'])):
+            v, why, route = REALITY[b['name']]
+            out += [f"### {b['n']}. {b['name']} [{LABEL[v]}]",
                     f"{b['area']} · {b['niche']} · {b['phone']} · Best time: {b['when']}", "",
+                    f"- **Realism:** {why}",
+                    f"- **Reaching the decision-maker:** {route}",
                     f"- **Them:** {b['them']}",
                     f"- **Competitor insight:** {b['rival']}",
                     f"- **Open (first 4 seconds):** \"{b['opener']}\"",
@@ -559,6 +635,9 @@ def build_md():
                     f"- **Likely objection:** \"{b['objection'][0]}\" → \"{b['objection'][1]}\"",
                     f"- **Future pace:** \"{b['future']}\"",
                     f"- **Check first:** {b['check']}", ""]
+        if region == "Egypt":
+            out += ["### Replacements for the 4 parked Egypt slots (owner-run, near you; full sheets come with batch 2)", ""]
+            out += [f"- **{n}** · {a} · {ph}: {f}" for n, a, ph, f in REPLACEMENTS] + [""]
     (HERE / "batch1-call-sheets.md").write_text("\n".join(out), encoding="utf-8")
 
 
@@ -609,15 +688,18 @@ def method_html():
 
 def build_html():
     cards = []
-    for i, b in enumerate(B):
+    for i, b in enumerate(sorted(B, key=lambda x: (x['region'], ORDER[REALITY[x['name']][0]], x['n']))):
         region = "egypt" if b["region"] == "Egypt" else "dubai"
+        v, why, route = REALITY[b['name']]
         script_id, msg_id = f"s{i}", f"m{i}"
         qs = "".join(f"<li>{esc(q)}</li>" for q in b["questions"])
-        cards.append(f'''<article class="lead" data-region="{region}" data-search="{esc((b['name']+' '+b['area']+' '+b['niche']).lower())}">
-  <header><div><h3><span class="num">{b['n']}</span>{esc(b['name'])}</h3>
+        cards.append(f'''<article class="lead v-{v.lower()}" data-region="{region}" data-search="{esc((b['name']+' '+b['area']+' '+b['niche']).lower())}">
+  <header><div><span class="badge b-{v.lower()}">{LABEL[v]}</span><h3><span class="num">{b['n']}</span>{esc(b['name'])}</h3>
   <p class="meta">{esc(b['area'])} · {esc(b['niche'])}</p>
   <p class="meta"><span class="phone">{esc(b['phone'])}</span> · {esc(b['when'])}</p></div></header>
   <dl>
+    <div class="real"><dt>Realism</dt><dd>{esc(why)}</dd></div>
+    <div class="route"><dt>Reaching the decision-maker</dt><dd>{esc(route)}</dd></div>
     <div><dt>Them</dt><dd>{esc(b['them'])}</dd></div>
     <div class="rival"><dt>Competitor insight</dt><dd>{esc(b['rival'])}</dd></div>
   </dl>
@@ -639,8 +721,11 @@ def build_html():
   <pre id="{script_id}" class="src" hidden>{esc(call_script(b))}</pre>
   <pre id="{msg_id}" class="src" hidden>{esc(written(b))}</pre>
 </article>''')
+    reps = "".join(f'<li><b>{esc(n)}</b> · {esc(a)} · <span class="phone">{esc(ph)}</span><br>{esc(f)}</li>' for n, a, ph, f in REPLACEMENTS)
+    cards.append(f'<article class="lead reps" data-region="egypt" data-search="replacement perfecta padel kriss sd skin"><h3>Replacements for the 4 parked Egypt slots</h3><p class="meta">Owner-run and near you. Full sheets come with batch 2.</p><ul>{reps}</ul></article>')
     tpl = (HERE / "batch1-template.html").read_text(encoding="utf-8")
     page = tpl.replace("{{METHOD}}", method_html()).replace("{{CARDS}}", "\n".join(cards))
+    page = page.replace("{{N_GO}}", str(sum(1 for x in REALITY.values() if x[0] == "GO"))).replace("{{N_PILOT}}", str(sum(1 for x in REALITY.values() if x[0] == "PILOT"))).replace("{{N_PARK}}", str(sum(1 for x in REALITY.values() if x[0] == "PARK")))
     page = page.replace("{{N_EG}}", str(sum(1 for b in B if b["region"] == "Egypt"))).replace("{{N_AE}}", str(sum(1 for b in B if b["region"] != "Egypt")))
     (HERE / "batch1-call-sheets.html").write_text(page, encoding="utf-8")
 

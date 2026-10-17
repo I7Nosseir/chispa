@@ -6,17 +6,17 @@
 /* Layout: a calling desk. Sticky tabs (Egypt / Dubai / Playbook), one card per business with the 8-step call and two copy buttons. */
 :root {
   --bg: #F4F5F2; --surface: #FFFFFF; --ink: #1A211C; --muted: #5A6359;
-  --line: #D9DDD5; --accent: #B4541C; --accent-ink: #FFFFFF; --rival: #FBEFE6; --ok: #2F7A3E; --soft: #EEF0EA;
+  --line: #D9DDD5; --accent: #B4541C; --accent-ink: #FFFFFF; --rival: #FBEFE6; --ok: #2F7A3E; --soft: #EEF0EA; --go: #1F6B34; --go-bg: #DDF0E1; --pilot: #8A5A00; --pilot-bg: #FBEBC8;
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
-  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark } }
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; --go: #7FDB97; --go-bg: #1E3A25; --pilot: #F3C467; --pilot-bg: #3D3016; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
-  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark }
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; --go: #7FDB97; --go-bg: #1E3A25; --pilot: #F3C467; --pilot-bg: #3D3016; color-scheme: dark }
 * { box-sizing: border-box }
 body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
@@ -64,6 +64,14 @@ table { border-collapse: collapse; font-size: 14px; min-width: 640px; background
 th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line) }
 th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
 .empty { color: var(--muted); padding: 24px 0 }
+.badge { display: inline-block; font: 600 11.5px var(--body); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-bottom: 6px }
+.b-go { background: var(--go-bg); color: var(--go) }
+.b-pilot { background: var(--pilot-bg); color: var(--pilot) }
+.b-park { background: var(--soft); color: var(--muted) }
+.lead.v-park { opacity: .82 }
+dl .real { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line) }
+dl .route { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line) }
+.reps ul { margin: 0; padding-left: 18px; display: grid; gap: 8px }
 @media (max-width: 520px) { .steps b { display: block; min-width: 0 } .alt-ask { padding-left: 0 } }
 @media (prefers-reduced-motion: no-preference) { .copy { transition: background .15s } }
 </style>
@@ -71,7 +79,7 @@ th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: v
 <div class="wrap">
   <div class="intro">
     <h1>Batch 1 Call Sheets</h1>
-    <p class="lede">The 27 Tier A businesses, each with its own approach. Every call opens with a true competitor fact from Google Maps (11 Oct). The call order comes from Gong's call data, Chris Voss, Josh Braun and Jordan Belfort's Straight Line, without the pressure. <b>Check each fact on your phone before you call.</b></p>
+    <p class="lede">The 27 Tier A businesses, each rated for realism: <b>{{N_GO}} go now</b>, {{N_PILOT}} pilot only and {{N_PARK}} parked until you have local case studies. Each has its own approach and a route to the person who decides. Every call opens with a true competitor fact from Google Maps (11 Oct). The call order comes from Gong's call data, Chris Voss, Josh Braun and Jordan Belfort's Straight Line, without the pressure. <b>Check each fact on your phone before you call.</b></p>
   </div>
   <div class="bar">
     <div class="tabs" role="tablist">

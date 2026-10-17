@@ -203,7 +203,13 @@ Built by a parallel session on the same day as the Command Center above. The Com
 - Notable facts:
   - Enhanced Dental's listing links Google Workspace's own Instagram/Facebook.
   - Mira links Yellow Pages' accounts.
-  - Carmel California and Bistro Paris share 13 Street 18; ask about the owner before pitching both.
+  - Carmel California and Bistro Paris are both at 13 Street 18, which is the Building 13 dining complex, not a sign of one owner (corrected 17 Oct).
+- Realism pass (17 Oct, after the founder pushed back: "why would big places talk to a 19-year-old solo freelancer?"):
+  - 16 Go, 5 Pilot, 6 Park.
+  - Parked: Lucille's, Carmel (viral on TikTok in 2023), Bistro Paris (3 branches), Bell's, FK Perfumes, Cocoage.
+  - Replacements: Perfecta Clinic October, The Match Padel, SD Skin Clinic, Kriss Beauty.
+- Each sheet now has a "reaching the decision-maker" route that uses only channels the business itself publishes. Personal mobile numbers are never hunted down: ask for a name, DM, business email, LinkedIn, walk-in, mutual contacts.
+- Positioning: small fixed jobs for owner-run, single-location businesses, never "marketing management". Go back to parked leads after 2–3 local case studies.
 - Next: batch 2 = Tier B (57 Egypt + 33 Dubai) once batch 1 outcomes are logged.
 
 ## Standing rules
