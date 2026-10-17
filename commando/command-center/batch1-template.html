@@ -1,0 +1,135 @@
+<title>Batch 1 Call Sheets</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a calling desk. Sticky tabs (Egypt / Dubai / Playbook), one card per business with the 8-step call and two copy buttons. */
+:root {
+  --bg: #F4F5F2; --surface: #FFFFFF; --ink: #1A211C; --muted: #5A6359;
+  --line: #D9DDD5; --accent: #B4541C; --accent-ink: #FFFFFF; --rival: #FBEFE6; --ok: #2F7A3E; --soft: #EEF0EA;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.wrap { max-width: 920px; margin: 0 auto }
+.intro { padding-block: 28px 12px; display: grid; gap: 8px }
+h1 { font: 800 clamp(28px, 5vw, 40px)/1.05 var(--display); margin: 0; letter-spacing: -0.02em; text-wrap: balance }
+.lede { margin: 0; color: var(--muted); max-width: 65ch }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid var(--line) }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 3px }
+.tab { font: 600 14px var(--body); border: 0; background: transparent; color: var(--muted); padding: 7px 12px; border-radius: 7px; cursor: pointer }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink) }
+.count { font-size: 12px; opacity: .8; margin-left: 4px; font-variant-numeric: tabular-nums }
+#q { flex: 1 1 180px; min-width: 0; font: 14px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.list { display: grid; gap: 14px; padding-top: 16px }
+.lead { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; min-width: 0 }
+h3 { font: 700 19px/1.25 var(--display); margin: 0; display: flex; gap: 10px; align-items: baseline; text-wrap: balance }
+.num { font: 600 13px var(--mono); color: var(--accent); min-width: 2ch }
+.meta { margin: 2px 0 0; color: var(--muted); font-size: 13.5px }
+.phone { font-family: var(--mono); color: var(--ink); user-select: all }
+dl { margin: 0; display: grid; gap: 8px }
+dl div { display: grid; gap: 2px; padding: 10px 12px; border-radius: 8px; background: var(--soft) }
+dl .rival { background: var(--rival) }
+dt { font: 600 11.5px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+dd { margin: 0 }
+.steps { margin: 0; padding-left: 22px; display: grid; gap: 6px }
+.steps li::marker { color: var(--accent); font-weight: 600 }
+.steps b { display: inline-block; min-width: 92px; font-weight: 600 }
+.steps ul { margin: 4px 0 0; padding-left: 18px }
+.steps i { color: var(--muted); font-size: 13px }
+.alt-ask { color: var(--muted); font-size: 14px; padding-left: 96px; display: inline-block }
+.check { margin: 0; font-size: 14px; color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 8px }
+.copy { font: 600 14px var(--body); border: 0; background: var(--accent); color: var(--accent-ink); padding: 9px 16px; border-radius: 8px; cursor: pointer }
+.copy.alt { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent) }
+.copy.done { background: var(--ok); color: var(--surface); box-shadow: none }
+pre.src { margin: 0; font: 13px/1.6 var(--mono); white-space: pre-wrap; word-break: break-word; background: var(--soft); border-radius: 8px; padding: 12px }
+.method { padding-top: 12px; max-width: 72ch }
+.method h2 { font: 700 22px var(--display); margin: 8px 0 }
+.method p, .method li { max-width: 72ch }
+.method a { color: var(--accent); word-break: break-all }
+.tablewrap { overflow-x: auto; margin: 10px 0 }
+table { border-collapse: collapse; font-size: 14px; min-width: 640px; background: var(--surface) }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line) }
+th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.empty { color: var(--muted); padding: 24px 0 }
+@media (max-width: 520px) { .steps b { display: block; min-width: 0 } .alt-ask { padding-left: 0 } }
+@media (prefers-reduced-motion: no-preference) { .copy { transition: background .15s } }
+</style>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Batch 1 Call Sheets</h1>
+    <p class="lede">The 27 Tier A businesses, each with its own approach. Every call opens with a true competitor fact from Google Maps (11 Oct). The call order comes from Gong's call data, Chris Voss, Josh Braun and Jordan Belfort's Straight Line, without the pressure. <b>Check each fact on your phone before you call.</b></p>
+  </div>
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" role="tab" id="tab-egypt" aria-selected="true" data-show="egypt">Egypt: call<span class="count">{{N_EG}}</span></button>
+      <button type="button" class="tab" role="tab" id="tab-dubai" aria-selected="false" data-show="dubai">Dubai: message<span class="count">{{N_AE}}</span></button>
+      <button type="button" class="tab" role="tab" id="tab-method" aria-selected="false" data-show="method">Playbook</button>
+    </div>
+    <input id="q" type="search" placeholder="Search: dental, Maadi, perfume…" aria-label="Search businesses">
+  </div>
+  <div id="cards" class="list">
+{{CARDS}}
+  </div>
+  <p class="empty" id="empty" hidden>No business matches that search.</p>
+  <section id="method" class="method" hidden>
+{{METHOD}}
+  </section>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab'), q = document.getElementById('q');
+  var cards = document.getElementById('cards'), method = document.getElementById('method');
+  var current = 'egypt';
+  function render() {
+    var isMethod = current === 'method';
+    method.hidden = !isMethod; cards.hidden = isMethod; q.hidden = isMethod;
+    var term = q.value.trim().toLowerCase(), any = false;
+    cards.querySelectorAll('.lead').forEach(function (c) {
+      var hit = c.dataset.region === current && (!term || c.dataset.search.indexOf(term) !== -1);
+      c.hidden = !hit; if (hit) any = true;
+    });
+    document.getElementById('empty').hidden = isMethod || any;
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () {
+    current = t.dataset.show;
+    tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+    try { localStorage.setItem('b1-tab', current); } catch (e) {}
+    render();
+  }); });
+  q.addEventListener('input', render);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.copy'); if (!b) return;
+    var pre = document.getElementById(b.dataset.target), text = pre.textContent, label = b.textContent;
+    function ok(msg) { b.textContent = msg; b.classList.add('done');
+      setTimeout(function () { b.textContent = label; b.classList.remove('done'); }, 1800); }
+    function fallback() {
+      pre.hidden = false;
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var done = false; try { done = document.execCommand('copy'); } catch (err) {}
+      ok(done ? 'Copied' : 'Selected: press Ctrl+C');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { ok('Copied'); }, fallback);
+    } else { fallback(); }
+  });
+  var saved = null; try { saved = localStorage.getItem('b1-tab'); } catch (e) {}
+  if (saved) { var t = document.querySelector('.tab[data-show="' + saved + '"]'); if (t) { t.click(); return; } }
+  render();
+})();
+</script>

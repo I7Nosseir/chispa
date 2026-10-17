@@ -180,6 +180,32 @@ Built by a parallel session on the same day as the Command Center above. The Com
   - a real product photo for the first Gulf sample
   - the Rakha items
 
+## Batch 1 call sheets (17 Oct 2026)
+- Page: https://claude.ai/artifact/ERpKu3SncEdJbP91Swz2QP.
+  - Source: `command-center/batch1.py` with `batch1-template.html`. Outputs: `batch1-call-sheets.md` and `.html`.
+- Batch 1 = the 27 Tier A leads (20 Egypt to call, 7 Dubai to message).
+- Each sheet has a real competitor fact from the 11 Oct Google Maps pulls, then an 8-step call:
+  1. permission + reason
+  2. insight
+  3. poke question
+  4. qualify
+  5. certainty
+  6. small no-oriented ask
+  7. loop at most twice
+  8. future pace
+- Each sheet has two copy buttons: the call script, and a WhatsApp/DM version that ends with an interest ask.
+- Playbook tab rates every tactic by evidence:
+  - Gong call data: permission opener 11.18% vs 1.5% baseline; "bad time?" opener weakest; interest CTA ~30% vs ~15%.
+  - The "reason for my call" 2.1× figure comes from a secondary source and is unverified.
+  - Expert methods: Voss no-oriented questions, Braun poke the bear, Belfort three tens and looping, Cialdini reciprocity.
+  - Belfort's pressure tactics are left out on purpose.
+- Raw Apify datasets (11 Oct; may expire): 6lW2R87jOZjOowO3p, EazaUq7ZQhmBK9hqH, Ey6e8xN48fZRAAZg1, JKlJyhqJVE5kuYn5H, WGbYh6Zx0e5Kjapyf, w4xxbqqCkzlyK6NXh (Egypt), WcjfhnjdWUs7bIfDr (Dubai).
+- Notable facts:
+  - Enhanced Dental's listing links Google Workspace's own Instagram/Facebook.
+  - Mira links Yellow Pages' accounts.
+  - Carmel California and Bistro Paris share 13 Street 18; ask about the owner before pitching both.
+- Next: batch 2 = Tier B (57 Egypt + 33 Dubai) once batch 1 outcomes are logged.
+
 ## Standing rules
 - English first; Egyptian Arabic through the egyptian-voice skill (no MSA; business terms stay in English).
 - Run everything through cringe-filter.

@@ -1,0 +1,1371 @@
+<title>Batch 1 Call Sheets</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a calling desk. Sticky tabs (Egypt / Dubai / Playbook), one card per business with the 8-step call and two copy buttons. */
+:root {
+  --bg: #F4F5F2; --surface: #FFFFFF; --ink: #1A211C; --muted: #5A6359;
+  --line: #D9DDD5; --accent: #B4541C; --accent-ink: #FFFFFF; --rival: #FBEFE6; --ok: #2F7A3E; --soft: #EEF0EA;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #131714; --surface: #1C221D; --ink: #E6EAE3; --muted: #A1AA9F;
+  --line: #2E3630; --accent: #F08A4B; --accent-ink: #1F0E04; --rival: #33241A; --ok: #6FD08A; --soft: #232A24; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.wrap { max-width: 920px; margin: 0 auto }
+.intro { padding-block: 28px 12px; display: grid; gap: 8px }
+h1 { font: 800 clamp(28px, 5vw, 40px)/1.05 var(--display); margin: 0; letter-spacing: -0.02em; text-wrap: balance }
+.lede { margin: 0; color: var(--muted); max-width: 65ch }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid var(--line) }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 3px }
+.tab { font: 600 14px var(--body); border: 0; background: transparent; color: var(--muted); padding: 7px 12px; border-radius: 7px; cursor: pointer }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink) }
+.count { font-size: 12px; opacity: .8; margin-left: 4px; font-variant-numeric: tabular-nums }
+#q { flex: 1 1 180px; min-width: 0; font: 14px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.list { display: grid; gap: 14px; padding-top: 16px }
+.lead { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; min-width: 0 }
+h3 { font: 700 19px/1.25 var(--display); margin: 0; display: flex; gap: 10px; align-items: baseline; text-wrap: balance }
+.num { font: 600 13px var(--mono); color: var(--accent); min-width: 2ch }
+.meta { margin: 2px 0 0; color: var(--muted); font-size: 13.5px }
+.phone { font-family: var(--mono); color: var(--ink); user-select: all }
+dl { margin: 0; display: grid; gap: 8px }
+dl div { display: grid; gap: 2px; padding: 10px 12px; border-radius: 8px; background: var(--soft) }
+dl .rival { background: var(--rival) }
+dt { font: 600 11.5px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+dd { margin: 0 }
+.steps { margin: 0; padding-left: 22px; display: grid; gap: 6px }
+.steps li::marker { color: var(--accent); font-weight: 600 }
+.steps b { display: inline-block; min-width: 92px; font-weight: 600 }
+.steps ul { margin: 4px 0 0; padding-left: 18px }
+.steps i { color: var(--muted); font-size: 13px }
+.alt-ask { color: var(--muted); font-size: 14px; padding-left: 96px; display: inline-block }
+.check { margin: 0; font-size: 14px; color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 8px }
+.copy { font: 600 14px var(--body); border: 0; background: var(--accent); color: var(--accent-ink); padding: 9px 16px; border-radius: 8px; cursor: pointer }
+.copy.alt { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent) }
+.copy.done { background: var(--ok); color: var(--surface); box-shadow: none }
+pre.src { margin: 0; font: 13px/1.6 var(--mono); white-space: pre-wrap; word-break: break-word; background: var(--soft); border-radius: 8px; padding: 12px }
+.method { padding-top: 12px; max-width: 72ch }
+.method h2 { font: 700 22px var(--display); margin: 8px 0 }
+.method p, .method li { max-width: 72ch }
+.method a { color: var(--accent); word-break: break-all }
+.tablewrap { overflow-x: auto; margin: 10px 0 }
+table { border-collapse: collapse; font-size: 14px; min-width: 640px; background: var(--surface) }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line) }
+th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.empty { color: var(--muted); padding: 24px 0 }
+@media (max-width: 520px) { .steps b { display: block; min-width: 0 } .alt-ask { padding-left: 0 } }
+@media (prefers-reduced-motion: no-preference) { .copy { transition: background .15s } }
+</style>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Batch 1 Call Sheets</h1>
+    <p class="lede">The 27 Tier A businesses, each with its own approach. Every call opens with a true competitor fact from Google Maps (11 Oct). The call order comes from Gong's call data, Chris Voss, Josh Braun and Jordan Belfort's Straight Line, without the pressure. <b>Check each fact on your phone before you call.</b></p>
+  </div>
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" role="tab" id="tab-egypt" aria-selected="true" data-show="egypt">Egypt: call<span class="count">20</span></button>
+      <button type="button" class="tab" role="tab" id="tab-dubai" aria-selected="false" data-show="dubai">Dubai: message<span class="count">7</span></button>
+      <button type="button" class="tab" role="tab" id="tab-method" aria-selected="false" data-show="method">Playbook</button>
+    </div>
+    <input id="q" type="search" placeholder="Search: dental, Maadi, perfume…" aria-label="Search businesses">
+  </div>
+  <div id="cards" class="list">
+<article class="lead" data-region="egypt" data-search="zoeya beauty lounge (maadi) zahraa el maadi beauty salon">
+  <header><div><h3><span class="num">1</span>ZOEYA Beauty Lounge (Maadi)</h3>
+  <p class="meta">Zahraa El Maadi · Beauty salon</p>
+  <p class="meta"><span class="phone">01155018818</span> · 11 AM–1 PM, before the salon gets busy</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.5★ from 555 reviews; 47 one-star (8%); no website and no Instagram/Facebook/TikTok linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>La Rosa Beauty Lounge in New Maadi has 840 reviews at 4.7. The One in Degla links its Instagram straight from Google, so people on Maps see its hair and nail work before they call.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do marketing for salons in Maadi. I was comparing salons on Google Maps this week and noticed something about ZOEYA I think you&#x27;d want to know. Do you have 30 seconds?”</li>
+    <li><b>Insight</b> “You have 555 reviews, more than most salons near you. But a woman comparing on Maps sees La Rosa at 4.7 and The One with its Instagram one tap away. Your listing has no link to your work, and the 47 one-star reviews sit there without replies.”</li>
+    <li><b>Poke</b> “When someone finds ZOEYA on Google Maps, how do they get to see your work before they call?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Where do most new clients find you now: Instagram, word of mouth or Maps?</li><li>Who replies to Google reviews at the moment?</li><li>Do you have a booking number on WhatsApp?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Let me send you a 2-minute audit on WhatsApp: the exact fix for the listing, and 3 reply templates for the one-star reviews. Free. Who should I send it to?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We already have someone for Instagram.” → “Great, keep them. This is the Google side: the listing, the link to your Instagram and the review replies. Most Instagram people don&#x27;t touch it. Can I send the audit so you can hand it to them?”</li>
+    <li><b>Future pace</b> “Picture it: a woman searches &#x27;salon Zahraa El Maadi&#x27;, sees 4.5 with calm replies under every complaint, taps once and lands on your before/afters and WhatsApp.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Search &#x27;ZOEYA&#x27; on Instagram first. If they have an account, say &#x27;it isn&#x27;t linked on Google&#x27; instead of &#x27;you have none&#x27;.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s0">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m0">Copy WhatsApp version</button>
+  </div>
+  <pre id="s0" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do marketing for salons in Maadi. I was comparing salons on Google Maps this week and noticed something about ZOEYA I think you&#x27;d want to know. Do you have 30 seconds?
+
+2 INSIGHT: You have 555 reviews, more than most salons near you. But a woman comparing on Maps sees La Rosa at 4.7 and The One with its Instagram one tap away. Your listing has no link to your work, and the 47 one-star reviews sit there without replies.
+
+3 POKE (then stop talking): When someone finds ZOEYA on Google Maps, how do they get to see your work before they call?
+
+4 QUALIFY:
+  - Where do most new clients find you now: Instagram, word of mouth or Maps?
+  - Who replies to Google reviews at the moment?
+  - Do you have a booking number on WhatsApp?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Let me send you a 2-minute audit on WhatsApp: the exact fix for the listing, and 3 reply templates for the one-star reviews. Free. Who should I send it to?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We already have someone for Instagram.&quot;: Great, keep them. This is the Google side: the listing, the link to your Instagram and the review replies. Most Instagram people don&#x27;t touch it. Can I send the audit so you can hand it to them?
+
+8 FUTURE: Picture it: a woman searches &#x27;salon Zahraa El Maadi&#x27;, sees 4.5 with calm replies under every complaint, taps once and lands on your before/afters and WhatsApp.</pre>
+  <pre id="m0" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Zahraa El Maadi. I compared beauty salon listings near you on Google this week. You have 555 reviews, more than most salons near you. But a woman comparing on Maps sees La Rosa at 4.7 and The One with its Instagram one tap away. Your listing has no link to your work, and the 47 one-star reviews sit there without replies. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="physiocure egypt zahraa el maadi physiotherapy">
+  <header><div><h3><span class="num">2</span>Physiocure Egypt</h3>
+  <p class="meta">Zahraa El Maadi · Physiotherapy</p>
+  <p class="meta"><span class="phone">01129736666</span> · Late morning or after 8 PM, between sessions</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.6★ from 217 reviews; 19 one-star; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Stride Clinic, also in Zahraa El Maadi, has 5.0 from 128. Dutch Physiotherapy links Instagram and TikTok. Physio Plus put &#x27;best physio centre in Maadi&#x27; in its Google name in Arabic, so it shows up when people search those exact words.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I work with clinics in Maadi on how patients find them. I looked at physio clinics near you on Google this week, and Physiocure has one thing the others don&#x27;t and one thing missing. Can I take 30 seconds?”</li>
+    <li><b>Insight</b> “You&#x27;re one of the 3 most-reviewed physio clinics in Maadi. But Stride, down the road, shows 5.0, and Physio Plus is grabbing the search &#x27;best physio in Maadi&#x27; with its name alone. A patient with back pain picks in 10 seconds, and your listing gives them nothing to tap.”</li>
+    <li><b>Poke</b> “When a patient Googles &#x27;physio Maadi&#x27;, what makes them pick you over Stride or Physio Plus?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Do most patients come from doctor referrals or from searching themselves?</li><li>Which treatment do you want more of: sports injuries, back pain, post-surgery?</li><li>Is anyone filming exercises or patient stories now?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a short audit on WhatsApp: what to fix on Google this week, and 3 short-video ideas for physio that don&#x27;t need patient faces. Free. What&#x27;s the best number?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Patients come from doctors anyway.” → “That&#x27;s the best kind. This is for the second half: people the doctor sends who then Google you before they book. Can I show you what they see?”</li>
+    <li><b>Future pace</b> “When a doctor says &#x27;go to Physiocure&#x27;, the patient Googles you and finds 4.6, short exercise videos and a WhatsApp button. That&#x27;s a booking, not a maybe.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Never use patient photos or names without written consent.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s1">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m1">Copy WhatsApp version</button>
+  </div>
+  <pre id="s1" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I work with clinics in Maadi on how patients find them. I looked at physio clinics near you on Google this week, and Physiocure has one thing the others don&#x27;t and one thing missing. Can I take 30 seconds?
+
+2 INSIGHT: You&#x27;re one of the 3 most-reviewed physio clinics in Maadi. But Stride, down the road, shows 5.0, and Physio Plus is grabbing the search &#x27;best physio in Maadi&#x27; with its name alone. A patient with back pain picks in 10 seconds, and your listing gives them nothing to tap.
+
+3 POKE (then stop talking): When a patient Googles &#x27;physio Maadi&#x27;, what makes them pick you over Stride or Physio Plus?
+
+4 QUALIFY:
+  - Do most patients come from doctor referrals or from searching themselves?
+  - Which treatment do you want more of: sports injuries, back pain, post-surgery?
+  - Is anyone filming exercises or patient stories now?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: I&#x27;ll send a short audit on WhatsApp: what to fix on Google this week, and 3 short-video ideas for physio that don&#x27;t need patient faces. Free. What&#x27;s the best number?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Patients come from doctors anyway.&quot;: That&#x27;s the best kind. This is for the second half: people the doctor sends who then Google you before they book. Can I show you what they see?
+
+8 FUTURE: When a doctor says &#x27;go to Physiocure&#x27;, the patient Googles you and finds 4.6, short exercise videos and a WhatsApp button. That&#x27;s a booking, not a maybe.</pre>
+  <pre id="m1" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Zahraa El Maadi. I compared physiotherapy listings near you on Google this week. You&#x27;re one of the 3 most-reviewed physio clinics in Maadi. But Stride, down the road, shows 5.0, and Physio Plus is grabbing the search &#x27;best physio in Maadi&#x27; with its name alone. A patient with back pain picks in 10 seconds, and your listing gives them nothing to tap. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="lucille&#x27;s maadi (road 9) restaurant">
+  <header><div><h3><span class="num">3</span>Lucille&#x27;s</h3>
+  <p class="meta">Maadi (Road 9) · Restaurant</p>
+  <p class="meta"><span class="phone">01092915000</span> · 4–6 PM, never at lunch or dinner</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.4★ from 2,866 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Ovio on Street 18 has 4,248 reviews and links a website, Instagram and TikTok on Google. Moishi and Tenaya both link a website and Instagram too.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do marketing for restaurants in Maadi. I was ranking Maadi restaurants on Google this week. Lucille&#x27;s came second, and there&#x27;s one gap I wanted to flag. 30 seconds?”</li>
+    <li><b>Insight</b> “2,866 reviews makes you the second-most-reviewed restaurant in Maadi, behind Ovio. But Ovio&#x27;s listing sends people to its menu, Instagram and TikTok. Yours sends them nowhere, so the hungry person on Maps orders from whoever shows food first.”</li>
+    <li><b>Poke</b> “When someone new to Maadi finds you on Maps, where do they see the menu?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How much of your business is delivery versus dine-in?</li><li>Do you run your own Instagram or does an agency?</li><li>What&#x27;s your busiest night, and which night do you want to fill?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “Can I send a free 2-minute audit on WhatsApp with the 3 changes that link your 2,866 reviews to your menu and Instagram?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Everyone in Maadi already knows Lucille&#x27;s.” → “They do, that&#x27;s the 2,866 reviews. This is for everyone who doesn&#x27;t: new residents, people from New Cairo, tourists. They decide on Maps. Can I show you what they see?”</li>
+    <li><b>Future pace</b> “Someone new to Maadi searches &#x27;burger Maadi&#x27;, sees 2,866 reviews, taps the menu and orders. That happens every night once the link exists.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Search their Instagram first. If they have one, the gap is &#x27;not linked on Google&#x27;.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s2">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m2">Copy WhatsApp version</button>
+  </div>
+  <pre id="s2" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do marketing for restaurants in Maadi. I was ranking Maadi restaurants on Google this week. Lucille&#x27;s came second, and there&#x27;s one gap I wanted to flag. 30 seconds?
+
+2 INSIGHT: 2,866 reviews makes you the second-most-reviewed restaurant in Maadi, behind Ovio. But Ovio&#x27;s listing sends people to its menu, Instagram and TikTok. Yours sends them nowhere, so the hungry person on Maps orders from whoever shows food first.
+
+3 POKE (then stop talking): When someone new to Maadi finds you on Maps, where do they see the menu?
+
+4 QUALIFY:
+  - How much of your business is delivery versus dine-in?
+  - Do you run your own Instagram or does an agency?
+  - What&#x27;s your busiest night, and which night do you want to fill?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: Can I send a free 2-minute audit on WhatsApp with the 3 changes that link your 2,866 reviews to your menu and Instagram?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Everyone in Maadi already knows Lucille&#x27;s.&quot;: They do, that&#x27;s the 2,866 reviews. This is for everyone who doesn&#x27;t: new residents, people from New Cairo, tourists. They decide on Maps. Can I show you what they see?
+
+8 FUTURE: Someone new to Maadi searches &#x27;burger Maadi&#x27;, sees 2,866 reviews, taps the menu and orders. That happens every night once the link exists.</pre>
+  <pre id="m2" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared restaurant listings near you on Google this week. 2,866 reviews makes you the second-most-reviewed restaurant in Maadi, behind Ovio. But Ovio&#x27;s listing sends people to its menu, Instagram and TikTok. Yours sends them nowhere, so the hungry person on Maps orders from whoever shows food first. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="carmel california maadi (13 street 18) restaurant">
+  <header><div><h3><span class="num">4</span>Carmel California</h3>
+  <p class="meta">Maadi (13 Street 18) · Restaurant</p>
+  <p class="meta"><span class="phone">01550067619</span> · 4–6 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 1,907 reviews; no website or socials linked on Google. Same address as Bistro Paris (13 Street 18).</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>On Street 18 itself, Ovio (4.4★) and Moishi (4.8★) both link a website, Instagram and TikTok.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I work on restaurant marketing in Maadi. I was looking at Street 18 on Google Maps and noticed Carmel has a better rating than Ovio but a weaker listing. 30 seconds?”</li>
+    <li><b>Insight</b> “You&#x27;re rated 4.7, higher than Ovio&#x27;s 4.4 on the same street. But Ovio and Moishi link their menu, Instagram and TikTok on Google, and Carmel links nothing. Someone standing on Street 18 deciding where to sit sees their food first.”</li>
+    <li><b>Poke</b> “When someone on Street 18 is choosing between you and Ovio on their phone, what do they see from you?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Is Carmel connected to Bistro Paris? You share an address.</li><li>Who handles the Instagram now?</li><li>Do you want more weekday dinners or weekend brunch?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send the audit on WhatsApp for free, and if Bistro Paris is yours too, I&#x27;ll do both in one. Who should get it?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re full on weekends.” → “Then this is about Sunday to Wednesday. The listing works every day. Can I send the audit and you decide?”</li>
+    <li><b>Future pace</b> “A couple on Street 18 opens Maps, sees 4.7 and your brunch photos, and walks in instead of next door.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Ask about Bistro Paris before pitching both. Never assume they&#x27;re the same owner.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s3">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m3">Copy WhatsApp version</button>
+  </div>
+  <pre id="s3" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I work on restaurant marketing in Maadi. I was looking at Street 18 on Google Maps and noticed Carmel has a better rating than Ovio but a weaker listing. 30 seconds?
+
+2 INSIGHT: You&#x27;re rated 4.7, higher than Ovio&#x27;s 4.4 on the same street. But Ovio and Moishi link their menu, Instagram and TikTok on Google, and Carmel links nothing. Someone standing on Street 18 deciding where to sit sees their food first.
+
+3 POKE (then stop talking): When someone on Street 18 is choosing between you and Ovio on their phone, what do they see from you?
+
+4 QUALIFY:
+  - Is Carmel connected to Bistro Paris? You share an address.
+  - Who handles the Instagram now?
+  - Do you want more weekday dinners or weekend brunch?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: I&#x27;ll send the audit on WhatsApp for free, and if Bistro Paris is yours too, I&#x27;ll do both in one. Who should get it?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re full on weekends.&quot;: Then this is about Sunday to Wednesday. The listing works every day. Can I send the audit and you decide?
+
+8 FUTURE: A couple on Street 18 opens Maps, sees 4.7 and your brunch photos, and walks in instead of next door.</pre>
+  <pre id="m3" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared restaurant listings near you on Google this week. You&#x27;re rated 4.7, higher than Ovio&#x27;s 4.4 on the same street. But Ovio and Moishi link their menu, Instagram and TikTok on Google, and Carmel links nothing. Someone standing on Street 18 deciding where to sit sees their food first. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="bistro paris (maadi) maadi (13 street 18) restaurant">
+  <header><div><h3><span class="num">5</span>Bistro Paris (Maadi)</h3>
+  <p class="meta">Maadi (13 Street 18) · Restaurant</p>
+  <p class="meta"><span class="phone">01289994449</span> · 4–6 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 1,267 reviews; no website or socials linked on Google. Same address as Carmel California.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Ovio and Moishi, on the same street, link a website, Instagram and TikTok. Moishi is 4.8★ with only 417 reviews and still wins on visibility.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do restaurant marketing in Maadi. I was comparing the Street 18 restaurants on Google, and Bistro Paris stood out for a good reason and a bad one. 30 seconds?”</li>
+    <li><b>Insight</b> “4.7 from 1,267 reviews is excellent. But Moishi, with a third of your reviews, links its site, Instagram and TikTok, so it looks bigger online than you. French food sells on photos, and right now no photo of yours is one tap away.”</li>
+    <li><b>Poke</b> “How do people who find you on Maps get to see the food before they come?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Who decides on marketing for Bistro Paris? Is it the same team as Carmel?</li><li>Do you do events or set menus I could help fill?</li><li>Do you have a menu online anywhere?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “Can I send a free audit on WhatsApp showing the 3 fixes? It takes 2 minutes to read.”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Send it by email.” → “Sure. What&#x27;s the email? I&#x27;ll also send it on WhatsApp so it doesn&#x27;t get lost, and call Thursday to hear what you think.”</li>
+    <li><b>Future pace</b> “Your crêpes and steak frites show up on Maps and Instagram, and the people choosing between you and Moishi pick you.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> If Carmel already said yes, mention it only with their permission.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s4">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m4">Copy WhatsApp version</button>
+  </div>
+  <pre id="s4" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do restaurant marketing in Maadi. I was comparing the Street 18 restaurants on Google, and Bistro Paris stood out for a good reason and a bad one. 30 seconds?
+
+2 INSIGHT: 4.7 from 1,267 reviews is excellent. But Moishi, with a third of your reviews, links its site, Instagram and TikTok, so it looks bigger online than you. French food sells on photos, and right now no photo of yours is one tap away.
+
+3 POKE (then stop talking): How do people who find you on Maps get to see the food before they come?
+
+4 QUALIFY:
+  - Who decides on marketing for Bistro Paris? Is it the same team as Carmel?
+  - Do you do events or set menus I could help fill?
+  - Do you have a menu online anywhere?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: Can I send a free audit on WhatsApp showing the 3 fixes? It takes 2 minutes to read.
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Send it by email.&quot;: Sure. What&#x27;s the email? I&#x27;ll also send it on WhatsApp so it doesn&#x27;t get lost, and call Thursday to hear what you think.
+
+8 FUTURE: Your crêpes and steak frites show up on Maps and Instagram, and the people choosing between you and Moishi pick you.</pre>
+  <pre id="m4" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared restaurant listings near you on Google this week. 4.7 from 1,267 reviews is excellent. But Moishi, with a third of your reviews, links its site, Instagram and TikTok, so it looks bigger online than you. French food sells on photos, and right now no photo of yours is one tap away. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="dr karim fawzy (cosmetic dentist) maadi (street 221) cosmetic dentistry">
+  <header><div><h3><span class="num">6</span>Dr Karim Fawzy (Cosmetic Dentist)</h3>
+  <p class="meta">Maadi (Street 221) · Cosmetic dentistry</p>
+  <p class="meta"><span class="phone">01015166629</span> · Before clinic hours; ask the receptionist when the doctor is free</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>5.0★ from 327 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Dental Care Center (DCC) on Street 219, two streets away, is rated 4.5 but links a website and Instagram. ToothMate in New Maadi has 767 reviews at 5.0 with a website and Instagram.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics in Maadi on how patients choose them online. Dr Karim has something the clinics around him don&#x27;t, and I&#x27;d like 30 seconds to explain.”</li>
+    <li><b>Insight</b> “A perfect 5.0 from 327 patients. DCC, two streets away, is rated 4.5 but links a website and Instagram, so a patient comparing veneers can see DCC&#x27;s smiles and not Dr Karim&#x27;s. Cosmetic patients buy with their eyes.”</li>
+    <li><b>Poke</b> “When a patient compares veneers between you and DCC, how do they see Dr Karim&#x27;s results?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which treatment do you want more of: veneers, implants, whitening?</li><li>Do patients ask to see before/after photos before booking?</li><li>Do you have consent forms for using case photos?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “I&#x27;ll prepare a 2-minute audit for Dr Karim: the listing fix and a simple page for his best cases, shown with patient consent. Free. What&#x27;s his WhatsApp, or the clinic&#x27;s?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “The doctor is busy.” → “Of course. What&#x27;s his name as he likes to be addressed, and when is he usually free? I&#x27;ll send the note so he can read it in 2 minutes.”</li>
+    <li><b>Future pace</b> “Someone searching &#x27;veneers Maadi&#x27; sees 5.0, taps once and sees 6 real smiles with consent. That patient doesn&#x27;t call DCC.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Cosmetic case photos need written patient consent. Say so up front; it builds trust.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s5">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m5">Copy WhatsApp version</button>
+  </div>
+  <pre id="s5" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics in Maadi on how patients choose them online. Dr Karim has something the clinics around him don&#x27;t, and I&#x27;d like 30 seconds to explain.
+
+2 INSIGHT: A perfect 5.0 from 327 patients. DCC, two streets away, is rated 4.5 but links a website and Instagram, so a patient comparing veneers can see DCC&#x27;s smiles and not Dr Karim&#x27;s. Cosmetic patients buy with their eyes.
+
+3 POKE (then stop talking): When a patient compares veneers between you and DCC, how do they see Dr Karim&#x27;s results?
+
+4 QUALIFY:
+  - Which treatment do you want more of: veneers, implants, whitening?
+  - Do patients ask to see before/after photos before booking?
+  - Do you have consent forms for using case photos?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: I&#x27;ll prepare a 2-minute audit for Dr Karim: the listing fix and a simple page for his best cases, shown with patient consent. Free. What&#x27;s his WhatsApp, or the clinic&#x27;s?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;The doctor is busy.&quot;: Of course. What&#x27;s his name as he likes to be addressed, and when is he usually free? I&#x27;ll send the note so he can read it in 2 minutes.
+
+8 FUTURE: Someone searching &#x27;veneers Maadi&#x27; sees 5.0, taps once and sees 6 real smiles with consent. That patient doesn&#x27;t call DCC.</pre>
+  <pre id="m5" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared cosmetic dentistry listings near you on Google this week. A perfect 5.0 from 327 patients. DCC, two streets away, is rated 4.5 but links a website and Instagram, so a patient comparing veneers can see DCC&#x27;s smiles and not Dr Karim&#x27;s. Cosmetic patients buy with their eyes. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="smile me clinic maadi (degla square) dental">
+  <header><div><h3><span class="num">7</span>Smile Me Clinic</h3>
+  <p class="meta">Maadi (Degla Square) · Dental</p>
+  <p class="meta"><span class="phone">01144499432</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 280 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Degla Dental Clinic on Street 208, around the corner, is rated 4.5 but links a website and Instagram. Smart Dental on Road 9 links a website, Instagram and TikTok.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics around Degla. I compared the clinics near Degla Square on Google, and Smile Me has the best rating with the weakest listing. 30 seconds?”</li>
+    <li><b>Insight</b> “4.9 from 280 is higher than Degla Dental&#x27;s 4.5 around the corner, but they link a website and Instagram and you link nothing. On Maps, the clinic you can see wins over the clinic with the better score.”</li>
+    <li><b>Poke</b> “When a family in Degla searches for a dentist, how do they tell you apart from Degla Dental?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Where do new patients hear about you?</li><li>Which treatment pays best for you?</li><li>Is there one doctor who&#x27;d be comfortable on camera for short tips?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Can I send a free 2-minute audit on WhatsApp with the exact fixes?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re not interested in social media.” → “Totally fine. This is just Google: a proper link and replies to reviews. No posting needed. Can I send it?”</li>
+    <li><b>Future pace</b> “Degla families searching for a dentist see 4.9 and a clean page with prices and WhatsApp, and book you without calling around.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Same consent rule for any patient photos.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s6">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m6">Copy WhatsApp version</button>
+  </div>
+  <pre id="s6" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics around Degla. I compared the clinics near Degla Square on Google, and Smile Me has the best rating with the weakest listing. 30 seconds?
+
+2 INSIGHT: 4.9 from 280 is higher than Degla Dental&#x27;s 4.5 around the corner, but they link a website and Instagram and you link nothing. On Maps, the clinic you can see wins over the clinic with the better score.
+
+3 POKE (then stop talking): When a family in Degla searches for a dentist, how do they tell you apart from Degla Dental?
+
+4 QUALIFY:
+  - Where do new patients hear about you?
+  - Which treatment pays best for you?
+  - Is there one doctor who&#x27;d be comfortable on camera for short tips?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Can I send a free 2-minute audit on WhatsApp with the exact fixes?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re not interested in social media.&quot;: Totally fine. This is just Google: a proper link and replies to reviews. No posting needed. Can I send it?
+
+8 FUTURE: Degla families searching for a dentist see 4.9 and a clean page with prices and WhatsApp, and book you without calling around.</pre>
+  <pre id="m6" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared dental listings near you on Google this week. 4.9 from 280 is higher than Degla Dental&#x27;s 4.5 around the corner, but they link a website and Instagram and you link nothing. On Maps, the clinic you can see wins over the clinic with the better score. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="boom restaurant haram (abou al hool st, by the pyramids) restaurant (tourist strip)">
+  <header><div><h3><span class="num">8</span>Boom Restaurant</h3>
+  <p class="meta">Haram (Abou Al Hool St, by the Pyramids) · Restaurant (tourist strip)</p>
+  <p class="meta"><span class="phone">01111201750</span> · 11 AM–12 PM or 4–5 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 781 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>On the same strip, Temple Restaurant has 4.8 from 417 and Tona Fish has 4.7 from 199. None of them link Instagram either, so the first to do it takes the lead.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do marketing for restaurants near the Pyramids. I compared every restaurant on your strip on Google. Boom is number one, and nobody on the strip is using it yet. 30 seconds?”</li>
+    <li><b>Insight</b> “4.9 from 781 is the best rating on Abou Al Hool, ahead of Temple at 4.8. Tourists pick lunch on Maps and Instagram, and nobody on your strip links an English menu or Instagram. Whoever does it first gets the tour groups.”</li>
+    <li><b>Poke</b> “How does a tourist standing outside with Maps open find your menu and prices?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>What share of your customers are tourists versus Egyptians?</li><li>Do tour guides bring groups to you?</li><li>Do you have an English menu with prices?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “Let me send a free audit on WhatsApp, including what an English menu page with a WhatsApp booking button would look like.”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Guides bring us customers already.” → “Perfect, keep them. This is for the tourists without a guide who are standing outside with Maps open. Can I send it?”</li>
+    <li><b>Future pace</b> “A couple leaving the Sphinx searches &#x27;restaurant near me&#x27;, sees 4.9, taps the English menu with Pyramid-view photos and walks in.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> If they quote prices in USD to tourists, keep the menu page honest and consistent.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s7">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m7">Copy WhatsApp version</button>
+  </div>
+  <pre id="s7" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do marketing for restaurants near the Pyramids. I compared every restaurant on your strip on Google. Boom is number one, and nobody on the strip is using it yet. 30 seconds?
+
+2 INSIGHT: 4.9 from 781 is the best rating on Abou Al Hool, ahead of Temple at 4.8. Tourists pick lunch on Maps and Instagram, and nobody on your strip links an English menu or Instagram. Whoever does it first gets the tour groups.
+
+3 POKE (then stop talking): How does a tourist standing outside with Maps open find your menu and prices?
+
+4 QUALIFY:
+  - What share of your customers are tourists versus Egyptians?
+  - Do tour guides bring groups to you?
+  - Do you have an English menu with prices?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: Let me send a free audit on WhatsApp, including what an English menu page with a WhatsApp booking button would look like.
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Guides bring us customers already.&quot;: Perfect, keep them. This is for the tourists without a guide who are standing outside with Maps open. Can I send it?
+
+8 FUTURE: A couple leaving the Sphinx searches &#x27;restaurant near me&#x27;, sees 4.9, taps the English menu with Pyramid-view photos and walks in.</pre>
+  <pre id="m7" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Haram. I compared restaurant (tourist strip) listings near you on Google this week. 4.9 from 781 is the best rating on Abou Al Hool, ahead of Temple at 4.8. Tourists pick lunch on Maps and Instagram, and nobody on your strip links an English menu or Instagram. Whoever does it first gets the tour groups. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="fish time new maadi (al nasser st) seafood restaurant">
+  <header><div><h3><span class="num">9</span>Fish Time</h3>
+  <p class="meta">New Maadi (Al Nasser St) · Seafood restaurant</p>
+  <p class="meta"><span class="phone">01116862555</span> · 4–6 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 419 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Of the 9 Maadi restaurants I pulled, Fish Time ties for the highest rating (4.9). Lower-rated places like Ovio (4.4) and Tenaya (4.7) link websites and Instagram.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do restaurant marketing in Maadi. I ranked Maadi restaurants on Google, and Fish Time came out on top for rating. I want to show you why that isn&#x27;t paying yet. 30 seconds?”</li>
+    <li><b>Insight</b> “4.9 is the top rating among the Maadi restaurants I compared, higher than Ovio and Tenaya. But they link menus and Instagram on Google and you don&#x27;t. Seafood is chosen by photos of the fish, and yours aren&#x27;t one tap away.”</li>
+    <li><b>Poke</b> “How do people find out what fish you have today?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How much is delivery versus dine-in?</li><li>Do you post the daily catch anywhere?</li><li>Which day is slowest?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a free audit with a simple idea: post &#x27;today&#x27;s fish&#x27; as a story every day, linked from Google. Can I send it on WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re a small place.” → “Small with a 4.9 is the best position there is. The fixes are cheap. Can I send them?”</li>
+    <li><b>Future pace</b> “Every morning, today&#x27;s catch goes up on Instagram, and the regulars and the new people from Maps order before noon.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Check the opening hours on Google match reality.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s8">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m8">Copy WhatsApp version</button>
+  </div>
+  <pre id="s8" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do restaurant marketing in Maadi. I ranked Maadi restaurants on Google, and Fish Time came out on top for rating. I want to show you why that isn&#x27;t paying yet. 30 seconds?
+
+2 INSIGHT: 4.9 is the top rating among the Maadi restaurants I compared, higher than Ovio and Tenaya. But they link menus and Instagram on Google and you don&#x27;t. Seafood is chosen by photos of the fish, and yours aren&#x27;t one tap away.
+
+3 POKE (then stop talking): How do people find out what fish you have today?
+
+4 QUALIFY:
+  - How much is delivery versus dine-in?
+  - Do you post the daily catch anywhere?
+  - Which day is slowest?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: I&#x27;ll send a free audit with a simple idea: post &#x27;today&#x27;s fish&#x27; as a story every day, linked from Google. Can I send it on WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re a small place.&quot;: Small with a 4.9 is the best position there is. The fixes are cheap. Can I send them?
+
+8 FUTURE: Every morning, today&#x27;s catch goes up on Instagram, and the regulars and the new people from Maps order before noon.</pre>
+  <pre id="m8" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in New Maadi. I compared seafood restaurant listings near you on Google this week. 4.9 is the top rating among the Maadi restaurants I compared, higher than Ovio and Tenaya. But they link menus and Instagram on Google and you don&#x27;t. Seafood is chosen by photos of the fish, and yours aren&#x27;t one tap away. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="enhanced dental clinic 6th of october (westgate business hub) dental">
+  <header><div><h3><span class="num">10</span>Enhanced Dental Clinic</h3>
+  <p class="meta">6th of October (Westgate Business Hub) · Dental</p>
+  <p class="meta"><span class="phone">01033522085</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>5.0★ from 274 reviews. The Google &#x27;website&#x27; button opens a Google Form. The Instagram and Facebook on the listing are Google Workspace&#x27;s own accounts, not theirs.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Dento Lashen on the Central Axis has 570 reviews at 4.9 and links its own website and Instagram. 911 Dental (4.9 from 194) links its Facebook.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics in October. I found something on your Google listing that&#x27;s sending patients to the wrong place. Can I take 30 seconds?”</li>
+    <li><b>Insight</b> “You have a perfect 5.0 from 274. But your website button opens a Google Form, and the Instagram linked on your listing is Google Workspace&#x27;s account, not yours. Dento Lashen, with a 4.9, sends patients to its own site. Right now your 5.0 is leading people to Google&#x27;s page.”</li>
+    <li><b>Poke</b> “Who set up your Google listing, and does anyone check it now?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Did someone set up the form as a booking page?</li><li>Do you have an Instagram I should link instead?</li><li>How do patients book now: phone, WhatsApp, the form?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “This one is quick to fix. Can I send you the exact steps on WhatsApp for free, plus what a proper booking page would look like?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “The form works for us.” → “Then keep it as the booking step. The fix is the Instagram link, which is Google&#x27;s, not yours, and a page that shows the clinic before the form. Can I send it?”</li>
+    <li><b>Future pace</b> “Your 274 five-star reviews send people to your own page, your own cases and your WhatsApp, not to a Google Form.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Open the listing on your phone first to confirm the Workspace links are still there. This is your strongest opener.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s9">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m9">Copy WhatsApp version</button>
+  </div>
+  <pre id="s9" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics in October. I found something on your Google listing that&#x27;s sending patients to the wrong place. Can I take 30 seconds?
+
+2 INSIGHT: You have a perfect 5.0 from 274. But your website button opens a Google Form, and the Instagram linked on your listing is Google Workspace&#x27;s account, not yours. Dento Lashen, with a 4.9, sends patients to its own site. Right now your 5.0 is leading people to Google&#x27;s page.
+
+3 POKE (then stop talking): Who set up your Google listing, and does anyone check it now?
+
+4 QUALIFY:
+  - Did someone set up the form as a booking page?
+  - Do you have an Instagram I should link instead?
+  - How do patients book now: phone, WhatsApp, the form?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: This one is quick to fix. Can I send you the exact steps on WhatsApp for free, plus what a proper booking page would look like?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;The form works for us.&quot;: Then keep it as the booking step. The fix is the Instagram link, which is Google&#x27;s, not yours, and a page that shows the clinic before the form. Can I send it?
+
+8 FUTURE: Your 274 five-star reviews send people to your own page, your own cases and your WhatsApp, not to a Google Form.</pre>
+  <pre id="m9" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in 6th of October. I compared dental listings near you on Google this week. You have a perfect 5.0 from 274. But your website button opens a Google Form, and the Instagram linked on your listing is Google Workspace&#x27;s account, not yours. Dento Lashen, with a 4.9, sends patients to its own site. Right now your 5.0 is leading people to Google&#x27;s page. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="dentocare dental clinic 6th of october (borai plaza, central axis) dental">
+  <header><div><h3><span class="num">11</span>DentoCare Dental Clinic</h3>
+  <p class="meta">6th of October (Borai Plaza, Central Axis) · Dental</p>
+  <p class="meta"><span class="phone">01114448686</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>5.0★ from 246 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Dento Lashen, on the same Central Axis, has 570 reviews and links a website and Instagram.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics on the Central Axis. I compared the clinics on your street on Google, and DentoCare is losing a fight it should be winning. 30 seconds?”</li>
+    <li><b>Insight</b> “You&#x27;re 5.0, Dento Lashen is 4.9. But they have twice your reviews and a website and Instagram linked, so on Maps they look like the bigger clinic. A patient on the Axis chooses the one they can see.”</li>
+    <li><b>Poke</b> “What do you do now to get happy patients to leave a Google review?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How many new patients a week do you want?</li><li>Do you ask happy patients for a Google review?</li><li>Which treatment do you want to be known for?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Can I send a free audit on WhatsApp, including a simple way to double your reviews in 3 months without paying for them?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We don&#x27;t have time for this.” → “That&#x27;s why the audit is 2 minutes. If you like it, I do the work. Can I send it?”</li>
+    <li><b>Future pace</b> “In 3 months you have 400+ reviews at 5.0 and a page with your cases, and you&#x27;re the clinic people see first on the Axis.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Never suggest buying or faking reviews. Only asking real patients.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s10">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m10">Copy WhatsApp version</button>
+  </div>
+  <pre id="s10" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics on the Central Axis. I compared the clinics on your street on Google, and DentoCare is losing a fight it should be winning. 30 seconds?
+
+2 INSIGHT: You&#x27;re 5.0, Dento Lashen is 4.9. But they have twice your reviews and a website and Instagram linked, so on Maps they look like the bigger clinic. A patient on the Axis chooses the one they can see.
+
+3 POKE (then stop talking): What do you do now to get happy patients to leave a Google review?
+
+4 QUALIFY:
+  - How many new patients a week do you want?
+  - Do you ask happy patients for a Google review?
+  - Which treatment do you want to be known for?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Can I send a free audit on WhatsApp, including a simple way to double your reviews in 3 months without paying for them?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We don&#x27;t have time for this.&quot;: That&#x27;s why the audit is 2 minutes. If you like it, I do the work. Can I send it?
+
+8 FUTURE: In 3 months you have 400+ reviews at 5.0 and a page with your cases, and you&#x27;re the clinic people see first on the Axis.</pre>
+  <pre id="m10" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in 6th of October. I compared dental listings near you on Google this week. You&#x27;re 5.0, Dento Lashen is 4.9. But they have twice your reviews and a website and Instagram linked, so on Maps they look like the bigger clinic. A patient on the Axis chooses the one they can see. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="dental care clinic (maadi) maadi (street 233) dental">
+  <header><div><h3><span class="num">12</span>Dental Care Clinic (Maadi)</h3>
+  <p class="meta">Maadi (Street 233) · Dental</p>
+  <p class="meta"><span class="phone">01012055421</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>5.0★ from 59 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>ToothMate in New Maadi has the same 5.0 but 767 reviews, a website and Instagram. Smile Me (4.9 from 280) is nearby in Degla.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics in Maadi. Your clinic has the same rating as the most-reviewed clinic in Maadi, and I&#x27;d like to show you the one difference. 30 seconds?”</li>
+    <li><b>Insight</b> “You and ToothMate both have 5.0. They have 767 reviews and you have 59. On Maps, 767 looks safer than 59, even with the same score. The gap is how many patients you ask, not how good you are.”</li>
+    <li><b>Poke</b> “Roughly how many patients a month leave without being asked for a review?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Do you ask patients for a review after treatment?</li><li>How do new patients find you now?</li><li>Are you taking on new patients, or close to full?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a free WhatsApp audit with a review-request card and message you can start using tomorrow. Who should get it?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re happy with word of mouth.” → “Word of mouth is why you&#x27;re at 5.0. The review card just puts that word of mouth where strangers can read it. Can I send it?”</li>
+    <li><b>Future pace</b> “Your 5.0 goes from 59 to 200 reviews, and people searching &#x27;dentist Maadi&#x27; see you next to ToothMate.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Smaller clinic, so pitch the starter package, not the full retainer.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s11">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m11">Copy WhatsApp version</button>
+  </div>
+  <pre id="s11" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics in Maadi. Your clinic has the same rating as the most-reviewed clinic in Maadi, and I&#x27;d like to show you the one difference. 30 seconds?
+
+2 INSIGHT: You and ToothMate both have 5.0. They have 767 reviews and you have 59. On Maps, 767 looks safer than 59, even with the same score. The gap is how many patients you ask, not how good you are.
+
+3 POKE (then stop talking): Roughly how many patients a month leave without being asked for a review?
+
+4 QUALIFY:
+  - Do you ask patients for a review after treatment?
+  - How do new patients find you now?
+  - Are you taking on new patients, or close to full?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: I&#x27;ll send a free WhatsApp audit with a review-request card and message you can start using tomorrow. Who should get it?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re happy with word of mouth.&quot;: Word of mouth is why you&#x27;re at 5.0. The review card just puts that word of mouth where strangers can read it. Can I send it?
+
+8 FUTURE: Your 5.0 goes from 59 to 200 reviews, and people searching &#x27;dentist Maadi&#x27; see you next to ToothMate.</pre>
+  <pre id="m11" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared dental listings near you on Google this week. You and ToothMate both have 5.0. They have 767 reviews and you have 59. On Maps, 767 looks safer than 59, even with the same score. The gap is how many patients you ask, not how good you are. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="transformers fitness club maadi (street 104) gym">
+  <header><div><h3><span class="num">13</span>Transformers Fitness Club</h3>
+  <p class="meta">Maadi (Street 104) · Gym</p>
+  <p class="meta"><span class="phone">01021219000</span> · 11 AM–1 PM (quiet hours)</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.0★ from 559 reviews; 65 one-star (12%); Google &#x27;website&#x27; is their Facebook page.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Among Maadi&#x27;s big gyms, Gold&#x27;s Gym has 4.4 from 760, Steel Fitness 4.4 with a website and Instagram, and Town Gym 4.5 nearby on the agricultural road.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do marketing for gyms in Maadi. I compared the big Maadi gyms on Google this week. Transformers has the reach, and one number is holding it back. 30 seconds?”</li>
+    <li><b>Insight</b> “559 reviews puts you second in Maadi after Gold&#x27;s. But your rating is 4.0, the lowest of the big four, and 65 one-star reviews have no replies. Someone choosing a gym filters for 4+ and sees Gold&#x27;s and Town Gym first.”</li>
+    <li><b>Poke</b> “Who replies to the one-star reviews right now?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>What do the one-star reviews usually complain about: crowding, staff, equipment?</li><li>Who answers Google reviews now?</li><li>When do you sign the most members: January, summer?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Let me send you a free audit: the main complaints grouped, a calm reply for each type, and the fix for the Google link. On WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Those reviews are fake / from competitors.” → “Some may be. A calm, public reply still shows the next reader you care. I&#x27;ll write them for you. Can I send them?”</li>
+    <li><b>Future pace</b> “Every one-star review has a calm owner&#x27;s reply, the rating climbs back toward 4.3, and January sign-ups come from Maps.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Read 3 of the one-star reviews before calling so you know the real complaint.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s12">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m12">Copy WhatsApp version</button>
+  </div>
+  <pre id="s12" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do marketing for gyms in Maadi. I compared the big Maadi gyms on Google this week. Transformers has the reach, and one number is holding it back. 30 seconds?
+
+2 INSIGHT: 559 reviews puts you second in Maadi after Gold&#x27;s. But your rating is 4.0, the lowest of the big four, and 65 one-star reviews have no replies. Someone choosing a gym filters for 4+ and sees Gold&#x27;s and Town Gym first.
+
+3 POKE (then stop talking): Who replies to the one-star reviews right now?
+
+4 QUALIFY:
+  - What do the one-star reviews usually complain about: crowding, staff, equipment?
+  - Who answers Google reviews now?
+  - When do you sign the most members: January, summer?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Let me send you a free audit: the main complaints grouped, a calm reply for each type, and the fix for the Google link. On WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Those reviews are fake / from competitors.&quot;: Some may be. A calm, public reply still shows the next reader you care. I&#x27;ll write them for you. Can I send them?
+
+8 FUTURE: Every one-star review has a calm owner&#x27;s reply, the rating climbs back toward 4.3, and January sign-ups come from Maps.</pre>
+  <pre id="m12" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared gym listings near you on Google this week. 559 reviews puts you second in Maadi after Gold&#x27;s. But your rating is 4.0, the lowest of the big four, and 65 one-star reviews have no replies. Someone choosing a gym filters for 4+ and sees Gold&#x27;s and Town Gym first. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="mira dental center maadi dental">
+  <header><div><h3><span class="num">14</span>Mira Dental Center</h3>
+  <p class="meta">Maadi · Dental</p>
+  <p class="meta"><span class="phone">01111197399</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 235 reviews. The Google &#x27;website&#x27; is their Yellow Pages profile, and the links on the listing include Yellow Pages&#x27; own Instagram and Facebook.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Maadi Dental Center (4.6, Road 209), Degla Dental (4.5) and ToothMate (5.0) all link their own websites.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with dental clinics in Maadi. I noticed your Google listing is sending patients to Yellow Pages instead of to you. Can I take 30 seconds?”</li>
+    <li><b>Insight</b> “Mira has 4.9 from 235, a better rating than Maadi Dental Center or Degla Dental. But your website button opens Yellow Pages, and Yellow Pages&#x27; own Instagram is linked next to yours. They send patients to their own pages; you send them to a directory full of other clinics.”</li>
+    <li><b>Poke</b> “Who looks after your Google listing at the moment?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Did Yellow Pages set up the listing for you?</li><li>Do you have your own Instagram I should link: mira_dental_center_?</li><li>How do patients book now?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Can I send a free audit on WhatsApp with the steps to take the listing back and a simple one-page site?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Yellow Pages manages it for us.” → “That&#x27;s fine, but it should point to your page, not theirs. You can keep them and still own the link. Can I send the steps?”</li>
+    <li><b>Future pace</b> “Your 4.9 sends patients to your own page and your WhatsApp, and Yellow Pages stops showing them other clinics.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> If they pay Yellow Pages, don&#x27;t attack it. Just fix where the link goes.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s13">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m13">Copy WhatsApp version</button>
+  </div>
+  <pre id="s13" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with dental clinics in Maadi. I noticed your Google listing is sending patients to Yellow Pages instead of to you. Can I take 30 seconds?
+
+2 INSIGHT: Mira has 4.9 from 235, a better rating than Maadi Dental Center or Degla Dental. But your website button opens Yellow Pages, and Yellow Pages&#x27; own Instagram is linked next to yours. They send patients to their own pages; you send them to a directory full of other clinics.
+
+3 POKE (then stop talking): Who looks after your Google listing at the moment?
+
+4 QUALIFY:
+  - Did Yellow Pages set up the listing for you?
+  - Do you have your own Instagram I should link: mira_dental_center_?
+  - How do patients book now?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Can I send a free audit on WhatsApp with the steps to take the listing back and a simple one-page site?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Yellow Pages manages it for us.&quot;: That&#x27;s fine, but it should point to your page, not theirs. You can keep them and still own the link. Can I send the steps?
+
+8 FUTURE: Your 4.9 sends patients to your own page and your WhatsApp, and Yellow Pages stops showing them other clinics.</pre>
+  <pre id="m13" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared dental listings near you on Google this week. Mira has 4.9 from 235, a better rating than Maadi Dental Center or Degla Dental. But your website button opens Yellow Pages, and Yellow Pages&#x27; own Instagram is linked next to yours. They send patients to their own pages; you send them to a directory full of other clinics. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="dutch physiotherapy (royal dutch cure) maadi physiotherapy">
+  <header><div><h3><span class="num">15</span>Dutch Physiotherapy (Royal Dutch Cure)</h3>
+  <p class="meta">Maadi · Physiotherapy</p>
+  <p class="meta"><span class="phone">01274520212</span> · Late morning</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.8★ from 275 reviews, the most of any physio clinic in my Maadi pull. Website is a free WordPress.com blog. They have Instagram and TikTok.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Physio Egypt (Maadi) has its own .com website. Physio Plus named itself &#x27;best physio centre in Maadi&#x27; in Arabic on Google, so it appears for that exact search.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I work with clinics in Maadi. Dutch Physio leads Maadi on Google reviews, and I want to show you why a smaller clinic still beats you in search. 30 seconds?”</li>
+    <li><b>Insight</b> “275 reviews: you&#x27;re number one for physio in Maadi. But your website is a free WordPress blog, Physio Egypt has its own .com, and Physio Plus put &#x27;best physio centre in Maadi&#x27; in its name to grab that search. You have the reputation; they&#x27;re taking the searches.”</li>
+    <li><b>Poke</b> “When someone searches &#x27;back pain treatment Maadi&#x27;, which clinic do you think comes up first?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How many patients come from Google versus Instagram?</li><li>Which treatments do you want to rank for: sports, back, post-op?</li><li>Who manages the WordPress site?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a free audit with what a proper site with treatment pages and WhatsApp booking would look like. Can I send it on WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Our Instagram brings enough.” → “Instagram is your strength. A real site is what Google shows people searching &#x27;back pain treatment Maadi&#x27;. They&#x27;re different patients. Can I show you?”</li>
+    <li><b>Future pace</b> “Someone searches &#x27;physio for back pain in Maadi&#x27;, and your treatment page with 275 reviews comes up instead of a clinic with 50.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Don&#x27;t copy Physio Plus&#x27;s name trick. Google can suspend listings that stuff keywords into the name.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s14">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m14">Copy WhatsApp version</button>
+  </div>
+  <pre id="s14" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I work with clinics in Maadi. Dutch Physio leads Maadi on Google reviews, and I want to show you why a smaller clinic still beats you in search. 30 seconds?
+
+2 INSIGHT: 275 reviews: you&#x27;re number one for physio in Maadi. But your website is a free WordPress blog, Physio Egypt has its own .com, and Physio Plus put &#x27;best physio centre in Maadi&#x27; in its name to grab that search. You have the reputation; they&#x27;re taking the searches.
+
+3 POKE (then stop talking): When someone searches &#x27;back pain treatment Maadi&#x27;, which clinic do you think comes up first?
+
+4 QUALIFY:
+  - How many patients come from Google versus Instagram?
+  - Which treatments do you want to rank for: sports, back, post-op?
+  - Who manages the WordPress site?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: I&#x27;ll send a free audit with what a proper site with treatment pages and WhatsApp booking would look like. Can I send it on WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Our Instagram brings enough.&quot;: Instagram is your strength. A real site is what Google shows people searching &#x27;back pain treatment Maadi&#x27;. They&#x27;re different patients. Can I show you?
+
+8 FUTURE: Someone searches &#x27;physio for back pain in Maadi&#x27;, and your treatment page with 275 reviews comes up instead of a clinic with 50.</pre>
+  <pre id="m14" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared physiotherapy listings near you on Google this week. 275 reviews: you&#x27;re number one for physio in Maadi. But your website is a free WordPress blog, Physio Egypt has its own .com, and Physio Plus put &#x27;best physio centre in Maadi&#x27; in its name to grab that search. You have the reputation; they&#x27;re taking the searches. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="a-touch clinics (dr amr kotb) new cairo (cairo business plaza, 90th st) dermatology">
+  <header><div><h3><span class="num">16</span>A-Touch Clinics (Dr Amr Kotb)</h3>
+  <p class="meta">New Cairo (Cairo Business Plaza, 90th St) · Dermatology</p>
+  <p class="meta"><span class="phone">01022222072</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 95 reviews; 7 one-star; Google &#x27;website&#x27; is their Facebook page.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Dr Rehab Zakaria in the Trivium complex on the same 90th Street has 4.9 from 79, her own .com website and Instagram. Derma Health Clinics in Elegantry Mall has 4.9 from 172 and its own website.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with skin clinics in New Cairo. I compared the clinics on 90th Street on Google, and A-Touch has one gap your neighbours have already closed. 30 seconds?”</li>
+    <li><b>Insight</b> “Dr Rehab Zakaria, a few buildings away, has fewer reviews than you but her own website and Instagram on Google. Your button goes to Facebook. For laser and injectables, patients want to see results and prices before they call, and a Facebook page buries both.”</li>
+    <li><b>Poke</b> “When a patient wants to see your laser results and prices, where do you send them?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which service do you want to grow: laser, fillers, skin care?</li><li>Do you show before/after results anywhere, with consent?</li><li>Who replies to reviews?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Can I send a free audit on WhatsApp: the listing fix and a one-page site for your top service?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “Facebook works for us.” → “Keep it. The site is what Google trusts, and it gives the Facebook ads a proper place to land. Can I send it?”</li>
+    <li><b>Future pace</b> “A woman in the Fifth Settlement searches &#x27;laser clinic 90th street&#x27;, sees your results page with WhatsApp booking and books without calling around.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> No medical claims in any copy. Results shown only with consent.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s15">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m15">Copy WhatsApp version</button>
+  </div>
+  <pre id="s15" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with skin clinics in New Cairo. I compared the clinics on 90th Street on Google, and A-Touch has one gap your neighbours have already closed. 30 seconds?
+
+2 INSIGHT: Dr Rehab Zakaria, a few buildings away, has fewer reviews than you but her own website and Instagram on Google. Your button goes to Facebook. For laser and injectables, patients want to see results and prices before they call, and a Facebook page buries both.
+
+3 POKE (then stop talking): When a patient wants to see your laser results and prices, where do you send them?
+
+4 QUALIFY:
+  - Which service do you want to grow: laser, fillers, skin care?
+  - Do you show before/after results anywhere, with consent?
+  - Who replies to reviews?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Can I send a free audit on WhatsApp: the listing fix and a one-page site for your top service?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;Facebook works for us.&quot;: Keep it. The site is what Google trusts, and it gives the Facebook ads a proper place to land. Can I send it?
+
+8 FUTURE: A woman in the Fifth Settlement searches &#x27;laser clinic 90th street&#x27;, sees your results page with WhatsApp booking and books without calling around.</pre>
+  <pre id="m15" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in New Cairo. I compared dermatology listings near you on Google this week. Dr Rehab Zakaria, a few buildings away, has fewer reviews than you but her own website and Instagram on Google. Your button goes to Facebook. For laser and injectables, patients want to see results and prices before they call, and a Facebook page buries both. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="damas derma clinic new cairo (elegantry mall) dermatology">
+  <header><div><h3><span class="num">17</span>Damas Derma Clinic</h3>
+  <p class="meta">New Cairo (Elegantry Mall) · Dermatology</p>
+  <p class="meta"><span class="phone">01148829045</span> · Before clinic hours</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.6★ from 73 reviews; 6 one-star; Google &#x27;website&#x27; is their Instagram.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Derma Health Clinics, in the same Elegantry Mall, has 4.9 from 172 and its own website, derma-health.com.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hello, this is Ismail. I work with skin clinics in New Cairo. There&#x27;s a clinic in your mall pulling ahead on Google, and the reason is fixable. 30 seconds?”</li>
+    <li><b>Insight</b> “Derma Health, in the same Elegantry Mall, has 172 reviews at 4.9 and its own website. You have 73 at 4.6, and your button goes to Instagram. A patient choosing between two clinics in one building picks the one that looks more established.”</li>
+    <li><b>Poke</b> “When a patient in the mall is choosing between you and Derma Health, what tips it?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How do patients find you now: the mall, Instagram, referrals?</li><li>What makes Damas different from the other clinics in the mall?</li><li>Do you ask patients for reviews?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a free audit with a review plan and a simple site idea. On WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re new, we can&#x27;t afford much.” → “Then start with the free fixes: the reviews and the listing. The site can come later. Can I send the audit?”</li>
+    <li><b>Future pace</b> “In 3 months you pass 150 reviews, have a page that shows what makes you different, and the mall walk-ins check you out on Maps and choose you.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Starter pricing; a newer clinic.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s16">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m16">Copy WhatsApp version</button>
+  </div>
+  <pre id="s16" class="src" hidden>1 PERMISSION + REASON: Hello, this is Ismail. I work with skin clinics in New Cairo. There&#x27;s a clinic in your mall pulling ahead on Google, and the reason is fixable. 30 seconds?
+
+2 INSIGHT: Derma Health, in the same Elegantry Mall, has 172 reviews at 4.9 and its own website. You have 73 at 4.6, and your button goes to Instagram. A patient choosing between two clinics in one building picks the one that looks more established.
+
+3 POKE (then stop talking): When a patient in the mall is choosing between you and Derma Health, what tips it?
+
+4 QUALIFY:
+  - How do patients find you now: the mall, Instagram, referrals?
+  - What makes Damas different from the other clinics in the mall?
+  - Do you ask patients for reviews?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: I&#x27;ll send a free audit with a review plan and a simple site idea. On WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re new, we can&#x27;t afford much.&quot;: Then start with the free fixes: the reviews and the listing. The site can come later. Can I send the audit?
+
+8 FUTURE: In 3 months you pass 150 reviews, have a page that shows what makes you different, and the mall walk-ins check you out on Maps and choose you.</pre>
+  <pre id="m16" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in New Cairo. I compared dermatology listings near you on Google this week. Derma Health, in the same Elegantry Mall, has 172 reviews at 4.9 and its own website. You have 73 at 4.6, and your button goes to Instagram. A patient choosing between two clinics in one building picks the one that looks more established. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="bell&#x27;s restaurant &amp; cafe maadi (mostafa kamel sq) restaurant &amp; café">
+  <header><div><h3><span class="num">18</span>Bell&#x27;s Restaurant &amp; Cafe</h3>
+  <p class="meta">Maadi (Mostafa Kamel Sq) · Restaurant &amp; café</p>
+  <p class="meta"><span class="phone">01093077077</span> · 4–6 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.3★ from 2,543 reviews; Google &#x27;website&#x27; is their Facebook page.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Among Maadi&#x27;s four most-reviewed restaurants, Ovio is 4.4 (with a website, Instagram and TikTok), Lucille&#x27;s 4.4 and Carmel 4.7. Bell&#x27;s is fourth on rating.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do restaurant marketing in Maadi. I ranked Maadi&#x27;s biggest restaurants on Google, and Bell&#x27;s has a strong number and a weak one. 30 seconds?”</li>
+    <li><b>Insight</b> “2,543 reviews puts you in Maadi&#x27;s top 3. But at 4.3 you&#x27;re the lowest-rated of the top four, and your Google button goes to Facebook while Ovio&#x27;s goes to a site, Instagram and TikTok. With so many reviews, a few calm replies a week can move the rating.”</li>
+    <li><b>Poke</b> “How do you handle the negative reviews at the moment?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>What do the negative reviews usually say?</li><li>Is the café side or the restaurant side the priority?</li><li>Who runs the Facebook page?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “Can I send a free audit on WhatsApp: the top 3 complaints, reply templates, and the link fix?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;ve been here for years, people know us.” → “That&#x27;s why you have 2,543 reviews. This keeps the new people coming. Can I send it?”</li>
+    <li><b>Future pace</b> “Calm replies under every complaint, the rating climbing toward 4.5, and your menu one tap away.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Read the newest 5 low reviews first.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s17">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m17">Copy WhatsApp version</button>
+  </div>
+  <pre id="s17" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do restaurant marketing in Maadi. I ranked Maadi&#x27;s biggest restaurants on Google, and Bell&#x27;s has a strong number and a weak one. 30 seconds?
+
+2 INSIGHT: 2,543 reviews puts you in Maadi&#x27;s top 3. But at 4.3 you&#x27;re the lowest-rated of the top four, and your Google button goes to Facebook while Ovio&#x27;s goes to a site, Instagram and TikTok. With so many reviews, a few calm replies a week can move the rating.
+
+3 POKE (then stop talking): How do you handle the negative reviews at the moment?
+
+4 QUALIFY:
+  - What do the negative reviews usually say?
+  - Is the café side or the restaurant side the priority?
+  - Who runs the Facebook page?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: Can I send a free audit on WhatsApp: the top 3 complaints, reply templates, and the link fix?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;ve been here for years, people know us.&quot;: That&#x27;s why you have 2,543 reviews. This keeps the new people coming. Can I send it?
+
+8 FUTURE: Calm replies under every complaint, the rating climbing toward 4.5, and your menu one tap away.</pre>
+  <pre id="m17" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared restaurant &amp; café listings near you on Google this week. 2,543 reviews puts you in Maadi&#x27;s top 3. But at 4.3 you&#x27;re the lowest-rated of the top four, and your Google button goes to Facebook while Ovio&#x27;s goes to a site, Instagram and TikTok. With so many reviews, a few calm replies a week can move the rating. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="calisto restaurant &amp; cafe maadi (family land) italian restaurant &amp; café">
+  <header><div><h3><span class="num">19</span>Calisto Restaurant &amp; Cafe</h3>
+  <p class="meta">Maadi (Family Land) · Italian restaurant &amp; café</p>
+  <p class="meta"><span class="phone">01029107026</span> · 4–6 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 526 reviews; Google &#x27;website&#x27; is their Facebook page.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Ovio (4.4) and Moishi (4.8) on Street 18 link a website, Instagram and TikTok. Ovio has 8× your reviews with a lower rating.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do restaurant marketing in Maadi. Calisto is rated higher than Ovio, and I want to show you why Ovio still gets more of the searches. 30 seconds?”</li>
+    <li><b>Insight</b> “You&#x27;re 4.7, Ovio is 4.4. But Ovio links a website, Instagram and TikTok and has 4,248 reviews, while your button goes to Facebook. Families leaving Family Land search for dinner on Maps, and they see Ovio&#x27;s food, not yours.”</li>
+    <li><b>Poke</b> “How do families leaving Family Land find out you&#x27;re 2 minutes away?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How many customers come from Family Land?</li><li>Do you do kids&#x27; menus or family deals?</li><li>Is there a dish you&#x27;re known for?</li></ul></li>
+    <li><b>Certainty</b> “When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.”</li>
+    <li><b>Small ask</b> “I&#x27;ll send a free audit with a family-deal content idea linked to Family Land weekends. On WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We&#x27;re happy with our customers.” → “Great. This helps you keep the ones you have and find the families who don&#x27;t know you yet. Can I send it?”</li>
+    <li><b>Future pace</b> “Families finish at Family Land, open Maps, see your 4.7 and your pizza video, and walk 2 minutes to you.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Confirm whether they still operate at Family Land.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s18">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m18">Copy WhatsApp version</button>
+  </div>
+  <pre id="s18" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do restaurant marketing in Maadi. Calisto is rated higher than Ovio, and I want to show you why Ovio still gets more of the searches. 30 seconds?
+
+2 INSIGHT: You&#x27;re 4.7, Ovio is 4.4. But Ovio links a website, Instagram and TikTok and has 4,248 reviews, while your button goes to Facebook. Families leaving Family Land search for dinner on Maps, and they see Ovio&#x27;s food, not yours.
+
+3 POKE (then stop talking): How do families leaving Family Land find out you&#x27;re 2 minutes away?
+
+4 QUALIFY:
+  - How many customers come from Family Land?
+  - Do you do kids&#x27; menus or family deals?
+  - Is there a dish you&#x27;re known for?
+
+5 CERTAINTY: When Rihla Travel launched, my campaigns brought in 350,000+ EGP in the first two weeks.
+
+6 SMALL ASK: I&#x27;ll send a free audit with a family-deal content idea linked to Family Land weekends. On WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We&#x27;re happy with our customers.&quot;: Great. This helps you keep the ones you have and find the families who don&#x27;t know you yet. Can I send it?
+
+8 FUTURE: Families finish at Family Land, open Maps, see your 4.7 and your pizza video, and walk 2 minutes to you.</pre>
+  <pre id="m18" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in Maadi. I compared italian restaurant &amp; café listings near you on Google this week. You&#x27;re 4.7, Ovio is 4.4. But Ovio links a website, Instagram and TikTok and has 4,248 reviews, while your button goes to Facebook. Families leaving Family Land search for dinner on Maps, and they see Ovio&#x27;s food, not yours. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="egypt" data-search="la rosa beauty lounge new maadi (al lasilki) beauty salon">
+  <header><div><h3><span class="num">20</span>La Rosa Beauty Lounge</h3>
+  <p class="meta">New Maadi (Al Lasilki) · Beauty salon</p>
+  <p class="meta"><span class="phone">01114033048</span> · 11 AM–1 PM</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 840 reviews, the most-reviewed salon in my Maadi pull; Google &#x27;website&#x27; is their Facebook page.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>The One in Degla (4.4 from 355) links its Instagram straight from Google. Kadoli Nubian Beauty has 4.9 from 172.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi, this is Ismail. I do marketing for salons in Maadi. La Rosa came out number one when I compared Maadi salons on Google, and there&#x27;s one easy fix. 30 seconds?”</li>
+    <li><b>Insight</b> “840 reviews at 4.7: you&#x27;re Maadi&#x27;s most-reviewed salon. But The One, with less than half your reviews, sends people straight to its Instagram, and your button goes to Facebook, where the work is harder to see. Salons are booked from photos.”</li>
+    <li><b>Poke</b> “Is Facebook or Instagram where your best work is?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Is Instagram or Facebook your main page?</li><li>Which service do you want to sell more: bridal, hair, nails?</li><li>How do clients book: phone or WhatsApp?</li></ul></li>
+    <li><b>Certainty</b> “For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.”</li>
+    <li><b>Small ask</b> “Can I send a free 2-minute audit on WhatsApp with the link fix and 3 reel ideas for your best service?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.”</span></li>
+    <li><b>If they say</b> “We already have a social media person.” → “Great, they&#x27;re doing the Facebook. This is the Google side and the reels. I can hand the audit to them. Can I send it?”</li>
+    <li><b>Future pace</b> “A bride searching &#x27;bridal makeup Maadi&#x27; sees 840 reviews, taps once and lands on your bridal reels and WhatsApp.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Check whether they have an Instagram before calling.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s19">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m19">Copy WhatsApp version</button>
+  </div>
+  <pre id="s19" class="src" hidden>1 PERMISSION + REASON: Hi, this is Ismail. I do marketing for salons in Maadi. La Rosa came out number one when I compared Maadi salons on Google, and there&#x27;s one easy fix. 30 seconds?
+
+2 INSIGHT: 840 reviews at 4.7: you&#x27;re Maadi&#x27;s most-reviewed salon. But The One, with less than half your reviews, sends people straight to its Instagram, and your button goes to Facebook, where the work is harder to see. Salons are booked from photos.
+
+3 POKE (then stop talking): Is Facebook or Instagram where your best work is?
+
+4 QUALIFY:
+  - Is Instagram or Facebook your main page?
+  - Which service do you want to sell more: bridal, hair, nails?
+  - How do clients book: phone or WhatsApp?
+
+5 CERTAINTY: For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries.
+
+6 SMALL ASK: Can I send a free 2-minute audit on WhatsApp with the link fix and 3 reel ideas for your best service?
+   or, no-oriented: Would it be a bad idea if I sent you the free audit on WhatsApp? It takes 2 minutes to read.
+
+7 IF &quot;We already have a social media person.&quot;: Great, they&#x27;re doing the Facebook. This is the Google side and the reels. I can hand the audit to them. Can I send it?
+
+8 FUTURE: A bride searching &#x27;bridal makeup Maadi&#x27; sees 840 reviews, taps once and lands on your bridal reels and WhatsApp.</pre>
+  <pre id="m19" class="src" hidden>Hi, this is Ismail. I do marketing for businesses in New Maadi. I compared beauty salon listings near you on Google this week. 840 reviews at 4.7: you&#x27;re Maadi&#x27;s most-reviewed salon. But The One, with less than half your reviews, sends people straight to its Instagram, and your button goes to Facebook, where the work is harder to see. Salons are booked from photos. I wrote a 2-minute audit with the fix, free. Open to seeing it?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="mayura khamas perfumes bur dubai (street 33b, meena bazaar) perfume shop">
+  <header><div><h3><span class="num">1</span>Mayura Khamas Perfumes</h3>
+  <p class="meta">Bur Dubai (Street 33B, Meena Bazaar) · Perfume shop</p>
+  <p class="meta"><span class="phone">+971 4 352 2319</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.8★ from 856 reviews; no website, Instagram or TikTok linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>IDOL Perfumes, on the same Street 33B, has 2,896 reviews and links a website, Instagram and TikTok. R A M Perfumes, a few streets away, links a website and Instagram with only 90 reviews.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi Mayura Khamas team, I&#x27;m Ismail, a performance marketer and AI content creator. I compared the perfume shops on Street 33B on Google this week.”</li>
+    <li><b>Insight</b> “With 856 reviews you have loyal customers, but IDOL, on the same street, links its website, Instagram and TikTok, so tourists choosing on Maps see IDOL&#x27;s bottles and not yours. I made one image of your perfume to show what&#x27;s possible without a studio shoot (attached).”</li>
+    <li><b>Poke</b> “How do tourists who find you on Maps see your perfumes before they walk in?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which of your perfumes sells best to tourists?</li><li>Do you sell online or only in the shop?</li><li>Do you have product photos I can work from?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Want me to send 3 more images of your bottles for free, ready for Instagram or WhatsApp?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “We don&#x27;t need social media, the shop is busy.” → “That&#x27;s what the 856 reviews say. These images are for the tourists who check Maps before they walk the souq. Want the 3 free ones?”</li>
+    <li><b>Future pace</b> “A tourist on Street 33B opens Maps, sees your bottles in bright photos and walks into Mayura instead of next door.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Only send an image made with their real bottle photo as @product. Never send one with an invented label.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s20">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m20">Copy DM version</button>
+  </div>
+  <pre id="s20" class="src" hidden>1 PERMISSION + REASON: Hi Mayura Khamas team, I&#x27;m Ismail, a performance marketer and AI content creator. I compared the perfume shops on Street 33B on Google this week.
+
+2 INSIGHT: With 856 reviews you have loyal customers, but IDOL, on the same street, links its website, Instagram and TikTok, so tourists choosing on Maps see IDOL&#x27;s bottles and not yours. I made one image of your perfume to show what&#x27;s possible without a studio shoot (attached).
+
+3 POKE (then stop talking): How do tourists who find you on Maps see your perfumes before they walk in?
+
+4 QUALIFY:
+  - Which of your perfumes sells best to tourists?
+  - Do you sell online or only in the shop?
+  - Do you have product photos I can work from?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Want me to send 3 more images of your bottles for free, ready for Instagram or WhatsApp?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;We don&#x27;t need social media, the shop is busy.&quot;: That&#x27;s what the 856 reviews say. These images are for the tourists who check Maps before they walk the souq. Want the 3 free ones?
+
+8 FUTURE: A tourist on Street 33B opens Maps, sees your bottles in bright photos and walks into Mayura instead of next door.</pre>
+  <pre id="m20" class="src" hidden>Hi Mayura Khamas team, I&#x27;m Ismail, a performance marketer and AI content creator. I compared the perfume shops on Street 33B on Google this week. With 856 reviews you have loyal customers, but IDOL, on the same street, links its website, Instagram and TikTok, so tourists choosing on Maps see IDOL&#x27;s bottles and not yours. I made one image of your perfume to show what&#x27;s possible without a studio shoot (attached). I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="ismile dental clinic al rigga, deira (near jovial center) dental">
+  <header><div><h3><span class="num">2</span>iSmile Dental Clinic</h3>
+  <p class="meta">Al Rigga, Deira (near Jovial Center) · Dental</p>
+  <p class="meta"><span class="phone">+971 54 712 8458</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 1,313 reviews; no website or socials linked on Google.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Go Dental Clinic in Bur Dubai has 2,792 reviews, and its Google website link carries tracking tags, so it measures every patient Google sends. Pure Smile in Deira (5.0 from 215) and City Smile (4.8 from 214, also on TikTok) link their own sites.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi iSmile team, I&#x27;m Ismail. I help dental clinics in Dubai turn Google reviews into bookings. I compared Deira and Bur Dubai clinics this week.”</li>
+    <li><b>Insight</b> “You have 1,313 reviews at 4.9, the most of any Deira clinic I checked. But there&#x27;s no website or Instagram on your listing, while Go Dental tracks every patient Google sends it, and Pure Smile and City Smile link their own sites. You&#x27;ve earned the trust; they&#x27;re collecting the patients.”</li>
+    <li><b>Poke</b> “How do you know how many of your patients came from Google?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which treatment do you want more of?</li><li>How do patients book now: phone or WhatsApp?</li><li>Do you have an Instagram I just couldn&#x27;t find?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Can I send a free one-page audit with the 3 fixes, including what a booking page would look like?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “We&#x27;re fully booked.” → “Good problem. Then this is about filling the higher-value treatments, not more check-ups. Want the audit?”</li>
+    <li><b>Future pace</b> “Your 1,313 reviews send people to a booking page for implants and aligners, and you see exactly how many came from Google.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> UAE health-ad rules: no before/after claims without approval. Keep it to the listing and booking.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s21">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m21">Copy DM version</button>
+  </div>
+  <pre id="s21" class="src" hidden>1 PERMISSION + REASON: Hi iSmile team, I&#x27;m Ismail. I help dental clinics in Dubai turn Google reviews into bookings. I compared Deira and Bur Dubai clinics this week.
+
+2 INSIGHT: You have 1,313 reviews at 4.9, the most of any Deira clinic I checked. But there&#x27;s no website or Instagram on your listing, while Go Dental tracks every patient Google sends it, and Pure Smile and City Smile link their own sites. You&#x27;ve earned the trust; they&#x27;re collecting the patients.
+
+3 POKE (then stop talking): How do you know how many of your patients came from Google?
+
+4 QUALIFY:
+  - Which treatment do you want more of?
+  - How do patients book now: phone or WhatsApp?
+  - Do you have an Instagram I just couldn&#x27;t find?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Can I send a free one-page audit with the 3 fixes, including what a booking page would look like?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;We&#x27;re fully booked.&quot;: Good problem. Then this is about filling the higher-value treatments, not more check-ups. Want the audit?
+
+8 FUTURE: Your 1,313 reviews send people to a booking page for implants and aligners, and you see exactly how many came from Google.</pre>
+  <pre id="m21" class="src" hidden>Hi iSmile team, I&#x27;m Ismail. I help dental clinics in Dubai turn Google reviews into bookings. I compared Deira and Bur Dubai clinics this week. You have 1,313 reviews at 4.9, the most of any Deira clinic I checked. But there&#x27;s no website or Instagram on your listing, while Go Dental tracks every patient Google sends it, and Pure Smile and City Smile link their own sites. You&#x27;ve earned the trust; they&#x27;re collecting the patients. I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="fakhruddin perfumes (fk perfumes) deira (gold souq) perfume shop">
+  <header><div><h3><span class="num">3</span>Fakhruddin Perfumes (FK Perfumes)</h3>
+  <p class="meta">Deira (Gold Souq) · Perfume shop</p>
+  <p class="meta"><span class="phone">+971 4 226 6943</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>5.0★ from 4,007 reviews. Their Maps name, Instagram (fakhruddin.perfumes), TikTok (fk_perfumes) and website (scentpercent.com) all use different names.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>IDOL Perfumes in Meena Bazaar has 2,896 reviews and uses the same name everywhere: Maps, Instagram, TikTok and website.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi FK Perfumes team, I&#x27;m Ismail. I make product visuals and ads for Gulf perfume brands. I compared the perfume shops in Deira and Bur Dubai this week, and you came out on top.”</li>
+    <li><b>Insight</b> “4,007 reviews at 5.0 is more than any perfume shop I found, including IDOL&#x27;s 2,896. But customers meet four names: Fakhruddin on Maps, FK on TikTok, fakhruddin.perfumes on Instagram and scentpercent.com for the shop. IDOL is one name everywhere, so its fans can find it again. I made one image of your perfume (attached).”</li>
+    <li><b>Poke</b> “Which of your names do customers search for when they want to order again?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which name do you want customers to remember?</li><li>Is scentpercent.com your main online shop?</li><li>Which perfume do you want to push this season?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Want 3 more product images for free, with one name across all of them?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “Our name is famous already.” → “4,007 reviews prove it. One name everywhere means every one of those fans can find your online shop. Want the free images?”</li>
+    <li><b>Future pace</b> “Someone who loved your shop in the Gold Souq searches you at home in Riyadh, finds one name and orders from your site.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Real bottle photo only. Ask which name they prefer; don&#x27;t decide for them.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s22">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m22">Copy DM version</button>
+  </div>
+  <pre id="s22" class="src" hidden>1 PERMISSION + REASON: Hi FK Perfumes team, I&#x27;m Ismail. I make product visuals and ads for Gulf perfume brands. I compared the perfume shops in Deira and Bur Dubai this week, and you came out on top.
+
+2 INSIGHT: 4,007 reviews at 5.0 is more than any perfume shop I found, including IDOL&#x27;s 2,896. But customers meet four names: Fakhruddin on Maps, FK on TikTok, fakhruddin.perfumes on Instagram and scentpercent.com for the shop. IDOL is one name everywhere, so its fans can find it again. I made one image of your perfume (attached).
+
+3 POKE (then stop talking): Which of your names do customers search for when they want to order again?
+
+4 QUALIFY:
+  - Which name do you want customers to remember?
+  - Is scentpercent.com your main online shop?
+  - Which perfume do you want to push this season?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Want 3 more product images for free, with one name across all of them?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;Our name is famous already.&quot;: 4,007 reviews prove it. One name everywhere means every one of those fans can find your online shop. Want the free images?
+
+8 FUTURE: Someone who loved your shop in the Gold Souq searches you at home in Riyadh, finds one name and orders from your site.</pre>
+  <pre id="m22" class="src" hidden>Hi FK Perfumes team, I&#x27;m Ismail. I make product visuals and ads for Gulf perfume brands. I compared the perfume shops in Deira and Bur Dubai this week, and you came out on top. 4,007 reviews at 5.0 is more than any perfume shop I found, including IDOL&#x27;s 2,896. But customers meet four names: Fakhruddin on Maps, FK on TikTok, fakhruddin.perfumes on Instagram and scentpercent.com for the shop. IDOL is one name everywhere, so its fans can find it again. I made one image of your perfume (attached). I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="idol perfumes bur dubai (meena bazaar, street 33b) perfume shop + e-shop">
+  <header><div><h3><span class="num">4</span>IDOL Perfumes</h3>
+  <p class="meta">Bur Dubai (Meena Bazaar, Street 33B) · Perfume shop + e-shop</p>
+  <p class="meta"><span class="phone">+971 55 849 3585</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 2,896 reviews; website, Instagram and TikTok all linked. Already strong online.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>FK Perfumes in the Gold Souq has 4,007 reviews, the only perfume shop ahead of you. Mayura Khamas, on your own street, has 856 reviews and nothing online yet.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi IDOL team, I&#x27;m Ismail. I make AI product visuals and UGC-style video ads for Gulf perfume brands. I compared the perfume shops in Bur Dubai and Deira, and IDOL has the best online setup of all of them.”</li>
+    <li><b>Insight</b> “You&#x27;re the only shop on Street 33B with a website, Instagram and TikTok, and you&#x27;re second only to FK on reviews. The next step isn&#x27;t the setup; it&#x27;s fresh ad creative every week for the e-shop. I made one sample with your bottle (attached).”</li>
+    <li><b>Poke</b> “How often do you get fresh ad creative to test?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which channel sells most online: Instagram, TikTok or the site?</li><li>How often do you get new product visuals?</li><li>Do you run paid ads now?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Want me to make 3 UGC-style ad videos for one perfume, free, so you can test them against your current ads?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “We have an agency.” → “Keep them for the big shoots. I make the weekly test creatives they can&#x27;t produce fast enough. Want to test 3?”</li>
+    <li><b>Future pace</b> “Every week a new ad tests on TikTok, the winners scale, and the e-shop grows without a new photoshoot.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Label any AI UGC as an ad, never as a real customer review. Turn on the platform&#x27;s AI label.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s23">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m23">Copy DM version</button>
+  </div>
+  <pre id="s23" class="src" hidden>1 PERMISSION + REASON: Hi IDOL team, I&#x27;m Ismail. I make AI product visuals and UGC-style video ads for Gulf perfume brands. I compared the perfume shops in Bur Dubai and Deira, and IDOL has the best online setup of all of them.
+
+2 INSIGHT: You&#x27;re the only shop on Street 33B with a website, Instagram and TikTok, and you&#x27;re second only to FK on reviews. The next step isn&#x27;t the setup; it&#x27;s fresh ad creative every week for the e-shop. I made one sample with your bottle (attached).
+
+3 POKE (then stop talking): How often do you get fresh ad creative to test?
+
+4 QUALIFY:
+  - Which channel sells most online: Instagram, TikTok or the site?
+  - How often do you get new product visuals?
+  - Do you run paid ads now?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Want me to make 3 UGC-style ad videos for one perfume, free, so you can test them against your current ads?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;We have an agency.&quot;: Keep them for the big shoots. I make the weekly test creatives they can&#x27;t produce fast enough. Want to test 3?
+
+8 FUTURE: Every week a new ad tests on TikTok, the winners scale, and the e-shop grows without a new photoshoot.</pre>
+  <pre id="m23" class="src" hidden>Hi IDOL team, I&#x27;m Ismail. I make AI product visuals and UGC-style video ads for Gulf perfume brands. I compared the perfume shops in Bur Dubai and Deira, and IDOL has the best online setup of all of them. You&#x27;re the only shop on Street 33B with a website, Instagram and TikTok, and you&#x27;re second only to FK on reviews. The next step isn&#x27;t the setup; it&#x27;s fresh ad creative every week for the e-shop. I made one sample with your bottle (attached). I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="nishka jewellery karama center jewelry">
+  <header><div><h3><span class="num">5</span>Nishka Jewellery</h3>
+  <p class="meta">Karama Center · Jewelry</p>
+  <p class="meta"><span class="phone">+971 56 545 0916</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 1,337 reviews; website and Instagram linked; no TikTok.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Mila Gold and Diamonds, in the same Karama Center, has 1,058 reviews and is on TikTok. Tanishq (3,604) and Malabar (12,673) are in the same mall.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi Nishka team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared the jewellers in Karama Center this week.”</li>
+    <li><b>Insight</b> “You have more reviews than Mila Gold (1,337 vs 1,058), but Mila is on TikTok and you aren&#x27;t. With Tanishq and Malabar in the same mall spending big budgets, short videos are the cheapest way for an independent to stand out. I made one sample of your piece (attached).”</li>
+    <li><b>Poke</b> “Have you tested short videos for any of your collections yet?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which collection do you want to push?</li><li>Do you sell on WhatsApp or online?</li><li>Who&#x27;s your main buyer: brides, gifts, everyday gold?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Want 3 more visuals or a short video for one piece, free, to test on TikTok?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “TikTok isn&#x27;t for jewelry.” → “Mila Gold, in your own mall, is already testing it. Three free videos let you find out at no cost. Want them?”</li>
+    <li><b>Future pace</b> “Your best necklace in a 7-second video reaches buyers in Karama before they walk past Malabar.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> The design must match their real piece exactly. No invented stones or patterns.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s24">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m24">Copy DM version</button>
+  </div>
+  <pre id="s24" class="src" hidden>1 PERMISSION + REASON: Hi Nishka team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared the jewellers in Karama Center this week.
+
+2 INSIGHT: You have more reviews than Mila Gold (1,337 vs 1,058), but Mila is on TikTok and you aren&#x27;t. With Tanishq and Malabar in the same mall spending big budgets, short videos are the cheapest way for an independent to stand out. I made one sample of your piece (attached).
+
+3 POKE (then stop talking): Have you tested short videos for any of your collections yet?
+
+4 QUALIFY:
+  - Which collection do you want to push?
+  - Do you sell on WhatsApp or online?
+  - Who&#x27;s your main buyer: brides, gifts, everyday gold?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Want 3 more visuals or a short video for one piece, free, to test on TikTok?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;TikTok isn&#x27;t for jewelry.&quot;: Mila Gold, in your own mall, is already testing it. Three free videos let you find out at no cost. Want them?
+
+8 FUTURE: Your best necklace in a 7-second video reaches buyers in Karama before they walk past Malabar.</pre>
+  <pre id="m24" class="src" hidden>Hi Nishka team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared the jewellers in Karama Center this week. You have more reviews than Mila Gold (1,337 vs 1,058), but Mila is on TikTok and you aren&#x27;t. With Tanishq and Malabar in the same mall spending big budgets, short videos are the cheapest way for an independent to stand out. I made one sample of your piece (attached). I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="cocoage aesthetics clinic sheikh zayed rd (fairmont tower) aesthetic clinic">
+  <header><div><h3><span class="num">6</span>Cocoage Aesthetics Clinic</h3>
+  <p class="meta">Sheikh Zayed Rd (Fairmont Tower) · Aesthetic clinic</p>
+  <p class="meta"><span class="phone">+971 54 793 2796</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.7★ from 550 reviews; 38 one-star (7%); website and Instagram linked; no TikTok.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>Celia Aesthetic Clinic on Sheikh Zayed Rd has almost the same reviews (543) and is on TikTok. Glow Aesthetics Burjuman (4.9 from 812) links a website, Instagram and TikTok.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi Cocoage team, I&#x27;m Ismail. I make short-form content and ads for aesthetic clinics in Dubai. I compared the clinics on Sheikh Zayed Road this week.”</li>
+    <li><b>Insight</b> “You and Celia are neck and neck: 550 reviews against 543. But Celia and Glow are both on TikTok, where people in their 20s and 30s now research treatments. And 38 one-star reviews without replies give them an easy edge.”</li>
+    <li><b>Poke</b> “Where do your newer, younger patients say they first heard of you?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>Which treatment do you want to grow?</li><li>Who replies to Google reviews?</li><li>Do you have a doctor or therapist comfortable on camera?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Can I send a free audit: reply templates for the one-star reviews and 3 TikTok ideas that stay within UAE health-ad rules?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “We do Instagram already.” → “Instagram is your base. The same clips can go on TikTok for no extra cost, which is where Celia is getting ahead. Want the ideas?”</li>
+    <li><b>Future pace</b> “Your educational clips run on TikTok and Instagram, every review has a calm reply, and you pull ahead of Celia.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> No before/after or result claims without approval; follow DHA advertising rules.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s25">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m25">Copy DM version</button>
+  </div>
+  <pre id="s25" class="src" hidden>1 PERMISSION + REASON: Hi Cocoage team, I&#x27;m Ismail. I make short-form content and ads for aesthetic clinics in Dubai. I compared the clinics on Sheikh Zayed Road this week.
+
+2 INSIGHT: You and Celia are neck and neck: 550 reviews against 543. But Celia and Glow are both on TikTok, where people in their 20s and 30s now research treatments. And 38 one-star reviews without replies give them an easy edge.
+
+3 POKE (then stop talking): Where do your newer, younger patients say they first heard of you?
+
+4 QUALIFY:
+  - Which treatment do you want to grow?
+  - Who replies to Google reviews?
+  - Do you have a doctor or therapist comfortable on camera?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Can I send a free audit: reply templates for the one-star reviews and 3 TikTok ideas that stay within UAE health-ad rules?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;We do Instagram already.&quot;: Instagram is your base. The same clips can go on TikTok for no extra cost, which is where Celia is getting ahead. Want the ideas?
+
+8 FUTURE: Your educational clips run on TikTok and Instagram, every review has a calm reply, and you pull ahead of Celia.</pre>
+  <pre id="m25" class="src" hidden>Hi Cocoage team, I&#x27;m Ismail. I make short-form content and ads for aesthetic clinics in Dubai. I compared the clinics on Sheikh Zayed Road this week. You and Celia are neck and neck: 550 reviews against 543. But Celia and Glow are both on TikTok, where people in their 20s and 30s now research treatments. And 38 one-star reviews without replies give them an easy edge. I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+<article class="lead" data-region="dubai" data-search="mila gold and diamonds karama center jewelry">
+  <header><div><h3><span class="num">7</span>Mila Gold and Diamonds</h3>
+  <p class="meta">Karama Center · Jewelry</p>
+  <p class="meta"><span class="phone">+971 4 251 4733</span> · Message Mon–Fri, 10 AM–1 PM Dubai time</p></div></header>
+  <dl>
+    <div><dt>Them</dt><dd>4.9★ from 1,058 reviews; website, Instagram and TikTok all linked.</dd></div>
+    <div class="rival"><dt>Competitor insight</dt><dd>In Karama Center you share the floor with Malabar (12,673 reviews) and Tanishq (3,604), both with national ad budgets. Nishka, also independent, has 1,337.</dd></div>
+  </dl>
+  <ol class="steps">
+    <li><b>Open</b> “Hi Mila Gold team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared every jeweller in Karama Center this week.”</li>
+    <li><b>Insight</b> “You&#x27;re the independent that&#x27;s already on TikTok, ahead of Nishka there. But Malabar and Tanishq outspend everyone. The way an independent wins is more creative, not more budget: a new video every week instead of one shoot a season. I made one sample with your piece (attached).”</li>
+    <li><b>Poke</b> “How do you compete for attention with Malabar and Tanishq in the same mall?” <i>then stop talking</i></li>
+    <li><b>Qualify</b><ul><li>How often do you post new videos?</li><li>Which pieces sell best from social?</li><li>Do you run paid ads?</li></ul></li>
+    <li><b>Certainty</b> “I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.”</li>
+    <li><b>Small ask</b> “Want 3 short videos for one collection, free, to test against your current posts?”<br><span class="alt-ask">Or: “Would it be a bad idea if I sent 3 more, free?”</span></li>
+    <li><b>If they say</b> “We have a photographer.” → “Keep them for the catalogue. I make the weekly ad tests between shoots. Want 3 free ones?”</li>
+    <li><b>Future pace</b> “A new piece shows up on TikTok every week, the winners get the ad budget, and Mila takes buyers from the big chains.”</li>
+  </ol>
+  <p class="check"><b>Check first:</b> Exact design match only; label AI content as an ad.</p>
+  <div class="actions">
+    <button type="button" class="copy" data-target="s26">Copy call script</button>
+    <button type="button" class="copy alt" data-target="m26">Copy DM version</button>
+  </div>
+  <pre id="s26" class="src" hidden>1 PERMISSION + REASON: Hi Mila Gold team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared every jeweller in Karama Center this week.
+
+2 INSIGHT: You&#x27;re the independent that&#x27;s already on TikTok, ahead of Nishka there. But Malabar and Tanishq outspend everyone. The way an independent wins is more creative, not more budget: a new video every week instead of one shoot a season. I made one sample with your piece (attached).
+
+3 POKE (then stop talking): How do you compete for attention with Malabar and Tanishq in the same mall?
+
+4 QUALIFY:
+  - How often do you post new videos?
+  - Which pieces sell best from social?
+  - Do you run paid ads?
+
+5 CERTAINTY: I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×.
+
+6 SMALL ASK: Want 3 short videos for one collection, free, to test against your current posts?
+   or, no-oriented: Would it be a bad idea if I sent 3 more, free?
+
+7 IF &quot;We have a photographer.&quot;: Keep them for the catalogue. I make the weekly ad tests between shoots. Want 3 free ones?
+
+8 FUTURE: A new piece shows up on TikTok every week, the winners get the ad budget, and Mila takes buyers from the big chains.</pre>
+  <pre id="m26" class="src" hidden>Hi Mila Gold team, I&#x27;m Ismail. I make jewelry visuals and short video ads for Gulf brands. I compared every jeweller in Karama Center this week. You&#x27;re the independent that&#x27;s already on TikTok, ahead of Nishka there. But Malabar and Tanishq outspend everyone. The way an independent wins is more creative, not more budget: a new video every week instead of one shoot a season. I made one sample with your piece (attached). I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×. I can send 3 more of your products, free. Open to seeing them?</pre>
+</article>
+  </div>
+  <p class="empty" id="empty" hidden>No business matches that search.</p>
+  <section id="method" class="method" hidden>
+<p>Belfort&#x27;s competitor-insight opener is one tactic. Each call sheet below combines it with the other methods that hold up, listed here with how strong the evidence is.</p>
+<div class="tablewrap"><table><thead><tr><th>Tactic</th><th>Where it comes from</th><th>How strong</th><th>How you use it</th></tr></thead><tbody>
+<tr><td><b>State the reason for the call early</b></td><td>Gong (secondary summaries report about 2.1× success; I couldn&#x27;t find the figure on Gong&#x27;s own pages)</td><td>Medium</td><td>&quot;The reason I&#x27;m calling is…&quot; inside the first 10 seconds</td></tr>
+<tr><td><b>Permission-based opener</b></td><td>Gong, 300M calls: 11.18% success vs a 1.5% baseline</td><td>Strong (large dataset, vendor-run)</td><td>&quot;Can I take 30 seconds to explain why I called?&quot;</td></tr>
+<tr><td><b>Don&#x27;t open with &quot;Did I catch you at a bad time?&quot;</b></td><td>Gong: about 2% success, the weakest opener tested</td><td>Strong</td><td>Never use it, even though it sounds polite</td></tr>
+<tr><td><b>Competitor or market insight first</b></td><td>Belfort (Straight Line); also the &quot;Challenger&quot; approach</td><td>Expert method</td><td>One true, public fact about a nearby competitor</td></tr>
+<tr><td><b>Poke-the-bear question</b></td><td>Josh Braun</td><td>Expert method</td><td>A neutral question that lets them discover the gap themselves, instead of you pitching it</td></tr>
+<tr><td><b>Problem before solution, no ROI promises</b></td><td>Gong: ROI language lowered cold-email success by about 15%</td><td>Medium (email data)</td><td>Talk about their missing link, not &quot;I&#x27;ll grow your revenue X%&quot;</td></tr>
+<tr><td><b>Three Tens (certainty in idea, you, plan)</b></td><td>Belfort</td><td>Expert method</td><td>The fact (idea) → one real result (you) → a small free first step (plan)</td></tr>
+<tr><td><b>No-oriented ask</b></td><td>Chris Voss, <i>Never Split the Difference</i></td><td>Expert method</td><td>&quot;Would it be a bad idea if I sent you the audit?&quot; Saying no feels safe, and here no means yes</td></tr>
+<tr><td><b>Interest ask in messages</b></td><td>Gong: an interest CTA got about 30% vs about 15% for a specific meeting ask (cold email)</td><td>Medium</td><td>End WhatsApp and DMs with &quot;Open to seeing it?&quot;, not &quot;Can we meet Tuesday at 3?&quot;</td></tr>
+<tr><td><b>Give first (reciprocity)</b></td><td>Cialdini, <i>Influence</i></td><td>Strong (decades of research)</td><td>The free audit, or 3 free images</td></tr>
+<tr><td><b>Looping, at most twice</b></td><td>Belfort</td><td>Expert method (shortened)</td><td>Acknowledge → one new fact → ask the small thing again</td></tr>
+<tr><td><b>Future pacing</b></td><td>Belfort / NLP selling</td><td>Expert method</td><td>One sentence picturing their customer once it&#x27;s fixed</td></tr>
+<tr><td><b>Warm, calm tone</b></td><td>Voss; Gong</td><td>Strong</td><td>A friendly voice beats a perfect script; speak your own Egyptian Arabic</td></tr>
+</tbody></table></div>
+<p><b>The call in order (each sheet follows it):</b></p>
+<ol>
+<li><b>Permission + reason</b> (first 4–10 seconds): who you are, why you&#x27;re calling, 30 seconds?</li>
+<li><b>Insight:</b> the competitor fact, short.</li>
+<li><b>Poke:</b> one neutral question about the gap. Then stop talking.</li>
+<li><b>Qualify:</b> 2–3 questions, and listen.</li>
+<li><b>Certainty:</b> one real result.</li>
+<li><b>No-oriented small ask:</b> the free audit.</li>
+<li><b>Loop</b> once or twice on an objection, then let it go.</li>
+<li><b>Future pace,</b> then get the name, the WhatsApp and the follow-up day.</li>
+</ol>
+<p><b>What I left out of Belfort, on purpose:</b></p>
+<ul>
+<li>Pressure, looping 3–5 times, fake urgency, closing on the first call, and &quot;say whatever closes&quot;.</li>
+<li>He was convicted of fraud, so keep his structure and leave his ethics.</li>
+<li>A second &quot;no&quot; ends the call politely. Note a follow-up for 3 months later.</li>
+</ul>
+<p><b>Rules:</b></p>
+<ul>
+<li>Use only true, public facts (Google Maps, their own posts), and check them on your phone before each call.</li>
+<li>Never insult the competitor, and never say a competitor is your client.</li>
+<li>If they ask how you know: &quot;It&#x27;s public on Google Maps. I compared the listings in your area.&quot;</li>
+<li><b>Dubai:</b> message first. Call only after they reply.</li>
+</ul>
+<p><b>Sources:</b></p>
+<ul>
+<li>Gong, best and worst cold call openers (300M calls): <a href="https://www.gong.io/blog/the-best-and-worst-cold-call-openers-backed-by-data-from-300m-calls" target="_blank" rel="noopener">https://www.gong.io/blog/the-best-and-worst-cold-call-openers-backed-by-data-from-300m-calls</a></li>
+<li>Gong, cold call opening lines (90,380 calls): <a href="https://www.gong.io/resources/labs/cold-call-opening-lines/" target="_blank" rel="noopener">https://www.gong.io/resources/labs/cold-call-opening-lines/</a></li>
+<li>Gong, sales stats (interest CTA, ROI language): <a href="https://gong.io/blog/sales-stats" target="_blank" rel="noopener">https://gong.io/blog/sales-stats</a></li>
+<li>The &quot;reason for my call&quot; 2.1× figure (secondary source): <a href="https://brendonrod.substack.com/p/gong30-mind-blowing-sales-stats-that" target="_blank" rel="noopener">https://brendonrod.substack.com/p/gong30-mind-blowing-sales-stats-that</a></li>
+<li>Black Swan Group (Chris Voss), fixing a bad cold-calling script: <a href="https://www.blackswanltd.com/the-edge/fixing-a-bad-cold-calling-script" target="_blank" rel="noopener">https://www.blackswanltd.com/the-edge/fixing-a-bad-cold-calling-script</a></li>
+<li>Josh Braun, Poke the Bear course: <a href="https://joshbraun.teachable.com/courses/poke/lectures/45769066" target="_blank" rel="noopener">https://joshbraun.teachable.com/courses/poke/lectures/45769066</a></li>
+<li>Belfort, <i>The Way of the Wolf</i> (summary): <a href="https://www.theinvestorspodcast.com/blog/the-way-of-the-wolf-straight-line-selling-book-summary/" target="_blank" rel="noopener">https://www.theinvestorspodcast.com/blog/the-way-of-the-wolf-straight-line-selling-book-summary/</a></li>
+</ul>
+  </section>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab'), q = document.getElementById('q');
+  var cards = document.getElementById('cards'), method = document.getElementById('method');
+  var current = 'egypt';
+  function render() {
+    var isMethod = current === 'method';
+    method.hidden = !isMethod; cards.hidden = isMethod; q.hidden = isMethod;
+    var term = q.value.trim().toLowerCase(), any = false;
+    cards.querySelectorAll('.lead').forEach(function (c) {
+      var hit = c.dataset.region === current && (!term || c.dataset.search.indexOf(term) !== -1);
+      c.hidden = !hit; if (hit) any = true;
+    });
+    document.getElementById('empty').hidden = isMethod || any;
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () {
+    current = t.dataset.show;
+    tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+    try { localStorage.setItem('b1-tab', current); } catch (e) {}
+    render();
+  }); });
+  q.addEventListener('input', render);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.copy'); if (!b) return;
+    var pre = document.getElementById(b.dataset.target), text = pre.textContent, label = b.textContent;
+    function ok(msg) { b.textContent = msg; b.classList.add('done');
+      setTimeout(function () { b.textContent = label; b.classList.remove('done'); }, 1800); }
+    function fallback() {
+      pre.hidden = false;
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var done = false; try { done = document.execCommand('copy'); } catch (err) {}
+      ok(done ? 'Copied' : 'Selected: press Ctrl+C');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { ok('Copied'); }, fallback);
+    } else { fallback(); }
+  });
+  var saved = null; try { saved = localStorage.getItem('b1-tab'); } catch (e) {}
+  if (saved) { var t = document.querySelector('.tab[data-show="' + saved + '"]'); if (t) { t.click(); return; } }
+  render();
+})();
+</script>
