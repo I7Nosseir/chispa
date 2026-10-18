@@ -212,6 +212,12 @@ Built by a parallel session on the same day as the Command Center above. The Com
 - Positioning: small fixed jobs for owner-run, single-location businesses, never "marketing management". Go back to parked leads after 2–3 local case studies.
 - Next: batch 2 = Tier B (57 Egypt + 33 Dubai) once batch 1 outcomes are logged.
 
+## Pipeline
+- **Physiocure Egypt (18 Oct):** said YES on WhatsApp to the free audit.
+  - Sent: a 1-page audit PDF (`clients/physiocure/`). It covers the GPS-coordinates address, nothing linked, and the lowest rating with the highest one-star share of the 6 nearby clinics.
+  - Follow-up 20 Oct.
+  - Quote in the meeting: Listing fix 2,000 EGP or Starter 9,000 EGP. Notes in `clients/physiocure/notes.md`.
+
 ## Batch 2 call sheets (18 Oct 2026)
 - Page: https://claude.ai/artifact/TMdUidbzPRzwS992oEMWJe.
   - Source: `command-center/batch2.py`, which reuses batch1's playbook and template. Outputs: `batch2-call-sheets.md` and `.html`.
