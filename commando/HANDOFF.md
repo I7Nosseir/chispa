@@ -212,6 +212,18 @@ Built by a parallel session on the same day as the Command Center above. The Com
 - Positioning: small fixed jobs for owner-run, single-location businesses, never "marketing management". Go back to parked leads after 2–3 local case studies.
 - Next: batch 2 = Tier B (57 Egypt + 33 Dubai) once batch 1 outcomes are logged.
 
+## Batch 2 call sheets (18 Oct 2026)
+- Page: https://claude.ai/artifact/TMdUidbzPRzwS992oEMWJe.
+  - Source: `command-center/batch2.py`, which reuses batch1's playbook and template. Outputs: `batch2-call-sheets.md` and `.html`.
+- All 90 Tier B leads (57 Egypt, 33 Dubai): 65 Go, 24 Pilot, 1 Park (Restart Fitness, a 2-branch chain).
+- Pilot covers:
+  - Dubai real estate brokers, cafés and restaurants, and Dubai clinics that already have a site and Instagram;
+  - Egypt real estate with fewer than 5 reviews;
+  - places rated under 3.8;
+  - plural names with 300+ reviews (possible branches).
+- Competitor facts are generated from the raw Google Maps data, now saved at `leads/raw/places-2026-10-11.json` (294 places, recovered from the 11 Oct Apify pulls). Each one is the strongest same-search place within 5 km, preferring one that links something the lead lacks.
+- Fixed in both batches: removed the unverified claim that one-star reviews "have no replies". The founder checks on the phone.
+
 ## Pricing (17 Oct 2026)
 - `reports/pricing-2026-10-17.md`: first-deal menu for owner-run businesses. The founder confirms prices before quoting.
 - Door-opener: Google listing fix, 1,500–2,500 EGP.

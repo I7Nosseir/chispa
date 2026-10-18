@@ -88,7 +88,7 @@ Zahraa El Maadi · Beauty salon · 01155018818 · Best time: 11 AM–1 PM, befor
 - **Them:** 4.5★ from 555 reviews; 47 one-star (8%); no website and no Instagram/Facebook/TikTok linked on Google.
 - **Competitor insight:** La Rosa Beauty Lounge in New Maadi has 840 reviews at 4.7. The One in Degla links its Instagram straight from Google, so people on Maps see its hair and nail work before they call.
 - **Open (first 4 seconds):** "Hi, this is Ismail. I do marketing for salons in Maadi. I was comparing salons on Google Maps this week and noticed something about ZOEYA I think you'd want to know. Do you have 30 seconds?"
-- **Insight line:** "You have 555 reviews, more than most salons near you. But a woman comparing on Maps sees La Rosa at 4.7 and The One with its Instagram one tap away. Your listing has no link to your work, and the 47 one-star reviews sit there without replies."
+- **Insight line:** "You have 555 reviews, more than most salons near you. But a woman comparing on Maps sees La Rosa at 4.7 and The One with its Instagram one tap away. Your listing has no link to your work, and 47 one-star reviews are the first thing a careful reader opens."
 - **Poke (then stop talking):** "When someone finds ZOEYA on Google Maps, how do they get to see your work before they call?"
 - **Qualify:** Where do most new clients find you now: Instagram, word of mouth or Maps? / Who replies to Google reviews at the moment? / Do you have a booking number on WhatsApp?
 - **Certainty:** "For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries."
@@ -326,7 +326,7 @@ Maadi (Street 104) · Gym · 01021219000 · Best time: 11 AM–1 PM (quiet hours
 - **Them:** 4.0★ from 559 reviews; 65 one-star (12%); Google 'website' is their Facebook page.
 - **Competitor insight:** Among Maadi's big gyms, Gold's Gym has 4.4 from 760, Steel Fitness 4.4 with a website and Instagram, and Town Gym 4.5 nearby on the agricultural road.
 - **Open (first 4 seconds):** "Hi, this is Ismail. I do marketing for gyms in Maadi. I compared the big Maadi gyms on Google this week. Transformers has the reach, and one number is holding it back. 30 seconds?"
-- **Insight line:** "559 reviews puts you second in Maadi after Gold's. But your rating is 4.0, the lowest of the big four, and 65 one-star reviews have no replies. Someone choosing a gym filters for 4+ and sees Gold's and Town Gym first."
+- **Insight line:** "559 reviews puts you second in Maadi after Gold's. But your rating is 4.0, the lowest of the big four, and 65 one-star reviews sit at the top for anyone who sorts by lowest. Someone choosing a gym filters for 4+ and sees Gold's and Town Gym first."
 - **Poke (then stop talking):** "Who replies to the one-star reviews right now?"
 - **Qualify:** What do the one-star reviews usually complain about: crowding, staff, equipment? / Who answers Google reviews now? / When do you sign the most members: January, summer?
 - **Certainty:** "For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×, so I know how to turn Google and Instagram into enquiries."
@@ -539,7 +539,7 @@ Sheikh Zayed Rd (Fairmont Tower) · Aesthetic clinic · +971 54 793 2796 · Best
 - **Them:** 4.7★ from 550 reviews; 38 one-star (7%); website and Instagram linked; no TikTok.
 - **Competitor insight:** Celia Aesthetic Clinic on Sheikh Zayed Rd has almost the same reviews (543) and is on TikTok. Glow Aesthetics Burjuman (4.9 from 812) links a website, Instagram and TikTok.
 - **Open (first 4 seconds):** "Hi Cocoage team, I'm Ismail. I make short-form content and ads for aesthetic clinics in Dubai. I compared the clinics on Sheikh Zayed Road this week."
-- **Insight line:** "You and Celia are neck and neck: 550 reviews against 543. But Celia and Glow are both on TikTok, where people in their 20s and 30s now research treatments. And 38 one-star reviews without replies give them an easy edge."
+- **Insight line:** "You and Celia are neck and neck: 550 reviews against 543. But Celia and Glow are both on TikTok, where people in their 20s and 30s now research treatments. And 38 one-star reviews are what a careful patient reads first."
 - **Poke (then stop talking):** "Where do your newer, younger patients say they first heard of you?"
 - **Qualify:** Which treatment do you want to grow? / Who replies to Google reviews? / Do you have a doctor or therapist comfortable on camera?
 - **Certainty:** "I make product visuals and ad creative with AI and run the ads myself. For Grapes Holiday I cut ad spend 62.5% while leads grew 2.5×."
