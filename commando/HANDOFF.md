@@ -217,6 +217,13 @@ Built by a parallel session on the same day as the Command Center above. The Com
   - Sent: a 1-page audit PDF (`clients/physiocure/`). It covers the GPS-coordinates address, nothing linked, and the lowest rating with the highest one-star share of the 6 nearby clinics.
   - Follow-up 20 Oct.
   - Quote in the meeting: Listing fix 2,000 EGP or Starter 9,000 EGP. Notes in `clients/physiocure/notes.md`.
+  - 18 Oct: they asked for a monthly price. Sent `Physiocure-Monthly-Plans.pdf`:
+    - Google & Reviews 3,000/month.
+    - Growth 7,500/month (recommended).
+    - Growth + Ads 10,000/month plus an ad budget of 5,000+.
+    - Google fix 2,000, free with 3 months.
+    - Optional site 7,000.
+    - 3-month minimum.
 
 ## Batch 2 call sheets (18 Oct 2026)
 - Page: https://claude.ai/artifact/TMdUidbzPRzwS992oEMWJe.

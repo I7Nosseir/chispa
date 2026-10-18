@@ -48,3 +48,41 @@
   - No patient photos without written consent.
   - No medical claims in any copy.
   - Ask for permission to use the results as a case study.
+
+## 18 Oct: they asked for monthly pricing and services
+- **Sent:** `Physiocure-Monthly-Plans.pdf` (source `proposal.html`) plus the WhatsApp reply below.
+- **Plans:**
+  - Google fix: 2,000 one-time, free with a 3-month plan.
+  - Google & Reviews: 3,000 a month.
+  - **Growth: 7,500 a month (recommended).**
+  - Growth + Ads: 10,000 a month plus an ad budget from 5,000, paid to Meta.
+  - Optional one-page website: 7,000.
+- **Terms:** 3-month minimum; paid at the start of each month; they own the accounts; patient consent rules apply.
+
+### WhatsApp reply (⚠️ read it out loud first)
+أهلاً بحضرتك، شكراً على اهتمامكم.
+عندي 3 باقات شهرية (التفاصيل في الـ PDF المرفق)، وكلهم بيبدأوا بتظبيط صفحة Google: العنوان، اللينكات، الخدمات، والرد على التقييمات القديمة.
+
+1. باقة Google والتقييمات: 3,000 جنيه في الشهر
+إدارة صفحة Google، الرد على كل التقييمات خلال 48 ساعة، كارت QR للتقييمات في الريسبشن، وتقرير شهري.
+
+2. باقة النمو (اللي أنصح بيها): 7,500 جنيه في الشهر
+كل اللي فات + Instagram و Facebook: 8 بوستات في الشهر منهم 4 Reels (تمارين ونصايح وكواليس المركز)، 3 Stories في الأسبوع، ويوم تصوير ساعتين في المركز كل شهر.
+
+3. النمو + إعلانات: 10,000 جنيه في الشهر + ميزانية الإعلانات (من 5,000 جنيه بتدفعوها لـ Meta مباشرة)
+إعلانات لخدمة واحدة زي آلام الضهر، والحجز بيجي على WhatsApp.
+
+تظبيط صفحة Google لوحده 2,000 جنيه، وبيبقى مجاني مع أي باقة 3 شهور.
+
+ممكن نتكلم 10 دقايق أعرف فيهم إيه الخدمة اللي عايزين تكبروها أكتر، وأظبطلكم الباقة عليها؟
+
+**English meaning:**
+- 3 monthly plans, all starting with the Google fix.
+- Google & Reviews 3,000; Growth 7,500 (recommended); Growth + Ads 10,000 plus the ad budget.
+- The Google fix is 2,000 alone, free with any 3-month plan.
+- Can we talk for 10 minutes to tailor it?
+
+### If they push back on price
+- **Don't discount; move them down a plan.** "Start with Google & Reviews at 3,000 and move up when you see the results."
+- **If they want Growth cheaper:** cut it to 6 posts and no stories, for 6,000.
+- **If they ask why it's monthly:** "Reviews and content only work if they keep coming. One month fixes the page; three months show the results."
